@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/wm/WindowStateAnimator$FlymeInjector;,
         Lcom/android/server/wm/WindowStateAnimator$SurfaceTrace;
     }
 .end annotation
@@ -390,13 +391,21 @@
 
     add-int v3, v6, v7
 
-    .line 1251
     .local v3, "top":I
     iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
 
     invoke-virtual {v6, v8, v8, v5, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1254
+    invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowStateAnimator$FlymeInjector;->isInFlymeMovedMode(Lcom/android/server/wm/WindowStateAnimator;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_flyme_0
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowStateAnimator$FlymeInjector;->setSystemDecorRectTop(Lcom/android/server/wm/WindowStateAnimator;)V
+
+    :cond_flyme_0
+
     iget-object v6, v4, Lcom/android/server/wm/WindowState;->mSystemDecorRect:Landroid/graphics/Rect;
 
     iget v7, p1, Landroid/graphics/Rect;->left:I
@@ -562,39 +571,30 @@
 
     invoke-direct {v7, v10}, Landroid/view/animation/AnimationSet;-><init>(Z)V
 
-    .line 1907
     .local v7, "newAnimation":Landroid/view/animation/AnimationSet;
     invoke-virtual {v7, v0, v1}, Landroid/view/animation/AnimationSet;->setDuration(J)V
 
-    .line 1908
     invoke-virtual {v7, v8, v9}, Landroid/view/animation/AnimationSet;->setStartTime(J)V
 
-    .line 1909
     iget-object v10, p0, Lcom/android/server/wm/WindowStateAnimator;->mAnimation:Landroid/view/animation/Animation;
 
     invoke-virtual {v7, v10}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1911
     iget-object v10, p0, Lcom/android/server/wm/WindowStateAnimator;->mContext:Landroid/content/Context;
 
-    const v11, 0x10a0011
+    const v11, #android:anim@app_starting_exit#t
 
-    .line 1910
     invoke-static {v10, v11}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v6
 
-    .line 1912
     .local v6, "fadeOut":Landroid/view/animation/Animation;
     invoke-virtual {v6, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 1913
     invoke-virtual {v6, v2, v3}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
-    .line 1914
     invoke-virtual {v7, v6}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1915
     iget-object v10, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
     iget-object v10, v10, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
@@ -2912,6 +2912,8 @@
 
     .line 1232
     :cond_1f
+    invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowStateAnimator$FlymeInjector;->moveShownFrameIfNeed(Lcom/android/server/wm/WindowStateAnimator;)V
+
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/server/wm/WindowStateAnimator;->mAlpha:F
@@ -7657,6 +7659,8 @@
 
     .line 1281
     .local v3, "displayInfo":Landroid/view/DisplayInfo;
+    invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowStateAnimator$FlymeInjector;->updateSurfaceWindowCrop(Lcom/android/server/wm/WindowStateAnimator;)V
+
     iget-object v7, v6, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
     iget v7, v7, Landroid/view/WindowManager$LayoutParams;->flags:I

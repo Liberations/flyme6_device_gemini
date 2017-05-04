@@ -10,6 +10,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/content/Intent$FlymeInjector;,
         Landroid/content/Intent$ShortcutIconResource;,
         Landroid/content/Intent$FilterComparison;,
         Landroid/content/Intent$1;
@@ -691,6 +692,8 @@
 
 
 # instance fields
+.field public mFlymeIntent:Landroid/content/IntentExt;
+
 .field private mAction:Ljava/lang/String;
 
 .field private mCategories:Landroid/util/ArraySet;
@@ -746,15 +749,14 @@
     .locals 1
 
     .prologue
-    .line 4342
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4335
     const/4 v0, -0x2
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    .line 4342
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
     return-void
 .end method
 
@@ -771,23 +773,21 @@
     .end annotation
 
     .prologue
-    .line 4448
     .local p2, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4335
     const/4 v0, -0x2
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    .line 4449
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
     new-instance v0, Landroid/content/ComponentName;
 
     invoke-direct {v0, p1, p2}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     iput-object v0, p0, Landroid/content/Intent;->mComponent:Landroid/content/ComponentName;
 
-    .line 4448
     return-void
 .end method
 
@@ -915,6 +915,8 @@
 
     .line 4348
     :cond_4
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;Landroid/content/Intent;)V
+
     return-void
 .end method
 
@@ -973,6 +975,8 @@
 
     .line 4378
     :cond_0
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
     return-void
 .end method
 
@@ -981,18 +985,16 @@
     .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 7807
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4335
     const/4 v0, -0x2
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    .line 7808
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
     invoke-virtual {p0, p1}, Landroid/content/Intent;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 7807
     return-void
 .end method
 
@@ -1001,18 +1003,16 @@
     .param p1, "action"    # Ljava/lang/String;
 
     .prologue
-    .line 4407
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4335
     const/4 v0, -0x2
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    .line 4408
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
     invoke-virtual {p0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4407
     return-void
 .end method
 
@@ -1022,21 +1022,18 @@
     .param p2, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 4427
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4335
     const/4 v0, -0x2
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    .line 4428
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
     invoke-virtual {p0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4429
     iput-object p2, p0, Landroid/content/Intent;->mData:Landroid/net/Uri;
 
-    .line 4427
     return-void
 .end method
 
@@ -1057,29 +1054,25 @@
     .end annotation
 
     .prologue
-    .line 4475
     .local p4, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4335
     const/4 v0, -0x2
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    .line 4477
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
     invoke-virtual {p0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4478
     iput-object p2, p0, Landroid/content/Intent;->mData:Landroid/net/Uri;
 
-    .line 4479
     new-instance v0, Landroid/content/ComponentName;
 
     invoke-direct {v0, p3, p4}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     iput-object v0, p0, Landroid/content/Intent;->mComponent:Landroid/content/ComponentName;
 
-    .line 4476
     return-void
 .end method
 
@@ -5385,21 +5378,19 @@
 
     if-ne v4, v7, :cond_10
 
-    .line 7322
     iget v4, p1, Landroid/content/Intent;->mContentUserHint:I
 
     if-eq v4, v7, :cond_10
 
-    .line 7323
     iget v4, p1, Landroid/content/Intent;->mContentUserHint:I
 
     iput v4, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    .line 7325
     :cond_10
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->copyMeizuFlag(Landroid/content/Intent;Landroid/content/Intent;)V
+
     return v0
 
-    .line 7252
     :cond_11
     and-int/lit8 v4, p2, 0x2
 
@@ -8878,14 +8869,14 @@
 
     iput v2, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    .line 7842
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/content/Intent;->mExtras:Landroid/os/Bundle;
 
-    .line 7811
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->readIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
+
     return-void
 .end method
 
@@ -10986,59 +10977,49 @@
 
     goto :goto_0
 
-    .line 7776
     :cond_1
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7779
     :cond_2
     iget-object v2, p0, Landroid/content/Intent;->mSelector:Landroid/content/Intent;
 
     if-eqz v2, :cond_3
 
-    .line 7780
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7781
     iget-object v2, p0, Landroid/content/Intent;->mSelector:Landroid/content/Intent;
 
     invoke-virtual {v2, p1, p2}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 7786
     :goto_2
     iget-object v2, p0, Landroid/content/Intent;->mClipData:Landroid/content/ClipData;
 
     if-eqz v2, :cond_4
 
-    .line 7787
     invoke-virtual {p1, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7788
     iget-object v2, p0, Landroid/content/Intent;->mClipData:Landroid/content/ClipData;
 
     invoke-virtual {v2, p1, p2}, Landroid/content/ClipData;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 7792
     :goto_3
     iget v2, p0, Landroid/content/Intent;->mContentUserHint:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 7793
     iget-object v2, p0, Landroid/content/Intent;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 7754
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->writeIntentExt(Landroid/content/Intent;Landroid/os/Parcel;)V
+
     return-void
 
-    .line 7783
     :cond_3
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_2
 
-    .line 7790
     :cond_4
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
