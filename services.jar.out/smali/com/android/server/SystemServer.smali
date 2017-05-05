@@ -2789,14 +2789,14 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
     :cond_1c
-    goto/16 :goto_flyme_0
+
     if-nez v54, :cond_1d
 
     if-eqz v49, :cond_31
 
     .end local v33    # "atlas":Lcom/android/server/AssetAtlasService;
     :cond_1d
-    :goto_flyme_0
+
     :goto_26
     if-nez v54, :cond_1e
 
