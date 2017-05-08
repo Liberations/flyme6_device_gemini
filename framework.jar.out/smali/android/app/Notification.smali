@@ -2604,7 +2604,6 @@
 
     invoke-static/range {p0 .. p2}, Landroid/app/Notification$FlymeInjector;->writeToParcelFlyme(Landroid/app/Notification;Landroid/os/Parcel;I)V
 
-
     return-void
 
     :cond_1

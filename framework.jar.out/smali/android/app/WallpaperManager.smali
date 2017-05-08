@@ -2008,6 +2008,7 @@
     .end annotation
 
     .prologue
+
     invoke-static/range {p0 .. p0}, Landroid/app/WallpaperManager$FlymeInjector;->isFlymeChildrenMode(Landroid/app/WallpaperManager;)Z
 
     move-result v0
@@ -2246,6 +2247,7 @@
     .end annotation
 
     .prologue
+
     invoke-static/range {p0 .. p0}, Landroid/app/WallpaperManager$FlymeInjector;->isFlymeChildrenMode(Landroid/app/WallpaperManager;)Z
 
     move-result v0
@@ -2429,6 +2431,7 @@
     .end annotation
 
     .prologue
+
     invoke-static/range {p0 .. p0}, Landroid/app/WallpaperManager$FlymeInjector;->isFlymeChildrenMode(Landroid/app/WallpaperManager;)Z
 
     move-result v0
@@ -2575,17 +2578,16 @@
     .param p1, "name"    # Landroid/content/ComponentName;
 
     .prologue
+
     invoke-static/range {p0 .. p0}, Landroid/app/WallpaperManager$FlymeInjector;->isFlymeChildrenMode(Landroid/app/WallpaperManager;)Z
 
     move-result v0
 
     if-eqz v0, :cond_flyme_0
 
-    new-instance v0, Ljava/io/IOException;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/io/IOException;-><init>()V
-
-    throw v0
+    return v0
 
     :cond_flyme_0
 

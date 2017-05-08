@@ -72,7 +72,7 @@ vendor_saved_apps := Bluetooth BluetoothExt BluetoothMidiService HTMLViewer KeyC
 # You need to decode android.policy.jar to the project directory (use apktool d android.policy.jar) first,
 # and then you can make it by:   make android.policy
 #-----------------------------------------------------------------------------
-vendor_modify_jars := com.qti.dpmframework framework qti-telephony-common services telephony-common wifi-service
+vendor_modify_jars :=  framework  services telephony-common wifi-service
 
 ##############################################################################
 # The value decides which board system directory you want to save.
@@ -93,7 +93,7 @@ vendor_modify_jars := com.qti.dpmframework framework qti-telephony-common servic
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-#board_remove_apps := LogReport
+board_remove_apps := LogReport
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -127,8 +127,8 @@ vendor_modify_jars := com.qti.dpmframework framework qti-telephony-common servic
 # The property decide whether hide the soft mainkeys.
 # If 1, hide the soft mainkeys. If 0, display the soft mainkeys.
 # You should configure the property according to your device.
-override_property += \
-    qemu.hw.mainkeys=1
+#override_property += \
+#    qemu.hw.mainkeys=1
 
 
 # The value of the property ro.flyme.romer will be contained in the ota package name.
@@ -138,8 +138,8 @@ override_property += \
 # The default value is Nexus-6P_Unofficial.
 # You should configure the property according to your device and your ID with replace the "Nexus-6P_Unofficial".
 override_property += \
-    ro.flyme.romer=Unofficial \
-    ro.product.model_romer=CGH2017
+    ro.flyme.romer=Liberation \
+    ro.product.model_romer=gemini_Liberation
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.

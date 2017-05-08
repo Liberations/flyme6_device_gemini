@@ -915,6 +915,7 @@
 
     .line 4348
     :cond_4
+
     invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;Landroid/content/Intent;)V
 
     return-void
@@ -975,6 +976,7 @@
 
     .line 4378
     :cond_0
+
     invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     return-void
@@ -5387,6 +5389,7 @@
     iput v4, p0, Landroid/content/Intent;->mContentUserHint:I
 
     :cond_10
+
     invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->copyMeizuFlag(Landroid/content/Intent;Landroid/content/Intent;)V
 
     return v0

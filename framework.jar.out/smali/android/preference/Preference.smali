@@ -418,6 +418,7 @@
 
     :cond_1
     :goto_2
+
     invoke-direct/range {p0 .. p0}, Landroid/preference/Preference;->flymeShouldRecycle()V
 
     return-void
@@ -1612,9 +1613,9 @@
 
     iget-boolean v0, p0, Landroid/preference/Preference;->mDependencyMet:Z
 
-    return v0
-
     if-eqz v0, :cond_0
+
+    return v0
 
     iget-boolean v0, p0, Landroid/preference/Preference;->mParentDependencyMet:Z
 
@@ -1933,6 +1934,7 @@
     invoke-direct {p0, p1, v6}, Landroid/preference/Preference;->setEnabledStateOnViews(Landroid/view/View;Z)V
 
     :cond_7
+
     invoke-virtual/range {p0 .. p1}, Landroid/preference/Preference;->setPreferenceView(Landroid/view/View;)V
 
     return-void

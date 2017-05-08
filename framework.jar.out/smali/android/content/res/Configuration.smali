@@ -5198,6 +5198,7 @@
     iput v2, p0, Landroid/content/res/Configuration;->seq:I
 
     :cond_18
+
     invoke-static {p0, p1, v0}, Landroid/content/res/Configuration$FlymeInjector;->updateFrom(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
 
     move-result v0

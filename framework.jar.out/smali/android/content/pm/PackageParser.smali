@@ -5338,8 +5338,9 @@
     .line 3229
     .local v15, "outerDepth":I
     :cond_20
+    invoke-static {v14}, Landroid/content/pm/PackageParser$FlymeInjector;->parseAccessMetaFromResource(Landroid/content/pm/PackageParser$Activity;)V
+
     :goto_7
-    :goto_flyme_0
     invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v21
@@ -5656,25 +5657,22 @@
 
     iput-object v2, v14, Landroid/content/pm/PackageParser$Activity;->metaData:Landroid/os/Bundle;
 
-    if-nez v2, :cond_flyme_0
+    if-nez v2, :cond_20
 
+    .line 3266
     const/4 v2, 0x0
 
     return-object v2
 
-    :cond_flyme_0
-    invoke-static {v14}, Landroid/content/pm/PackageParser$FlymeInjector;->parseAccessMetaFromResource(Landroid/content/pm/PackageParser$Activity;)V
-
-    goto/16 :goto_flyme_0
-
+    .line 3270
     :cond_29
-    const-string v2, "PackageParser"
+    const-string/jumbo v2, "PackageParser"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Problem in package "
+    const-string/jumbo v4, "Problem in package "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -21712,6 +21710,7 @@
     .param p2, "requireFilename"    # Z
 
     .prologue
+
     invoke-static/range {p0 .. p0}, Landroid/content/pm/PackageParser$FlymeInjector;->validateName(Ljava/lang/String;)Z
 
     move-result v0

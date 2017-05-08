@@ -1647,6 +1647,7 @@
     .line 1471
     :cond_5
     :goto_1
+
     move-object/from16 v14, p0
 
     move-object/from16 v15, p1
@@ -3073,6 +3074,7 @@
     .line 1556
     .end local v5    # "res":Landroid/content/res/Resources;
     :cond_0
+
     invoke-virtual {p0, v1}, Landroid/widget/PopupWindow;->computePopwindowPositionForMz(I)I
 
     move-result v1
@@ -3677,6 +3679,7 @@
     .param p1, "mode"    # I
 
     .prologue
+
     invoke-direct/range {p0 .. p1}, Landroid/widget/PopupWindow;->setFlymeInputMethodMode(I)I
 
     move-result p1

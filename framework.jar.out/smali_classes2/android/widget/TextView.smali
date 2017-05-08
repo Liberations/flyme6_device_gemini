@@ -3317,6 +3317,7 @@
 
     .line 1380
     :cond_d
+
     invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->initFlymeExtraFields(Landroid/widget/TextView;Landroid/content/Context;)V
 
     if-nez v54, :cond_e
@@ -9624,6 +9625,7 @@
     .line 4286
     .local v17, "s2":Landroid/text/Spannable;
     :goto_4
+
     invoke-static/range {p0 .. p0}, Landroid/widget/TextView$FlymeInjector;->resetAutoLinkMask(Landroid/widget/TextView;)V
 
     move-object/from16 v0, p0
@@ -21114,6 +21116,7 @@
 
     .end local v6    # "sp":Landroid/text/Spannable;
     :cond_2
+
     invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->onFocusChanged(Landroid/widget/TextView;Z)V
 
     invoke-direct {p0, p1}, Landroid/widget/TextView;->startStopMarquee(Z)V
@@ -24199,7 +24202,9 @@
 
     if-nez v5, :cond_flyme_0
 
-    return v6
+    const/4 v5, 0x1
+
+    return v5
 
     :cond_flyme_0
 
@@ -24613,6 +24618,7 @@
     if-eqz v5, :cond_c
 
     :cond_a
+
     invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->onTouchUpEventMz(Landroid/widget/TextView;Landroid/view/MotionEvent;)V
 
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
@@ -24642,9 +24648,9 @@
     or-int/2addr v1, v7
 
     :cond_b
-    iget-object v7, p0, Landroid/widget/TextView;->mEditor:Landroid/widget/Editor;
+    #iget-object v7, p0, Landroid/widget/TextView;->mEditor:Landroid/widget/Editor;
 
-    invoke-virtual {v7, p1}, Landroid/widget/Editor;->onTouchUpEvent(Landroid/view/MotionEvent;)V
+    #invoke-virtual {v7, p1}, Landroid/widget/Editor;->onTouchUpEvent(Landroid/view/MotionEvent;)V
 
     const/4 v1, 0x1
 
@@ -28163,6 +28169,7 @@
     iput-object v7, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
 
     :cond_3
+
     invoke-static/range {p0 .. p0}, Landroid/widget/TextView$FlymeInjector;->updateCurrentCursorVisbilityOnFocusOrInputTypeChangedIfHasFocus(Landroid/widget/TextView;)V
 
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
@@ -30179,6 +30186,7 @@
     invoke-virtual {p0, v3, v2}, Landroid/widget/TextView;->onSelectionChanged(II)V
 
     :cond_7
+
     invoke-static/range {p0 .. p6}, Landroid/widget/TextView$FlymeInjector;->editorOnSelectionChanged(Landroid/widget/TextView;Landroid/text/Spanned;Ljava/lang/Object;IIII)V
 
     instance-of v5, p2, Landroid/text/style/UpdateAppearance;

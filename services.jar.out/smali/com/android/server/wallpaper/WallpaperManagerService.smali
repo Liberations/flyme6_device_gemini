@@ -5331,6 +5331,7 @@
     .param p2, "callingPackage"    # Ljava/lang/String;
 
     .prologue
+
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wallpaper/WallpaperManagerService;->isFlymeChildrenMode()Z
 
     move-result v0
@@ -5398,6 +5399,7 @@
     const/4 v5, 0x1
 
     iput-boolean v5, v4, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;->imageWallpaperPending:Z
+
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wallpaper/WallpaperManagerService;->setFlymeWallpaperSimultaneously()V
 
     :try_end_1
@@ -5445,6 +5447,7 @@
     .param p1, "name"    # Landroid/content/ComponentName;
 
     .prologue
+
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wallpaper/WallpaperManagerService;->isFlymeChildrenMode()Z
 
     move-result v0

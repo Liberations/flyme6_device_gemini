@@ -1430,6 +1430,7 @@
     .param p7, "animate"    # Z
 
     .prologue
+
     iget-object v0, p0, Lcom/android/internal/policy/PhoneWindow$DecorView;->this$0:Lcom/android/internal/policy/PhoneWindow;
 
     move/from16 v1, p4
@@ -3327,6 +3328,7 @@
 
     .restart local v2    # "handled":Z
     :goto_1
+
     invoke-static {p0, p1}, Lcom/android/internal/policy/PhoneWindow$FlymeInjector;->flymeDispatchKeyEvent(Lcom/android/internal/policy/PhoneWindow$DecorView;Landroid/view/KeyEvent;)Z
 
     move-result v5

@@ -1529,7 +1529,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v66, Lcom/android/server/MzInputMethodManagerService;
+    new-instance v66, Lcom/android/server/InputMethodManagerService;
 
     move-object/from16 v0, v66
 
@@ -1674,7 +1674,8 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v73, Lcom/android/server/FlymeExtLockSettingsService;
+    new-instance v73, Lcom/android/server/LockSettingsService;
+
     move-object/from16 v0, v73
 
     invoke-direct {v0, v3}, Lcom/android/server/FlymeExtLockSettingsService;-><init>(Landroid/content/Context;)V
@@ -1750,7 +1751,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v91, Lcom/android/server/statusbar/FlymeExtStatusBarManagerService;
+    new-instance v91, Lcom/android/server/statusbar/StatusBarManagerService;
 
     move-object/from16 v0, v91
 
@@ -2789,14 +2790,12 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
     :cond_1c
-
     if-nez v54, :cond_1d
 
     if-eqz v49, :cond_31
 
     .end local v33    # "atlas":Lcom/android/server/AssetAtlasService;
     :cond_1d
-
     :goto_26
     if-nez v54, :cond_1e
 
@@ -3052,13 +3051,6 @@
     check-cast v77, Lcom/android/server/MmsServiceBroker;
 
     .local v77, "mmsService":Lcom/android/server/MmsServiceBroker;
-    move-object/from16 v0, p0
-
-    move-object/from16 v4, v103
-
-    move-object/from16 v5, v100
-
-    invoke-static {v0, v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;Lcom/android/server/wallpaper/WallpaperManagerService;)V
     :try_start_3a
     invoke-virtual/range {v97 .. v97}, Lcom/android/server/VibratorService;->systemReady()V
     :try_end_3a
