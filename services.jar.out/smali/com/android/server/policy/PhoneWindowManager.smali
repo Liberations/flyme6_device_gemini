@@ -16435,6 +16435,7 @@
 
     :cond_4
     :goto_4
+    invoke-static/range {p0 .. p1}, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector;->initFlymeExtraFields(Lcom/android/server/policy/PhoneWindowManager;Landroid/content/Context;)V
     return-void
 
     .end local v12    # "deviceKeyHandlerClass":Ljava/lang/String;
@@ -18192,6 +18193,17 @@
     .end local v38    # "service":Lcom/android/internal/statusbar/IStatusBarService;
     :cond_33
     :goto_8
+    invoke-static/range {p0 .. p2}, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector;->handleLongPressOnHeadSetIfNeeded(Lcom/android/server/policy/PhoneWindowManager;Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/KeyEvent;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_flyme_0
+
+    const-wide/16 v4, -0x1
+
+    return-wide v4
+
+    :cond_flyme_0
     move-object/from16 v0, p0
 
     iget-boolean v4, v0, Lcom/android/server/policy/PhoneWindowManager;->mSearchKeyShortcutPending:Z
@@ -20485,7 +20497,7 @@
     :cond_26
     and-int/lit8 v19, v16, 0x1
 
-    if-nez v19, :cond_11
+    if-nez v19, :cond_flyme_0
 
     move-object/from16 v0, p0
 

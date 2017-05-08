@@ -1529,7 +1529,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v66, Lcom/android/server/InputMethodManagerService;
+    new-instance v66, Lcom/android/server/MzInputMethodManagerService;
 
     move-object/from16 v0, v66
 
@@ -1674,7 +1674,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v73, Lcom/android/server/LockSettingsService;
+    new-instance v73, Lcom/android/server/FlymeExtLockSettingsService;
 
     move-object/from16 v0, v73
 
@@ -1751,7 +1751,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v91, Lcom/android/server/statusbar/StatusBarManagerService;
+    new-instance v91, Lcom/android/server/statusbar/FlymeExtStatusBarManagerService;
 
     move-object/from16 v0, v91
 
@@ -2790,6 +2790,7 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
     :cond_1c
+    goto/16 :goto_flyme_0
     if-nez v54, :cond_1d
 
     if-eqz v49, :cond_31
@@ -2853,6 +2854,7 @@
 
     .end local v63    # "gestureService":Lcom/android/server/gesture/GestureService;
     :cond_1f
+    :goto_flyme_0
     :goto_27
     move-object/from16 v0, p0
 
@@ -3051,6 +3053,13 @@
     check-cast v77, Lcom/android/server/MmsServiceBroker;
 
     .local v77, "mmsService":Lcom/android/server/MmsServiceBroker;
+    move-object/from16 v0, p0
+
+    move-object/from16 v4, v103
+
+    move-object/from16 v5, v100
+
+    invoke-static {v0, v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;Lcom/android/server/wallpaper/WallpaperManagerService;)V
     :try_start_3a
     invoke-virtual/range {v97 .. v97}, Lcom/android/server/VibratorService;->systemReady()V
     :try_end_3a
@@ -4085,6 +4094,7 @@
 
     .end local v59    # "e":Ljava/lang/Throwable;
     :cond_31
+    
     :try_start_46
     const-string v4, "SystemServer"
 
