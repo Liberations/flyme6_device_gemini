@@ -3504,6 +3504,7 @@
     .param p5, "nowElapsed"    # J
 
     .prologue
+    invoke-static/range {p1 .. p1}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->applyFlymeOomAdjLocked(Lcom/android/server/am/ProcessRecord;)V
     const/16 v22, 0x1
 
     .local v22, "success":Z
@@ -36786,7 +36787,7 @@
 
     move/from16 v0, p2
 
-    invoke-static {v2, v0}, Lcom/android/server/am/ActivityManagerService;->killProcessGroup(II)V
+    invoke-static {v2, v0}, Lcom/android/server/am/ActivityManagerService;->killFlymeProcessGroup(II)V
 
     .line 4760
     const/4 v2, 0x1
@@ -99534,6 +99535,7 @@
     invoke-virtual {v3, v5}, Lcom/android/server/am/ActivityManagerService$MainHandler;->post(Ljava/lang/Runnable;)Z
 
     :cond_37
+    invoke-static/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->updateFlymeOomAdjLocked(Lcom/android/server/am/ActivityManagerService;)V
     return-void
 
     .restart local v4    # "app":Lcom/android/server/am/ProcessRecord;
