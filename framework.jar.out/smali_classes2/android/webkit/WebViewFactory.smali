@@ -785,6 +785,8 @@
     .local v3, "uid":I
     if-eqz v3, :cond_1
 
+    goto :goto_flyme_0
+
     const/16 v4, 0x3e8
 
     if-ne v3, v4, :cond_2
@@ -811,10 +813,12 @@
 
     throw v4
 
-    .line 156
     :cond_2
+
+    :goto_flyme_0
+
     :try_start_2
-    const-string/jumbo v4, "WebViewFactory.getProvider()"
+    const-string v4, "WebViewFactory.getProvider()"
 
     const-wide/16 v6, 0x10
 
@@ -1472,15 +1476,12 @@
     .locals 2
 
     .prologue
-    .line 100
     invoke-static {}, Landroid/app/AppGlobals;->getInitialApplication()Landroid/app/Application;
 
     move-result-object v0
 
-    .line 101
-    const v1, 0x104004f
+    const v1, #android:string@config_webViewPackageName#t
 
-    .line 100
     invoke-virtual {v0, v1}, Landroid/app/Application;->getString(I)Ljava/lang/String;
 
     move-result-object v0

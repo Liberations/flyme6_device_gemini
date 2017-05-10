@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/content/pm/PackageParser$FlymeInjector;,
         Landroid/content/pm/PackageParser$NewPermissionInfo;,
         Landroid/content/pm/PackageParser$SplitPermissionInfo;,
         Landroid/content/pm/PackageParser$ParsePackageItemArgs;,
@@ -4334,6 +4335,10 @@
 
     iput v3, v2, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
+    move-object/from16 v0, v18
+
+    invoke-static {v14, v0}, Landroid/content/pm/PackageParser$FlymeInjector;->parseAccessArgsFromResource(Landroid/content/pm/PackageParser$Activity;Landroid/content/res/TypedArray;)V
+
     .line 3066
     const/16 v2, 0x1b
 
@@ -5333,6 +5338,8 @@
     .line 3229
     .local v15, "outerDepth":I
     :cond_20
+    invoke-static {v14}, Landroid/content/pm/PackageParser$FlymeInjector;->parseAccessMetaFromResource(Landroid/content/pm/PackageParser$Activity;)V
+
     :goto_7
     invoke-interface/range {p3 .. p3}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -6358,6 +6365,12 @@
     move-object/from16 v0, v17
 
     iput v2, v0, Landroid/content/pm/ActivityInfo;->maxRecents:I
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v25
+
+    invoke-static {v0, v1}, Landroid/content/pm/PackageParser$FlymeInjector;->copyAccessArgs(Landroid/content/pm/ActivityInfo;Landroid/content/pm/PackageParser$Activity;)V
 
     .line 3380
     new-instance v15, Landroid/content/pm/PackageParser$Activity;
@@ -21697,20 +21710,29 @@
     .param p2, "requireFilename"    # Z
 
     .prologue
-    .line 1202
+
+    invoke-static/range {p0 .. p0}, Landroid/content/pm/PackageParser$FlymeInjector;->validateName(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_flyme_0
+
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 1203
     .local v0, "N":I
     const/4 v3, 0x0
 
-    .line 1204
     .local v3, "hasSep":Z
     const/4 v2, 0x1
 
-    .line 1205
     .local v2, "front":Z
     const/4 v4, 0x0
 
