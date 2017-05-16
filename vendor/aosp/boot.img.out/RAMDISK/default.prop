@@ -1,0 +1,21 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.adb.secure=1
+ro.secure=0
+ro.allow.mock.location=0
+ro.debuggable=1
+ro.zygote=zygote64_32
+dalvik.vm.image-dex2oat-Xms=64m
+dalvik.vm.image-dex2oat-Xmx=64m
+dalvik.vm.dex2oat-Xms=64m
+dalvik.vm.dex2oat-Xmx=512m
+ro.dalvik.vm.native.bridge=0
+debug.atrace.tags.enableflags=0
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Mit Nov 16 10:53:23 CET 2016
+ro.bootimage.build.date.utc=1479290003
+ro.bootimage.build.fingerprint=Xiaomi/aosp_gemini/gemini:6.0.1/MMB29M/fabian11161022:userdebug/test-keys
+persist.sys.usb.config=adb
