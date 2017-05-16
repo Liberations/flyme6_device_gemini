@@ -33,19 +33,14 @@
     .param p3, "animation"    # Z
 
     .prologue
-    .line 7468
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7469
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarColorTheme;->mPwm:Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 7470
     iput p2, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarColorTheme;->mColor:I
 
-    .line 7471
     iput-boolean p3, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarColorTheme;->mAnimation:Z
 
-    .line 7468
     return-void
 .end method
 
@@ -57,7 +52,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 7477
     :try_start_0
     iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarColorTheme;->mPwm:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -65,11 +59,9 @@
 
     move-result-object v1
 
-    .line 7478
     .local v1, "statusbar":Lmeizu/statusbar/IFlymeStatusBarService;
     if-eqz v1, :cond_0
 
-    .line 7479
     iget v2, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarColorTheme;->mColor:I
 
     iget-boolean v3, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarColorTheme;->mAnimation:Z
@@ -78,17 +70,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 7475
     .end local v1    # "statusbar":Lmeizu/statusbar/IFlymeStatusBarService;
     :cond_0
     :goto_0
     return-void
 
-    .line 7481
     :catch_0
     move-exception v0
 
-    .line 7483
     .local v0, "e":Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$FlymeInjector$FlymeStatusBarColorTheme;->mPwm:Lcom/android/server/policy/PhoneWindowManager;
 

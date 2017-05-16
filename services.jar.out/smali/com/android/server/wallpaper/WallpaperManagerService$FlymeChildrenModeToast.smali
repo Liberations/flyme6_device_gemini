@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/wallpaper/WallpaperManagerService;
 
     .prologue
-    .line 1612
     iput-object p1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$FlymeChildrenModeToast;->this$0:Lcom/android/server/wallpaper/WallpaperManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +50,6 @@
     .locals 3
 
     .prologue
-    .line 1615
     iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$FlymeChildrenModeToast;->this$0:Lcom/android/server/wallpaper/WallpaperManagerService;
 
     iget-object v0, v0, Lcom/android/server/wallpaper/WallpaperManagerService;->mContext:Landroid/content/Context;
@@ -78,6 +76,5 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 1614
     return-void
 .end method

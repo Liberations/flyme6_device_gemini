@@ -45,32 +45,23 @@
     .param p8, "seinfo"    # Ljava/lang/String;
 
     .prologue
-    .line 10491
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10493
     iput p2, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->moveId:I
 
-    .line 10494
     iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->fromUuid:Ljava/lang/String;
 
-    .line 10495
     iput-object p4, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->toUuid:Ljava/lang/String;
 
-    .line 10496
     iput-object p5, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->packageName:Ljava/lang/String;
 
-    .line 10497
     iput-object p6, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->dataAppName:Ljava/lang/String;
 
-    .line 10498
     iput p7, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->appId:I
 
-    .line 10499
     iput-object p8, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->seinfo:Ljava/lang/String;
 
-    .line 10492
     return-void
 .end method

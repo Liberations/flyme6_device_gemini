@@ -42,63 +42,51 @@
 
     const/4 v3, 0x0
 
-    .line 46
     invoke-direct {p0, p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 37
     iput v3, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCustomColor:I
 
-    .line 39
     iput-boolean v3, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressed:Z
 
-    .line 43
     iput v3, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverAlpha:I
 
-    .line 49
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPaint:Landroid/graphics/Paint;
 
-    .line 50
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 51
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCustomColor:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 53
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverPaint:Landroid/graphics/Paint;
 
-    .line 54
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 55
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverPaint:Landroid/graphics/Paint;
 
     const/high16 v1, -0x1000000
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 56
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 65
-    const-string/jumbo v0, "coveralpha"
+    const-string v0, "coveralpha"
 
     const/4 v1, 0x2
 
@@ -110,26 +98,22 @@
 
     aput v2, v1, v3
 
-    .line 66
     const/4 v2, 0x0
 
     aput v2, v1, v4
 
-    .line 65
     invoke-static {p0, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressAnimtor:Landroid/animation/ObjectAnimator;
 
-    .line 67
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressAnimtor:Landroid/animation/ObjectAnimator;
 
     const-wide/16 v2, 0x1a0
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 45
     return-void
 .end method
 
@@ -140,22 +124,18 @@
     .prologue
     const-wide/high16 v8, 0x4000000000000000L    # 2.0
 
-    .line 133
     const/4 v0, 0x1
 
-    .line 134
     .local v0, "result":Z
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
 
-    .line 135
     .local v1, "x":F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
-    .line 136
     .local v2, "y":F
     iget v3, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCircleCenterY:F
 
@@ -167,7 +147,6 @@
 
     move-result-wide v4
 
-    .line 137
     iget v3, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCircleCenterY:F
 
     sub-float/2addr v3, v2
@@ -178,19 +157,16 @@
 
     move-result-wide v6
 
-    .line 136
     add-double/2addr v4, v6
 
     invoke-static {v4, v5}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v4
 
-    .line 137
     iget v3, p0, Lcom/android/server/policy/MzCustomCircleButton;->mRadius:F
 
     float-to-double v6, v3
 
-    .line 136
     cmpg-double v3, v4, v6
 
     if-gtz v3, :cond_0
@@ -212,7 +188,6 @@
     .locals 1
 
     .prologue
-    .line 164
     iget v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverAlpha:I
 
     return v0
@@ -223,7 +198,6 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 86
     iget v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCircleCenterX:F
 
     iget v1, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCircleCenterY:F
@@ -234,7 +208,6 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 93
     iget v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverAlpha:I
 
     if-ltz v0, :cond_0
@@ -245,31 +218,25 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverPaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverAlpha:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 95
     iget v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCircleCenterX:F
 
     iget v1, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCircleCenterY:F
 
     iget v2, p0, Lcom/android/server/policy/MzCustomCircleButton;->mRadius:F
 
-    .line 96
     iget-object v3, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverPaint:Landroid/graphics/Paint;
 
-    .line 95
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 98
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 84
     return-void
 .end method
 
@@ -282,7 +249,6 @@
     .param p5, "bottom"    # I
 
     .prologue
-    .line 104
     sub-int v0, p4, p2
 
     div-int/lit8 v0, v0, 0x2
@@ -295,7 +261,6 @@
 
     iput v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mRadius:F
 
-    .line 105
     sub-int v0, p5, p3
 
     div-int/lit8 v0, v0, 0x2
@@ -304,7 +269,6 @@
 
     iput v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCircleCenterY:F
 
-    .line 103
     return-void
 .end method
 
@@ -317,23 +281,19 @@
 
     const/4 v1, 0x0
 
-    .line 111
     invoke-super {p0, p1}, Landroid/widget/TextView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 112
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 126
     :cond_0
     :goto_0
     :pswitch_0
     return v1
 
-    .line 114
     :pswitch_1
     invoke-direct {p0, p1}, Lcom/android/server/policy/MzCustomCircleButton;->inCircleArea(Landroid/view/MotionEvent;)Z
 
@@ -341,19 +301,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 115
     invoke-virtual {p0, v2}, Lcom/android/server/policy/MzCustomCircleButton;->setStatePressed(Z)V
 
-    .line 116
     return v2
 
-    .line 121
     :pswitch_2
     invoke-virtual {p0, v1}, Lcom/android/server/policy/MzCustomCircleButton;->setStatePressed(Z)V
 
     goto :goto_0
 
-    .line 112
     nop
 
     :pswitch_data_0
@@ -370,13 +326,10 @@
     .param p1, "alpha"    # I
 
     .prologue
-    .line 159
     iput p1, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverAlpha:I
 
-    .line 160
     invoke-virtual {p0}, Lcom/android/server/policy/MzCustomCircleButton;->postInvalidate()V
 
-    .line 158
     return-void
 .end method
 
@@ -385,20 +338,16 @@
     .param p1, "color"    # I
 
     .prologue
-    .line 71
     iput p1, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCustomColor:I
 
-    .line 72
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCustomColor:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 73
     invoke-virtual {p0}, Lcom/android/server/policy/MzCustomCircleButton;->postInvalidate()V
 
-    .line 70
     return-void
 .end method
 
@@ -409,15 +358,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 141
     iget-boolean v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressed:Z
 
     if-eq p1, v0, :cond_1
 
-    .line 142
     iput-boolean p1, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressed:Z
 
-    .line 143
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressAnimtor:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
@@ -430,37 +376,30 @@
 
     if-eqz v0, :cond_0
 
-    .line 144
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressAnimtor:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
 
-    .line 146
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 147
     const/16 v0, 0x66
 
     invoke-virtual {p0, v0}, Lcom/android/server/policy/MzCustomCircleButton;->setCoverAlpha(I)V
 
-    .line 148
     invoke-virtual {p0}, Lcom/android/server/policy/MzCustomCircleButton;->postInvalidate()V
 
-    .line 140
     :cond_1
     :goto_0
     return-void
 
-    .line 150
     :cond_2
-    const-string/jumbo v0, "coverAlpha"
+    const-string v0, "coverAlpha"
 
     const/4 v1, 0x2
 
     new-array v1, v1, [I
 
-    .line 151
     iget v2, p0, Lcom/android/server/policy/MzCustomCircleButton;->mCoverAlpha:I
 
     aput v2, v1, v3
@@ -469,21 +408,18 @@
 
     aput v3, v1, v2
 
-    .line 150
     invoke-static {p0, v0, v1}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressAnimtor:Landroid/animation/ObjectAnimator;
 
-    .line 152
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressAnimtor:Landroid/animation/ObjectAnimator;
 
     const-wide/16 v2, 0x1a0
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 153
     iget-object v0, p0, Lcom/android/server/policy/MzCustomCircleButton;->mPressAnimtor:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V

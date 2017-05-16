@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/LockSettingsService;
 
     .prologue
-    .line 579
     iput-object p1, p0, Lcom/android/server/LockSettingsService$3;->this$0:Lcom/android/server/LockSettingsService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p1, "pattern"    # Ljava/lang/String;
 
     .prologue
-    .line 594
     invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->patternStringToBaseZero(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -62,12 +60,10 @@
     .end annotation
 
     .prologue
-    .line 583
     iget-object v0, p0, Lcom/android/server/LockSettingsService$3;->this$0:Lcom/android/server/LockSettingsService;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/LockSettingsService;->setLockPattern(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 582
     return-void
 .end method
 
@@ -77,12 +73,10 @@
     .param p2, "userId"    # I
 
     .prologue
-    .line 589
     invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->stringToPattern(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 588
     invoke-static {v0}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
     move-result-object v0

@@ -24,7 +24,6 @@
     .param p1, "this$0"    # Lcom/android/server/wm/WindowState;
 
     .prologue
-    .line 379
     iput-object p1, p0, Lcom/android/server/wm/WindowState$1;->this$0:Lcom/android/server/wm/WindowState;
 
     invoke-direct {p0}, Landroid/view/IWindowId$Stub;-><init>()V
@@ -38,7 +37,6 @@
     .locals 1
 
     .prologue
-    .line 390
     iget-object v0, p0, Lcom/android/server/wm/WindowState$1;->this$0:Lcom/android/server/wm/WindowState;
 
     invoke-virtual {v0}, Lcom/android/server/wm/WindowState;->isFocused()Z
@@ -53,12 +51,10 @@
     .param p1, "observer"    # Landroid/view/IWindowFocusObserver;
 
     .prologue
-    .line 382
     iget-object v0, p0, Lcom/android/server/wm/WindowState$1;->this$0:Lcom/android/server/wm/WindowState;
 
     invoke-virtual {v0, p1}, Lcom/android/server/wm/WindowState;->registerFocusObserver(Landroid/view/IWindowFocusObserver;)V
 
-    .line 381
     return-void
 .end method
 
@@ -67,11 +63,9 @@
     .param p1, "observer"    # Landroid/view/IWindowFocusObserver;
 
     .prologue
-    .line 386
     iget-object v0, p0, Lcom/android/server/wm/WindowState$1;->this$0:Lcom/android/server/wm/WindowState;
 
     invoke-virtual {v0, p1}, Lcom/android/server/wm/WindowState;->unregisterFocusObserver(Landroid/view/IWindowFocusObserver;)V
 
-    .line 385
     return-void
 .end method

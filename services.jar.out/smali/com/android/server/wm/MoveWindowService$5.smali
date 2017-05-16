@@ -39,19 +39,16 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 168
     iput-object p1, p0, Lcom/android/server/wm/MoveWindowService$5;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 169
     new-instance v1, Landroid/animation/IntEvaluator;
 
     invoke-direct {v1}, Landroid/animation/IntEvaluator;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/wm/MoveWindowService$5;->intEvaluator:Landroid/animation/IntEvaluator;
 
-    .line 170
     iget-object v1, p0, Lcom/android/server/wm/MoveWindowService$5;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     iget-object v1, v1, Lcom/android/server/wm/MoveWindowService;->mRealWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -62,7 +59,6 @@
 
     iput-object v1, p0, Lcom/android/server/wm/MoveWindowService$5;->displayContent:Lcom/android/server/wm/DisplayContent;
 
-    .line 171
     iget-object v1, p0, Lcom/android/server/wm/MoveWindowService$5;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     iget-object v1, v1, Lcom/android/server/wm/MoveWindowService;->mRealWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -71,7 +67,6 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 172
     iget-object v1, p0, Lcom/android/server/wm/MoveWindowService$5;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     iget-object v1, v1, Lcom/android/server/wm/MoveWindowService;->mRealWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -82,26 +77,21 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 171
     :cond_0
     :goto_0
     iput-boolean v0, p0, Lcom/android/server/wm/MoveWindowService$5;->rotated:Z
 
-    .line 173
     iget-boolean v0, p0, Lcom/android/server/wm/MoveWindowService$5;->rotated:Z
 
     if-eqz v0, :cond_2
 
-    .line 174
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$5;->displayContent:Lcom/android/server/wm/DisplayContent;
 
     iget v0, v0, Lcom/android/server/wm/DisplayContent;->mBaseDisplayWidth:I
 
-    .line 173
     :goto_1
     iput v0, p0, Lcom/android/server/wm/MoveWindowService$5;->realdh:I
 
-    .line 175
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$5;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     invoke-static {v0}, Lcom/android/server/wm/MoveWindowService;->-get0(Lcom/android/server/wm/MoveWindowService;)Lcom/android/server/wm/WindowState;
@@ -125,16 +115,13 @@
     :goto_2
     iput v0, p0, Lcom/android/server/wm/MoveWindowService$5;->fromY:I
 
-    .line 168
     return-void
 
-    .line 172
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 174
     :cond_2
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$5;->displayContent:Lcom/android/server/wm/DisplayContent;
 
@@ -142,7 +129,6 @@
 
     goto :goto_1
 
-    .line 175
     :cond_3
     iget v0, p0, Lcom/android/server/wm/MoveWindowService$5;->realdh:I
 
@@ -160,7 +146,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 179
     iget-object v2, p0, Lcom/android/server/wm/MoveWindowService$5;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     invoke-static {v2}, Lcom/android/server/wm/MoveWindowService;->-get0(Lcom/android/server/wm/MoveWindowService;)Lcom/android/server/wm/WindowState;
@@ -181,7 +166,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 184
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -192,7 +176,6 @@
 
     move-result v0
 
-    .line 185
     .local v0, "f":F
     iget-object v2, p0, Lcom/android/server/wm/MoveWindowService$5;->intEvaluator:Landroid/animation/IntEvaluator;
 
@@ -214,28 +197,23 @@
 
     move-result v1
 
-    .line 186
     .local v1, "jY":I
     iget-object v2, p0, Lcom/android/server/wm/MoveWindowService$5;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     invoke-static {v2, v5, v1}, Lcom/android/server/wm/MoveWindowService;->-wrap0(Lcom/android/server/wm/MoveWindowService;II)V
 
-    .line 178
     return-void
 
-    .line 180
     .end local v0    # "f":F
     .end local v1    # "jY":I
     :cond_0
-    const-string/jumbo v2, "Move_Win"
+    const-string v2, "Move_Win"
 
-    const-string/jumbo v3, "Move normal animator cancel"
+    const-string v3, "Move normal animator cancel"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 181
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 182
     return-void
 .end method

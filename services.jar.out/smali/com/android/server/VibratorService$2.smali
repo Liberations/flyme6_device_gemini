@@ -24,7 +24,6 @@
     .param p1, "this$0"    # Lcom/android/server/VibratorService;
 
     .prologue
-    .line 721
     iput-object p1, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +39,11 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 724
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, "android.intent.action.SCREEN_OFF"
+    const-string v3, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -53,7 +51,6 @@
 
     if-eqz v2, :cond_4
 
-    .line 725
     iget-object v2, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v2}, Lcom/android/server/VibratorService;->-get2(Lcom/android/server/VibratorService;)Ljava/util/LinkedList;
@@ -62,7 +59,6 @@
 
     monitor-enter v3
 
-    .line 731
     :try_start_0
     iget-object v2, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
 
@@ -72,7 +68,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 732
     iget-object v2, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v2}, Lcom/android/server/VibratorService;->-get0(Lcom/android/server/VibratorService;)Lcom/android/server/VibratorService$Vibration;
@@ -85,7 +80,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 737
     :cond_0
     :goto_0
     iget-object v2, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
@@ -98,7 +92,6 @@
 
     move-result-object v0
 
-    .line 738
     .local v0, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/android/server/VibratorService$Vibration;>;"
     :cond_1
     :goto_1
@@ -108,14 +101,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 739
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/server/VibratorService$Vibration;
 
-    .line 740
     .local v1, "vibration":Lcom/android/server/VibratorService$Vibration;
     iget-object v2, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
 
@@ -125,19 +116,16 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 741
     iget-object v2, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v2, v1}, Lcom/android/server/VibratorService;->-wrap3(Lcom/android/server/VibratorService;Lcom/android/server/VibratorService$Vibration;)V
 
-    .line 742
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_1
 
-    .line 725
     .end local v0    # "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/android/server/VibratorService$Vibration;>;"
     .end local v1    # "vibration":Lcom/android/server/VibratorService$Vibration;
     :catchall_0
@@ -147,7 +135,6 @@
 
     throw v2
 
-    .line 733
     :cond_2
     :try_start_1
     iget-object v2, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
@@ -162,7 +149,6 @@
     :cond_3
     monitor-exit v3
 
-    .line 723
     .end local v0    # "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/android/server/VibratorService$Vibration;>;"
     :cond_4
     return-void

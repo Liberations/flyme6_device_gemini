@@ -232,21 +232,18 @@
 
     const/4 v6, -0x1
 
-    .line 92
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4, v5}, Ljava/util/HashMap;-><init>(I)V
 
     sput-object v4, Lcom/android/server/shrinker/PackageStateInfo;->PRIORITY_MAP:Ljava/util/HashMap;
 
-    .line 93
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4, v5}, Ljava/util/HashMap;-><init>(I)V
 
     sput-object v4, Lcom/android/server/shrinker/PackageStateInfo;->FLAGS_MAP:Ljava/util/HashMap;
 
-    .line 94
     new-instance v4, Ljava/util/HashMap;
 
     const/16 v5, 0xc
@@ -255,26 +252,22 @@
 
     sput-object v4, Lcom/android/server/shrinker/PackageStateInfo;->NOTIFICATIONS:Ljava/util/HashMap;
 
-    .line 95
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v4, Lcom/android/server/shrinker/PackageStateInfo;->WORK_APP_LIST:Ljava/util/ArrayList;
 
-    .line 97
     const/4 v4, 0x0
 
     sput-object v4, Lcom/android/server/shrinker/PackageStateInfo;->sReceiver:Lcom/android/server/shrinker/PackageStateInfo$AlphaMeActionReceiver;
 
-    .line 101
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v4, 0x20
 
     invoke-direct {v1, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 102
     .local v1, "coreAppList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v3, Ljava/util/ArrayList;
 
@@ -282,167 +275,135 @@
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 103
     .local v3, "systemAppList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2, v8}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 104
     .local v2, "superAppList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v8}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 105
     .local v0, "blackAppList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    const-string/jumbo v4, "android"
+    const-string v4, "android"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 106
-    const-string/jumbo v4, "com.android.systemui"
+    const-string v4, "com.android.systemui"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 107
-    const-string/jumbo v4, "com.meizu.alphame"
+    const-string v4, "com.meizu.alphame"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 108
-    const-string/jumbo v4, "com.android.phone"
+    const-string v4, "com.android.phone"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 109
-    const-string/jumbo v4, "com.meizu.experiencedatasync"
+    const-string v4, "com.meizu.experiencedatasync"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 110
-    const-string/jumbo v4, "com.amap.android.location"
+    const-string v4, "com.amap.android.location"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 111
-    const-string/jumbo v4, "com.android.providers.media"
+    const-string v4, "com.android.providers.media"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 112
-    const-string/jumbo v4, "com.android.providers.downloads"
+    const-string v4, "com.android.providers.downloads"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 113
-    const-string/jumbo v4, "com.android.providers.contacts"
+    const-string v4, "com.android.providers.contacts"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 114
-    const-string/jumbo v4, "com.meizu.flyme.providers.forcetouch"
+    const-string v4, "com.meizu.flyme.providers.forcetouch"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 115
-    const-string/jumbo v4, "com.meizu.flyme.service.find"
+    const-string v4, "com.meizu.flyme.service.find"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 116
-    const-string/jumbo v4, "com.meizu.cloud"
+    const-string v4, "com.meizu.cloud"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 117
-    const-string/jumbo v4, "com.meizu.mzsyncservice"
+    const-string v4, "com.meizu.mzsyncservice"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 118
-    const-string/jumbo v4, "com.meizu.battery"
+    const-string v4, "com.meizu.battery"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 119
-    const-string/jumbo v4, "com.meizu.safe"
+    const-string v4, "com.meizu.safe"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 120
-    const-string/jumbo v4, "com.meizu.privacy"
+    const-string v4, "com.meizu.privacy"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 121
-    const-string/jumbo v4, "com.flyme.netadmin"
+    const-string v4, "com.flyme.netadmin"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 122
-    const-string/jumbo v4, "com.android.providers.applications"
+    const-string v4, "com.android.providers.applications"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 123
-    const-string/jumbo v4, "com.android.providers.calendar"
+    const-string v4, "com.android.providers.calendar"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 124
-    const-string/jumbo v4, "com.android.defcontainer"
+    const-string v4, "com.android.defcontainer"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 125
-    const-string/jumbo v4, "com.android.packageinstaller"
+    const-string v4, "com.android.packageinstaller"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 126
-    const-string/jumbo v4, "com.meizu.flyme.telecom"
+    const-string v4, "com.meizu.flyme.telecom"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 127
-    const-string/jumbo v4, "com.meizu.flymecommunication"
+    const-string v4, "com.meizu.flymecommunication"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 128
-    const-string/jumbo v4, "com.meizu.share"
+    const-string v4, "com.meizu.share"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 130
     invoke-static {}, Lcom/android/server/shrinker/Utils;->isSamSung()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 131
-    const-string/jumbo v4, "com.aricent.ims.service"
+    const-string v4, "com.aricent.ims.service"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 132
-    const-string/jumbo v4, "com.sec.jniril"
+    const-string v4, "com.sec.jniril"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 133
-    const-string/jumbo v4, "com.android.smspush"
+    const-string v4, "com.android.smspush"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 134
-    const-string/jumbo v4, "com.nxp.nfceeapi.service"
+    const-string v4, "com.nxp.nfceeapi.service"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 137
     :cond_0
     invoke-static {}, Lcom/android/server/shrinker/Utils;->isMTK()Z
 
@@ -450,103 +411,83 @@
 
     if-eqz v4, :cond_1
 
-    .line 138
-    const-string/jumbo v4, "com.mediatek.atci.service"
+    const-string v4, "com.mediatek.atci.service"
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 141
     :cond_1
-    const-string/jumbo v4, "com.meizu.mstore"
+    const-string v4, "com.meizu.mstore"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 142
-    const-string/jumbo v4, "com.android.mms"
+    const-string v4, "com.android.mms"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 143
-    const-string/jumbo v4, "com.android.dialer"
+    const-string v4, "com.android.dialer"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 144
-    const-string/jumbo v4, "com.meizu.account"
+    const-string v4, "com.meizu.account"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 145
-    const-string/jumbo v4, "com.android.alarmclock"
+    const-string v4, "com.android.alarmclock"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 146
-    const-string/jumbo v4, "com.android.settings"
+    const-string v4, "com.android.settings"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 147
-    const-string/jumbo v4, "com.meizu.flyme.update"
+    const-string v4, "com.meizu.flyme.update"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 148
-    const-string/jumbo v4, "com.meizu.net.pedometer"
+    const-string v4, "com.meizu.net.pedometer"
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 150
-    const-string/jumbo v4, "com.tencent.mm"
+    const-string v4, "com.tencent.mm"
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 151
-    const-string/jumbo v4, "com.tencent.mobileqq"
+    const-string v4, "com.tencent.mobileqq"
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 153
-    const-string/jumbo v4, "com.iflytek.speechsuite"
+    const-string v4, "com.iflytek.speechsuite"
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 154
-    const-string/jumbo v4, "com.eg.android.AlipayGphone"
+    const-string v4, "com.eg.android.AlipayGphone"
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 155
-    const-string/jumbo v4, "com.android.browser"
+    const-string v4, "com.android.browser"
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 156
-    const-string/jumbo v4, "com.UCMobile"
+    const-string v4, "com.UCMobile"
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 158
     const/16 v4, 0x200
 
     invoke-static {v7, v2, v4, v6}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 159
     const/4 v4, 0x4
 
     invoke-static {v7, v3, v4, v6}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 160
     const/16 v4, 0x8
 
     invoke-static {v7, v1, v4, v6}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 161
     const/4 v4, 0x1
 
     invoke-static {v4, v0, v8, v6}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 18
     return-void
 .end method
 
@@ -554,7 +495,6 @@
     .locals 0
 
     .prologue
-    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -565,29 +505,24 @@
     .param p0, "type"    # I
 
     .prologue
-    .line 299
     if-nez p0, :cond_1
 
     sget-object v3, Lcom/android/server/shrinker/PackageStateInfo;->PRIORITY_MAP:Ljava/util/HashMap;
 
-    .line 300
     .local v3, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :goto_0
     monitor-enter v3
 
-    .line 301
     :try_start_0
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 302
     .local v4, "removeList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v3}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
     move-result-object v2
 
-    .line 303
     .local v2, "keys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -608,7 +543,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 304
     .local v0, "key":Ljava/lang/String;
     invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -620,14 +554,12 @@
 
     if-nez v5, :cond_0
 
-    .line 305
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_1
 
-    .line 300
     .end local v0    # "key":Ljava/lang/String;
     .end local v1    # "key$iterator":Ljava/util/Iterator;
     .end local v2    # "keys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
@@ -639,7 +571,6 @@
 
     throw v5
 
-    .line 299
     .end local v3    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :cond_1
     sget-object v3, Lcom/android/server/shrinker/PackageStateInfo;->FLAGS_MAP:Ljava/util/HashMap;
@@ -647,7 +578,6 @@
     .restart local v3    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     goto :goto_0
 
-    .line 308
     .restart local v1    # "key$iterator":Ljava/util/Iterator;
     .restart local v2    # "keys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     .restart local v4    # "removeList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
@@ -670,7 +600,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 309
     .restart local v0    # "key":Ljava/lang/String;
     invoke-virtual {v3, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_1
@@ -682,7 +611,6 @@
     :cond_3
     monitor-exit v3
 
-    .line 298
     return-void
 .end method
 
@@ -694,14 +622,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 452
     if-nez p1, :cond_0
 
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
     return-object v1
 
-    .line 453
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -709,186 +635,151 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 454
     .local v0, "builder":Ljava/lang/StringBuilder;
     if-nez p0, :cond_c
 
-    .line 455
     and-int/lit16 v1, p1, 0x800
 
     if-eqz v1, :cond_1
 
-    .line 456
-    const-string/jumbo v1, "home"
+    const-string v1, "home"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 457
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 459
     :cond_1
     and-int/lit16 v1, p1, 0x400
 
     if-eqz v1, :cond_2
 
-    .line 460
-    const-string/jumbo v1, "visible"
+    const-string v1, "visible"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 461
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 463
     :cond_2
     and-int/lit16 v1, p1, 0x200
 
     if-eqz v1, :cond_3
 
-    .line 464
-    const-string/jumbo v1, "super"
+    const-string v1, "super"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 465
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 467
     :cond_3
     and-int/lit16 v1, p1, 0x100
 
     if-eqz v1, :cond_4
 
-    .line 468
-    const-string/jumbo v1, "working"
+    const-string v1, "working"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 469
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 471
     :cond_4
     and-int/lit8 v1, p1, 0x40
 
     if-eqz v1, :cond_5
 
-    .line 472
-    const-string/jumbo v1, "selected"
+    const-string v1, "selected"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 473
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 475
     :cond_5
     and-int/lit8 v1, p1, 0x20
 
     if-eqz v1, :cond_6
 
-    .line 476
-    const-string/jumbo v1, "locked"
+    const-string v1, "locked"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 477
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 479
     :cond_6
     and-int/lit16 v1, p1, 0x80
 
     if-eqz v1, :cond_7
 
-    .line 480
-    const-string/jumbo v1, "favorite"
+    const-string v1, "favorite"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 481
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 483
     :cond_7
     and-int/lit8 v1, p1, 0x10
 
     if-eqz v1, :cond_8
 
-    .line 484
-    const-string/jumbo v1, "recent"
+    const-string v1, "recent"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 485
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 487
     :cond_8
     and-int/lit8 v1, p1, 0x8
 
     if-eqz v1, :cond_9
 
-    .line 488
-    const-string/jumbo v1, "core"
+    const-string v1, "core"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 489
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 491
     :cond_9
     and-int/lit8 v1, p1, 0x4
 
     if-eqz v1, :cond_a
 
-    .line 492
-    const-string/jumbo v1, "system"
+    const-string v1, "system"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 493
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 495
     :cond_a
     and-int/lit8 v1, p1, 0x2
 
     if-eqz v1, :cond_b
 
-    .line 496
-    const-string/jumbo v1, "normal"
+    const-string v1, "normal"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 497
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 518
     :cond_b
     :goto_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
@@ -903,72 +794,59 @@
 
     return-object v1
 
-    .line 499
     :cond_c
     const/4 v1, 0x1
 
     if-ne p0, v1, :cond_b
 
-    .line 500
     and-int/lit8 v1, p1, 0x2
 
     if-eqz v1, :cond_d
 
-    .line 501
-    const-string/jumbo v1, "black"
+    const-string v1, "black"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 502
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 504
     :cond_d
     and-int/lit8 v1, p1, 0x4
 
     if-eqz v1, :cond_e
 
-    .line 505
-    const-string/jumbo v1, "disallow"
+    const-string v1, "disallow"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 506
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 508
     :cond_e
     and-int/lit8 v1, p1, 0x10
 
     if-eqz v1, :cond_f
 
-    .line 509
-    const-string/jumbo v1, "ignore"
+    const-string v1, "ignore"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 510
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 512
     :cond_f
     and-int/lit8 v1, p1, 0x8
 
     if-eqz v1, :cond_b
 
-    .line 513
-    const-string/jumbo v1, "notification"
+    const-string v1, "notification"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 514
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -983,26 +861,21 @@
 
     const/4 v5, 0x0
 
-    .line 553
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v4, 0x200
 
     invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 554
     .local v0, "builder":Ljava/lang/StringBuilder;
     invoke-static {v6}, Lcom/android/server/shrinker/PackageStateInfo;->clear(I)V
 
-    .line 555
     invoke-static {v5}, Lcom/android/server/shrinker/PackageStateInfo;->clear(I)V
 
-    .line 556
     sget-object v5, Lcom/android/server/shrinker/PackageStateInfo;->PRIORITY_MAP:Ljava/util/HashMap;
 
     monitor-enter v5
 
-    .line 557
     :try_start_0
     sget-object v4, Lcom/android/server/shrinker/PackageStateInfo;->PRIORITY_MAP:Ljava/util/HashMap;
 
@@ -1010,13 +883,11 @@
 
     move-result-object v3
 
-    .line 558
     .local v3, "keys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    const-string/jumbo v4, "Priority :\n"
+    const-string v4, "Priority :\n"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 559
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1035,16 +906,13 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 560
     .local v1, "key":Ljava/lang/String;
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 561
-    const-string/jumbo v4, "["
+    const-string v4, "["
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 562
     sget-object v4, Lcom/android/server/shrinker/PackageStateInfo;->PRIORITY_MAP:Ljava/util/HashMap;
 
     invoke-virtual {v4, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1063,8 +931,7 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 563
-    const-string/jumbo v4, "]\n"
+    const-string v4, "]\n"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_0
@@ -1072,7 +939,6 @@
 
     goto :goto_0
 
-    .line 556
     .end local v1    # "key":Ljava/lang/String;
     .end local v2    # "key$iterator":Ljava/util/Iterator;
     .end local v3    # "keys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
@@ -1088,12 +954,10 @@
     :cond_0
     monitor-exit v5
 
-    .line 566
     sget-object v5, Lcom/android/server/shrinker/PackageStateInfo;->FLAGS_MAP:Ljava/util/HashMap;
 
     monitor-enter v5
 
-    .line 567
     :try_start_1
     sget-object v4, Lcom/android/server/shrinker/PackageStateInfo;->FLAGS_MAP:Ljava/util/HashMap;
 
@@ -1101,12 +965,10 @@
 
     move-result-object v3
 
-    .line 568
-    const-string/jumbo v4, "Flags :\n"
+    const-string v4, "Flags :\n"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 569
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1124,16 +986,13 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 570
     .restart local v1    # "key":Ljava/lang/String;
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 571
-    const-string/jumbo v4, "["
+    const-string v4, "["
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 572
     sget-object v4, Lcom/android/server/shrinker/PackageStateInfo;->FLAGS_MAP:Ljava/util/HashMap;
 
     invoke-virtual {v4, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1152,8 +1011,7 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 573
-    const-string/jumbo v4, "]\n"
+    const-string v4, "]\n"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_1
@@ -1161,7 +1019,6 @@
 
     goto :goto_1
 
-    .line 566
     .end local v1    # "key":Ljava/lang/String;
     :catchall_1
     move-exception v4
@@ -1173,7 +1030,6 @@
     :cond_1
     monitor-exit v5
 
-    .line 576
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -1189,17 +1045,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 261
     if-nez p0, :cond_0
 
     sget-object v1, Lcom/android/server/shrinker/PackageStateInfo;->PRIORITY_MAP:Ljava/util/HashMap;
 
-    .line 262
     .local v1, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :goto_0
     monitor-enter v1
 
-    .line 263
     :try_start_0
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1209,16 +1062,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 264
     .local v0, "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     if-nez v0, :cond_1
 
     monitor-exit v1
 
-    .line 265
     return v2
 
-    .line 261
     .end local v0    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     .end local v1    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :cond_0
@@ -1227,7 +1077,6 @@
     .restart local v1    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     goto :goto_0
 
-    .line 267
     .restart local v0    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     :cond_1
     :try_start_1
@@ -1239,7 +1088,6 @@
 
     return v2
 
-    .line 262
     .end local v0    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     :catchall_0
     move-exception v2
@@ -1259,12 +1107,10 @@
 
     const/4 v6, 0x0
 
-    .line 400
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 401
     .local v0, "time":J
     sget-wide v2, Lcom/android/server/shrinker/PackageStateInfo;->sLastClearTime:J
 
@@ -1280,29 +1126,23 @@
 
     if-lez v2, :cond_0
 
-    .line 402
     invoke-static {v7}, Lcom/android/server/shrinker/PackageStateInfo;->clear(I)V
 
-    .line 403
     invoke-static {v6}, Lcom/android/server/shrinker/PackageStateInfo;->clear(I)V
 
-    .line 404
     sput-wide v0, Lcom/android/server/shrinker/PackageStateInfo;->sLastClearTime:J
 
-    .line 407
     :cond_0
     sget-object v2, Lcom/android/server/shrinker/PackageStateInfo;->sReceiver:Lcom/android/server/shrinker/PackageStateInfo$AlphaMeActionReceiver;
 
     if-nez v2, :cond_1
 
-    .line 408
     new-instance v2, Lcom/android/server/shrinker/PackageStateInfo$AlphaMeActionReceiver;
 
     invoke-direct {v2, v8}, Lcom/android/server/shrinker/PackageStateInfo$AlphaMeActionReceiver;-><init>(Lcom/android/server/shrinker/PackageStateInfo$AlphaMeActionReceiver;)V
 
     sput-object v2, Lcom/android/server/shrinker/PackageStateInfo;->sReceiver:Lcom/android/server/shrinker/PackageStateInfo$AlphaMeActionReceiver;
 
-    .line 409
     invoke-static {}, Lcom/meizu/common/alphame/AlphaMe;->getInstance()Lcom/meizu/common/alphame/AlphaMe;
 
     move-result-object v2
@@ -1311,12 +1151,11 @@
 
     invoke-virtual {v2, v3}, Lcom/meizu/common/alphame/AlphaMe;->registerActionReceiver(Lcom/meizu/common/alphame/AlphaMe$ActionReceiver;)V
 
-    .line 410
     invoke-static {}, Lcom/meizu/common/alphame/AlphaMe;->getInstance()Lcom/meizu/common/alphame/AlphaMe;
 
     move-result-object v2
 
-    const-string/jumbo v3, "getAppListByType"
+    const-string v3, "getAppListByType"
 
     new-array v4, v7, [Ljava/lang/Object;
 
@@ -1336,12 +1175,11 @@
 
     invoke-static {v2}, Lcom/android/server/shrinker/PackageStateInfo;->setFavoriteList(Ljava/util/List;)V
 
-    .line 411
     invoke-static {}, Lcom/meizu/common/alphame/AlphaMe;->getInstance()Lcom/meizu/common/alphame/AlphaMe;
 
     move-result-object v2
 
-    const-string/jumbo v3, "getAppListByType"
+    const-string v3, "getAppListByType"
 
     new-array v4, v7, [Ljava/lang/Object;
 
@@ -1361,12 +1199,11 @@
 
     invoke-static {v2}, Lcom/android/server/shrinker/PackageStateInfo;->setLockedList(Ljava/util/List;)V
 
-    .line 412
     invoke-static {}, Lcom/meizu/common/alphame/AlphaMe;->getInstance()Lcom/meizu/common/alphame/AlphaMe;
 
     move-result-object v2
 
-    const-string/jumbo v3, "getAppListByType"
+    const-string v3, "getAppListByType"
 
     new-array v4, v7, [Ljava/lang/Object;
 
@@ -1384,14 +1221,12 @@
 
     invoke-static {v2}, Lcom/android/server/shrinker/PackageStateInfo;->setWorkingList(Ljava/util/List;)V
 
-    .line 413
-    const-string/jumbo v2, "Shrinker"
+    const-string v2, "Shrinker"
 
-    const-string/jumbo v3, "PackageStateInfo inited"
+    const-string v3, "PackageStateInfo inited"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 417
     :cond_1
     sget-wide v2, Lcom/android/server/shrinker/PackageStateInfo;->sLastUpdateAlphaMeTime:J
 
@@ -1407,12 +1242,11 @@
 
     if-lez v2, :cond_2
 
-    .line 418
     invoke-static {}, Lcom/meizu/common/alphame/AlphaMe;->getInstance()Lcom/meizu/common/alphame/AlphaMe;
 
     move-result-object v2
 
-    const-string/jumbo v3, "getAppListByType"
+    const-string v3, "getAppListByType"
 
     new-array v4, v7, [Ljava/lang/Object;
 
@@ -1432,10 +1266,8 @@
 
     invoke-static {v2}, Lcom/android/server/shrinker/PackageStateInfo;->setNormalList(Ljava/util/List;)V
 
-    .line 419
     sput-wide v0, Lcom/android/server/shrinker/PackageStateInfo;->sLastUpdateAlphaMeTime:J
 
-    .line 399
     :cond_2
     return-void
 .end method
@@ -1447,7 +1279,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 387
     and-int/lit8 v1, p0, 0x6
 
     if-eqz v1, :cond_0
@@ -1463,7 +1294,6 @@
     .param p0, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 383
     const/4 v0, 0x1
 
     invoke-static {v0, p0}, Lcom/android/server/shrinker/PackageStateInfo;->get(ILjava/lang/String;)I
@@ -1484,7 +1314,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 379
     and-int/lit8 v1, p0, 0x2
 
     if-eqz v1, :cond_0
@@ -1502,7 +1331,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 359
     invoke-static {v0, p0}, Lcom/android/server/shrinker/PackageStateInfo;->get(ILjava/lang/String;)I
 
     move-result v1
@@ -1524,7 +1352,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 375
     and-int/lit8 v1, p0, 0x4
 
     if-eqz v1, :cond_0
@@ -1542,7 +1369,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 367
     and-int/lit16 v1, p0, 0x80
 
     if-eqz v1, :cond_0
@@ -1558,7 +1384,6 @@
     .param p0, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 371
     const/4 v0, 0x0
 
     invoke-static {v0, p0}, Lcom/android/server/shrinker/PackageStateInfo;->get(ILjava/lang/String;)I
@@ -1579,7 +1404,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 343
     and-int/lit16 v1, p0, 0x800
 
     if-eqz v1, :cond_0
@@ -1597,7 +1421,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 391
     and-int/lit8 v1, p0, 0x10
 
     if-eqz v1, :cond_0
@@ -1613,7 +1436,6 @@
     .param p0, "priority"    # I
 
     .prologue
-    .line 355
     const/4 v0, 0x2
 
     if-gt p0, v0, :cond_0
@@ -1636,7 +1458,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 395
     and-int/lit8 v1, p0, 0x8
 
     if-eqz v1, :cond_0
@@ -1654,7 +1475,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 339
     and-int/lit8 v1, p0, 0x10
 
     if-eqz v1, :cond_0
@@ -1672,7 +1492,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 363
     and-int/lit16 v1, p0, 0x200
 
     if-eqz v1, :cond_0
@@ -1690,7 +1509,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 347
     and-int/lit16 v1, p0, 0x400
 
     if-eqz v1, :cond_0
@@ -1708,7 +1526,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 351
     and-int/lit16 v1, p0, 0x100
 
     if-eqz v1, :cond_0
@@ -1725,12 +1542,10 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 272
     sget-object v2, Lcom/android/server/shrinker/PackageStateInfo;->NOTIFICATIONS:Ljava/util/HashMap;
 
     monitor-enter v2
 
-    .line 273
     :try_start_0
     sget-object v1, Lcom/android/server/shrinker/PackageStateInfo;->NOTIFICATIONS:Ljava/util/HashMap;
 
@@ -1740,23 +1555,19 @@
 
     check-cast v0, Ljava/util/Set;
 
-    .line 274
     .local v0, "set":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     if-nez v0, :cond_0
 
-    .line 275
     new-instance v0, Ljava/util/HashSet;
 
     .end local v0    # "set":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 276
     .restart local v0    # "set":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     sget-object v1, Lcom/android/server/shrinker/PackageStateInfo;->NOTIFICATIONS:Ljava/util/HashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 277
     const/4 v1, 0x1
 
     const/16 v3, 0x8
@@ -1765,7 +1576,6 @@
 
     invoke-static {v1, p0, v3, v4}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/lang/String;II)V
 
-    .line 279
     :cond_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1777,7 +1587,6 @@
 
     if-nez v1, :cond_1
 
-    .line 280
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1789,10 +1598,8 @@
     :cond_1
     monitor-exit v2
 
-    .line 271
     return-void
 
-    .line 272
     .end local v0    # "set":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     :catchall_0
     move-exception v1
@@ -1808,12 +1615,10 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 286
     sget-object v2, Lcom/android/server/shrinker/PackageStateInfo;->NOTIFICATIONS:Ljava/util/HashMap;
 
     monitor-enter v2
 
-    .line 287
     :try_start_0
     sget-object v1, Lcom/android/server/shrinker/PackageStateInfo;->NOTIFICATIONS:Ljava/util/HashMap;
 
@@ -1823,7 +1628,6 @@
 
     check-cast v0, Ljava/util/Set;
 
-    .line 288
     .local v0, "set":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     if-eqz v0, :cond_0
 
@@ -1837,26 +1641,22 @@
 
     if-eqz v1, :cond_0
 
-    .line 289
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 290
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 291
     sget-object v1, Lcom/android/server/shrinker/PackageStateInfo;->NOTIFICATIONS:Ljava/util/HashMap;
 
     invoke-virtual {v1, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 292
     const/4 v1, 0x1
 
     const/4 v3, 0x0
@@ -1870,10 +1670,8 @@
     :cond_0
     monitor-exit v2
 
-    .line 285
     return-void
 
-    .line 286
     .end local v0    # "set":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Integer;>;"
     :catchall_0
     move-exception v1
@@ -1889,17 +1687,14 @@
     .param p1, "mask"    # I
 
     .prologue
-    .line 252
     if-nez p0, :cond_0
 
     sget-object v2, Lcom/android/server/shrinker/PackageStateInfo;->PRIORITY_MAP:Ljava/util/HashMap;
 
-    .line 253
     .local v2, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :goto_0
     monitor-enter v2
 
-    .line 254
     :try_start_0
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -1923,7 +1718,6 @@
 
     check-cast v0, Lcom/android/server/shrinker/PackageStateInfo$IntElement;
 
-    .line 255
     .local v0, "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     iget v3, v0, Lcom/android/server/shrinker/PackageStateInfo$IntElement;->value:I
 
@@ -1935,7 +1729,6 @@
 
     goto :goto_1
 
-    .line 253
     .end local v0    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     .end local v1    # "element$iterator":Ljava/util/Iterator;
     :catchall_0
@@ -1945,7 +1738,6 @@
 
     throw v3
 
-    .line 252
     .end local v2    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :cond_0
     sget-object v2, Lcom/android/server/shrinker/PackageStateInfo;->FLAGS_MAP:Ljava/util/HashMap;
@@ -1957,7 +1749,6 @@
     :cond_1
     monitor-exit v2
 
-    .line 251
     return-void
 .end method
 
@@ -1969,17 +1760,14 @@
     .param p3, "mask"    # I
 
     .prologue
-    .line 165
     if-nez p0, :cond_1
 
     sget-object v1, Lcom/android/server/shrinker/PackageStateInfo;->PRIORITY_MAP:Ljava/util/HashMap;
 
-    .line 166
     .local v1, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :goto_0
     monitor-enter v1
 
-    .line 167
     :try_start_0
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1987,21 +1775,17 @@
 
     check-cast v0, Lcom/android/server/shrinker/PackageStateInfo$IntElement;
 
-    .line 168
     .local v0, "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     if-nez v0, :cond_0
 
-    .line 169
     new-instance v0, Lcom/android/server/shrinker/PackageStateInfo$IntElement;
 
     .end local v0    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     invoke-direct {v0}, Lcom/android/server/shrinker/PackageStateInfo$IntElement;-><init>()V
 
-    .line 170
     .restart local v0    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 172
     :cond_0
     iget v2, v0, Lcom/android/server/shrinker/PackageStateInfo$IntElement;->value:I
 
@@ -2009,7 +1793,6 @@
 
     iput v2, v0, Lcom/android/server/shrinker/PackageStateInfo$IntElement;->value:I
 
-    .line 173
     iget v2, v0, Lcom/android/server/shrinker/PackageStateInfo$IntElement;->value:I
 
     and-int/2addr v2, p3
@@ -2020,17 +1803,14 @@
 
     monitor-exit v1
 
-    .line 175
     invoke-static {}, Lcom/android/server/shrinker/Shrinker;->getInstance()Lcom/android/server/shrinker/Shrinker;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lcom/android/server/shrinker/Shrinker;->statusChanded()V
 
-    .line 164
     return-void
 
-    .line 165
     .end local v0    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     .end local v1    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :cond_1
@@ -2039,7 +1819,6 @@
     .restart local v1    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     goto :goto_0
 
-    .line 166
     :catchall_0
     move-exception v2
 
@@ -2064,7 +1843,6 @@
     .end annotation
 
     .prologue
-    .line 179
     .local p1, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz p1, :cond_0
 
@@ -2077,21 +1855,17 @@
     :cond_0
     return-void
 
-    .line 180
     :cond_1
     if-nez p0, :cond_4
 
     sget-object v3, Lcom/android/server/shrinker/PackageStateInfo;->PRIORITY_MAP:Ljava/util/HashMap;
 
-    .line 181
     .local v3, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :goto_0
     monitor-enter v3
 
-    .line 182
     const/4 v1, 0x0
 
-    .line 183
     .local v1, "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     :try_start_0
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -2114,7 +1888,6 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 184
     .local v4, "pkg":Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2122,7 +1895,6 @@
 
     if-nez v6, :cond_2
 
-    .line 185
     invoke-virtual {v3, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
@@ -2133,18 +1905,15 @@
 
     move-object v1, v0
 
-    .line 186
     .local v1, "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     if-nez v1, :cond_3
 
-    .line 187
     new-instance v2, Lcom/android/server/shrinker/PackageStateInfo$IntElement;
 
     invoke-direct {v2}, Lcom/android/server/shrinker/PackageStateInfo$IntElement;-><init>()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 188
     .end local v1    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     .local v2, "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     :try_start_1
@@ -2154,7 +1923,6 @@
 
     move-object v1, v2
 
-    .line 190
     .end local v2    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     .restart local v1    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     :cond_3
@@ -2165,7 +1933,6 @@
 
     iput v6, v1, Lcom/android/server/shrinker/PackageStateInfo$IntElement;->value:I
 
-    .line 191
     iget v6, v1, Lcom/android/server/shrinker/PackageStateInfo$IntElement;->value:I
 
     and-int/2addr v6, p3
@@ -2176,7 +1943,6 @@
 
     goto :goto_1
 
-    .line 181
     .end local v1    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     .end local v4    # "pkg":Ljava/lang/String;
     .end local v5    # "pkg$iterator":Ljava/util/Iterator;
@@ -2188,7 +1954,6 @@
 
     throw v6
 
-    .line 180
     .end local v3    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/shrinker/PackageStateInfo$IntElement;>;"
     :cond_4
     sget-object v3, Lcom/android/server/shrinker/PackageStateInfo;->FLAGS_MAP:Ljava/util/HashMap;
@@ -2200,10 +1965,8 @@
     :cond_5
     monitor-exit v3
 
-    .line 178
     return-void
 
-    .line 181
     .restart local v2    # "element":Lcom/android/server/shrinker/PackageStateInfo$IntElement;
     .restart local v4    # "pkg":Ljava/lang/String;
     :catchall_1
@@ -2232,19 +1995,16 @@
     .local p0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v2, 0x1
 
-    .line 247
     const/4 v0, -0x5
 
     invoke-static {v2, v0}, Lcom/android/server/shrinker/PackageStateInfo;->reset(II)V
 
-    .line 248
     const/4 v0, 0x4
 
     const/4 v1, -0x1
 
     invoke-static {v2, p0, v0, v1}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 246
     return-void
 .end method
 
@@ -2264,19 +2024,16 @@
     .local p0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v5, 0x0
 
-    .line 198
     const/16 v3, -0x81
 
     invoke-static {v5, v3}, Lcom/android/server/shrinker/PackageStateInfo;->reset(II)V
 
-    .line 199
     const/16 v3, 0x80
 
     const/4 v4, -0x1
 
     invoke-static {v5, p0, v3, v4}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 200
     if-eqz p0, :cond_0
 
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
@@ -2285,18 +2042,15 @@
 
     if-eqz v3, :cond_1
 
-    .line 197
     :cond_0
     :goto_0
     return-void
 
-    .line 201
     :cond_1
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 202
     .local v2, "preload":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -2317,7 +2071,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 203
     .local v0, "pkg":Ljava/lang/String;
     const/4 v3, 0x1
 
@@ -2329,12 +2082,10 @@
 
     if-nez v3, :cond_2
 
-    .line 204
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 207
     .end local v0    # "pkg":Ljava/lang/String;
     :cond_3
     invoke-static {v2}, Lcom/android/server/am/Ams_Interface;->loadFavoriteApps(Ljava/util/List;)V
@@ -2360,15 +2111,12 @@
 
     const/4 v1, 0x1
 
-    .line 315
     invoke-static {v1, v2}, Lcom/android/server/shrinker/PackageStateInfo;->reset(II)V
 
-    .line 316
     const/4 v0, -0x1
 
     invoke-static {v1, p0, v2, v0}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 314
     return-void
 .end method
 
@@ -2386,19 +2134,16 @@
     .end annotation
 
     .prologue
-    .line 320
     .local p0, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;"
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 321
     .local v4, "selectedList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 323
     .local v0, "disallowList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     if-eqz p0, :cond_0
 
@@ -2408,23 +2153,18 @@
 
     if-eqz v5, :cond_1
 
-    .line 334
     :cond_0
     invoke-static {v4}, Lcom/android/server/shrinker/PackageStateInfo;->setSelectedList(Ljava/util/List;)V
 
-    .line 335
     invoke-static {v0}, Lcom/android/server/shrinker/PackageStateInfo;->setDisallowList(Ljava/util/List;)V
 
-    .line 319
     return-void
 
-    .line 324
     :cond_1
     invoke-interface {p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v3
 
-    .line 325
     .local v3, "keySet":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -2445,7 +2185,6 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 326
     .local v1, "key":Ljava/lang/String;
     invoke-interface {p0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2461,12 +2200,10 @@
 
     if-ne v5, v6, :cond_3
 
-    .line 327
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 328
     :cond_3
     invoke-interface {p0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2482,7 +2219,6 @@
 
     if-ne v5, v6, :cond_2
 
-    .line 329
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -2506,7 +2242,6 @@
 
     const/4 v5, 0x0
 
-    .line 217
     invoke-static {}, Lcom/android/server/am/Ams_Utils;->hasAppCloneFeature()Z
 
     move-result v4
@@ -2515,16 +2250,13 @@
 
     if-eqz p0, :cond_2
 
-    .line 218
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 219
     .local v1, "newList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v0, -0x1
 
-    .line 220
     .local v0, "index":I
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -2544,18 +2276,15 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 221
     .local v2, "str":Ljava/lang/String;
-    const-string/jumbo v4, ":"
+    const-string v4, ":"
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 222
     if-eq v0, v6, :cond_0
 
-    .line 223
     invoke-virtual {v2, v5, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v4
@@ -2564,18 +2293,15 @@
 
     goto :goto_0
 
-    .line 225
     :cond_0
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 228
     .end local v2    # "str":Ljava/lang/String;
     :cond_1
     move-object p0, v1
 
-    .line 230
     .end local v0    # "index":I
     .end local v1    # "newList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .end local v3    # "str$iterator":Ljava/util/Iterator;
@@ -2584,12 +2310,10 @@
 
     invoke-static {v5, v4}, Lcom/android/server/shrinker/PackageStateInfo;->reset(II)V
 
-    .line 231
     const/16 v4, 0x20
 
     invoke-static {v5, p0, v4, v6}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 216
     return-void
 .end method
 
@@ -2609,19 +2333,16 @@
     .local p0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v2, 0x0
 
-    .line 212
     const/4 v0, -0x3
 
     invoke-static {v2, v0}, Lcom/android/server/shrinker/PackageStateInfo;->reset(II)V
 
-    .line 213
     const/4 v0, 0x2
 
     const/4 v1, -0x1
 
     invoke-static {v2, p0, v0, v1}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 211
     return-void
 .end method
 
@@ -2641,19 +2362,16 @@
     .local p0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v2, 0x0
 
-    .line 235
     const/16 v0, -0x41
 
     invoke-static {v2, v0}, Lcom/android/server/shrinker/PackageStateInfo;->reset(II)V
 
-    .line 236
     const/16 v0, 0x40
 
     const/4 v1, -0x1
 
     invoke-static {v2, p0, v0, v1}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 234
     return-void
 .end method
 
@@ -2673,33 +2391,28 @@
     .local p0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v2, 0x0
 
-    .line 240
     sget-object v0, Lcom/android/server/shrinker/PackageStateInfo;->WORK_APP_LIST:Ljava/util/ArrayList;
 
     const/16 v1, -0x101
 
     invoke-static {v2, v0, v2, v1}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 241
     const/16 v0, 0x100
 
     const/4 v1, -0x1
 
     invoke-static {v2, p0, v0, v1}, Lcom/android/server/shrinker/PackageStateInfo;->set(ILjava/util/List;II)V
 
-    .line 242
     sget-object v0, Lcom/android/server/shrinker/PackageStateInfo;->WORK_APP_LIST:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 243
     if-eqz p0, :cond_0
 
     sget-object v0, Lcom/android/server/shrinker/PackageStateInfo;->WORK_APP_LIST:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 239
     :cond_0
     return-void
 .end method
@@ -2711,14 +2424,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 522
     if-nez p0, :cond_0
 
-    const-string/jumbo v1, ""
+    const-string v1, ""
 
     return-object v1
 
-    .line 523
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2726,103 +2437,84 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 524
     .local v0, "builder":Ljava/lang/StringBuilder;
     and-int/lit8 v1, p0, 0x1
 
     if-eqz v1, :cond_1
 
-    .line 525
-    const-string/jumbo v1, "downloading"
+    const-string v1, "downloading"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 526
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 528
     :cond_1
     and-int/lit8 v1, p0, 0x10
 
     if-eqz v1, :cond_2
 
-    .line 529
-    const-string/jumbo v1, "moving"
+    const-string v1, "moving"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 530
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 532
     :cond_2
     and-int/lit8 v1, p0, 0x4
 
     if-eqz v1, :cond_3
 
-    .line 533
-    const-string/jumbo v1, "navigation"
+    const-string v1, "navigation"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 534
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 536
     :cond_3
     and-int/lit8 v1, p0, 0x2
 
     if-eqz v1, :cond_4
 
-    .line 537
-    const-string/jumbo v1, "playbacking"
+    const-string v1, "playbacking"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 538
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 540
     :cond_4
     and-int/lit8 v1, p0, 0x8
 
     if-eqz v1, :cond_5
 
-    .line 541
-    const-string/jumbo v1, "recording"
+    const-string v1, "recording"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 542
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 545
     :cond_5
     and-int/lit8 v1, p0, 0x20
 
     if-eqz v1, :cond_6
 
-    .line 546
-    const-string/jumbo v1, "screen_record"
+    const-string v1, "screen_record"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 547
-    const-string/jumbo v1, " "
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 549
     :cond_6
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 

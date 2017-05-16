@@ -30,18 +30,14 @@
     .param p3, "isfocussed"    # Z
 
     .prologue
-    .line 180
     iput-object p1, p0, Lcom/android/server/audio/AudioService$MediaPlayerInfo;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 181
     iput-object p2, p0, Lcom/android/server/audio/AudioService$MediaPlayerInfo;->mPackageName:Ljava/lang/String;
 
-    .line 182
     iput-boolean p3, p0, Lcom/android/server/audio/AudioService$MediaPlayerInfo;->mIsfocussed:Z
 
-    .line 180
     return-void
 .end method
 
@@ -51,7 +47,6 @@
     .locals 1
 
     .prologue
-    .line 191
     iget-object v0, p0, Lcom/android/server/audio/AudioService$MediaPlayerInfo;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -61,7 +56,6 @@
     .locals 1
 
     .prologue
-    .line 185
     iget-boolean v0, p0, Lcom/android/server/audio/AudioService$MediaPlayerInfo;->mIsfocussed:Z
 
     return v0
@@ -72,9 +66,7 @@
     .param p1, "focus"    # Z
 
     .prologue
-    .line 188
     iput-boolean p1, p0, Lcom/android/server/audio/AudioService$MediaPlayerInfo;->mIsfocussed:Z
 
-    .line 187
     return-void
 .end method

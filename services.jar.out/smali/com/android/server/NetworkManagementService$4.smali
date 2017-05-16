@@ -30,7 +30,6 @@
     .param p2, "val$params"    # Lcom/android/server/NetworkManagementService$IdleTimerParams;
 
     .prologue
-    .line 1669
     iput-object p1, p0, Lcom/android/server/NetworkManagementService$4;->this$0:Lcom/android/server/NetworkManagementService;
 
     iput-object p2, p0, Lcom/android/server/NetworkManagementService$4;->val$params:Lcom/android/server/NetworkManagementService$IdleTimerParams;
@@ -46,26 +45,21 @@
     .locals 7
 
     .prologue
-    .line 1671
     iget-object v1, p0, Lcom/android/server/NetworkManagementService$4;->this$0:Lcom/android/server/NetworkManagementService;
 
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$4;->val$params:Lcom/android/server/NetworkManagementService$IdleTimerParams;
 
     iget v2, v0, Lcom/android/server/NetworkManagementService$IdleTimerParams;->type:I
 
-    .line 1672
     sget v3, Landroid/telephony/DataConnectionRealTimeInfo;->DC_POWER_STATE_LOW:I
 
-    .line 1673
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
     move-result-wide v4
 
     const/4 v6, 0x0
 
-    .line 1671
     invoke-static/range {v1 .. v6}, Lcom/android/server/NetworkManagementService;->-wrap3(Lcom/android/server/NetworkManagementService;IIJZ)V
 
-    .line 1670
     return-void
 .end method

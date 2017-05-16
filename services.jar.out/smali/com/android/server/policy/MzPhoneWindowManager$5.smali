@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/policy/MzPhoneWindowManager;
 
     .prologue
-    .line 906
     iput-object p1, p0, Lcom/android/server/policy/MzPhoneWindowManager$5;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,16 +42,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 909
     iget-object v0, p0, Lcom/android/server/policy/MzPhoneWindowManager$5;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-static {v0, v1}, Lcom/android/server/policy/MzPhoneWindowManager;->-set5(Lcom/android/server/policy/MzPhoneWindowManager;Z)Z
 
-    .line 910
     iget-object v0, p0, Lcom/android/server/policy/MzPhoneWindowManager$5;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-static {v0, v1}, Lcom/android/server/policy/MzPhoneWindowManager;->-set3(Lcom/android/server/policy/MzPhoneWindowManager;I)I
 
-    .line 908
     return-void
 .end method

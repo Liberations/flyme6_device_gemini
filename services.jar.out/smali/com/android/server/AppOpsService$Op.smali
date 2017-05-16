@@ -44,24 +44,18 @@
     .param p3, "_op"    # I
 
     .prologue
-    .line 153
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 144
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/AppOpsService$Op;->proxyUid:I
 
-    .line 154
     iput p1, p0, Lcom/android/server/AppOpsService$Op;->uid:I
 
-    .line 155
     iput-object p2, p0, Lcom/android/server/AppOpsService$Op;->packageName:Ljava/lang/String;
 
-    .line 156
     iput p3, p0, Lcom/android/server/AppOpsService$Op;->op:I
 
-    .line 157
     iget v0, p0, Lcom/android/server/AppOpsService$Op;->op:I
 
     invoke-static {v0}, Landroid/app/AppOpsManager;->opToDefaultMode(I)I
@@ -70,6 +64,5 @@
 
     iput v0, p0, Lcom/android/server/AppOpsService$Op;->mode:I
 
-    .line 153
     return-void
 .end method

@@ -24,7 +24,6 @@
     .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
     .prologue
-    .line 880
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$7;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-direct {p0}, Lcom/android/server/notification/ZenModeHelper$Callback;-><init>()V
@@ -38,12 +37,10 @@
     .locals 1
 
     .prologue
-    .line 883
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$7;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/notification/NotificationManagerService;->savePolicyFile()V
 
-    .line 882
     return-void
 .end method
 
@@ -51,14 +48,12 @@
     .locals 2
 
     .prologue
-    .line 896
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$7;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    const-string/jumbo v1, "android.app.action.NOTIFICATION_POLICY_CHANGED"
+    const-string v1, "android.app.action.NOTIFICATION_POLICY_CHANGED"
 
     invoke-static {v0, v1}, Lcom/android/server/notification/NotificationManagerService;->-wrap23(Lcom/android/server/notification/NotificationManagerService;Ljava/lang/String;)V
 
-    .line 895
     return-void
 .end method
 
@@ -66,21 +61,18 @@
     .locals 2
 
     .prologue
-    .line 888
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$7;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    const-string/jumbo v1, "android.app.action.INTERRUPTION_FILTER_CHANGED"
+    const-string v1, "android.app.action.INTERRUPTION_FILTER_CHANGED"
 
     invoke-static {v0, v1}, Lcom/android/server/notification/NotificationManagerService;->-wrap23(Lcom/android/server/notification/NotificationManagerService;Ljava/lang/String;)V
 
-    .line 889
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$7;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     iget-object v1, v0, Lcom/android/server/notification/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 890
     :try_start_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$7;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -90,10 +82,8 @@
 
     monitor-exit v1
 
-    .line 887
     return-void
 
-    .line 889
     :catchall_0
     move-exception v0
 

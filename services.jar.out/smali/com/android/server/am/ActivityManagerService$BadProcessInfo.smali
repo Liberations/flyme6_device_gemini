@@ -33,21 +33,15 @@
     .param p5, "stack"    # Ljava/lang/String;
 
     .prologue
-    .line 591
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 592
     iput-wide p1, p0, Lcom/android/server/am/ActivityManagerService$BadProcessInfo;->time:J
 
-    .line 593
     iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$BadProcessInfo;->shortMsg:Ljava/lang/String;
 
-    .line 594
     iput-object p4, p0, Lcom/android/server/am/ActivityManagerService$BadProcessInfo;->longMsg:Ljava/lang/String;
 
-    .line 595
     iput-object p5, p0, Lcom/android/server/am/ActivityManagerService$BadProcessInfo;->stack:Ljava/lang/String;
 
-    .line 591
     return-void
 .end method

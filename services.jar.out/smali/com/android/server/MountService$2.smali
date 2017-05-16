@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/MountService;
 
     .prologue
-    .line 2386
     iput-object p1, p0, Lcom/android/server/MountService$2;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .locals 6
 
     .prologue
-    .line 2389
     :try_start_0
     iget-object v1, p0, Lcom/android/server/MountService$2;->this$0:Lcom/android/server/MountService;
 
@@ -49,13 +47,13 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "cryptfs"
+    const-string v2, "cryptfs"
 
     const/4 v3, 0x1
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    const-string/jumbo v4, "restart"
+    const-string v4, "restart"
 
     const/4 v5, 0x0
 
@@ -65,19 +63,16 @@
     :try_end_0
     .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2387
     :goto_0
     return-void
 
-    .line 2390
     :catch_0
     move-exception v0
 
-    .line 2391
     .local v0, "e":Lcom/android/server/NativeDaemonConnectorException;
-    const-string/jumbo v1, "MountService"
+    const-string v1, "MountService"
 
-    const-string/jumbo v2, "problem executing in background"
+    const-string v2, "problem executing in background"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 

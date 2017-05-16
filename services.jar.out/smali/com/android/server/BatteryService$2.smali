@@ -25,7 +25,6 @@
     .param p2, "$anonymous0"    # Landroid/os/Handler;
 
     .prologue
-    .line 195
     iput-object p1, p0, Lcom/android/server/BatteryService$2;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,7 +39,6 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 198
     iget-object v0, p0, Lcom/android/server/BatteryService$2;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0}, Lcom/android/server/BatteryService;->-get5(Lcom/android/server/BatteryService;)Ljava/lang/Object;
@@ -49,7 +47,6 @@
 
     monitor-enter v1
 
-    .line 199
     :try_start_0
     iget-object v0, p0, Lcom/android/server/BatteryService$2;->this$0:Lcom/android/server/BatteryService;
 
@@ -59,10 +56,8 @@
 
     monitor-exit v1
 
-    .line 197
     return-void
 
-    .line 198
     :catchall_0
     move-exception v0
 

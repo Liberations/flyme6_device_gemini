@@ -30,7 +30,6 @@
     .param p2, "val$vol"    # Landroid/os/storage/VolumeInfo;
 
     .prologue
-    .line 15813
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$22;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$22;->val$vol:Landroid/os/storage/VolumeInfo;
@@ -46,13 +45,11 @@
     .locals 2
 
     .prologue
-    .line 15816
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$22;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$22;->val$vol:Landroid/os/storage/VolumeInfo;
 
     invoke-static {v0, v1}, Lcom/android/server/pm/PackageManagerService;->-wrap28(Lcom/android/server/pm/PackageManagerService;Landroid/os/storage/VolumeInfo;)V
 
-    .line 15815
     return-void
 .end method

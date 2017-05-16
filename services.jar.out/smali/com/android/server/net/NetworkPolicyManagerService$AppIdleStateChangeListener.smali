@@ -24,7 +24,6 @@
     .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
     .prologue
-    .line 2336
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;-><init>()V
@@ -51,7 +50,6 @@
     .param p3, "idle"    # Z
 
     .prologue
-    .line 2342
     :try_start_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -67,7 +65,6 @@
 
     move-result v1
 
-    .line 2343
     .local v1, "uid":I
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -77,7 +74,6 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2344
     :try_start_1
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -88,12 +84,10 @@
     :try_start_2
     monitor-exit v3
 
-    .line 2340
     .end local v1    # "uid":I
     :goto_0
     return-void
 
-    .line 2343
     .restart local v1    # "uid":I
     :catchall_0
     move-exception v2
@@ -104,7 +98,6 @@
     :try_end_2
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 2346
     .end local v1    # "uid":I
     :catch_0
     move-exception v0
@@ -118,14 +111,12 @@
     .param p1, "isParoleOn"    # Z
 
     .prologue
-    .line 2352
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v1, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mRulesLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 2353
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -135,10 +126,8 @@
 
     monitor-exit v1
 
-    .line 2351
     return-void
 
-    .line 2352
     :catchall_0
     move-exception v0
 

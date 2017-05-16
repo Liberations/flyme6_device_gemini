@@ -31,7 +31,6 @@
     .param p4, "val$dropboxTag"    # Ljava/lang/String;
 
     .prologue
-    .line 12384
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$16;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$16;->val$dbox:Landroid/os/DropBoxManager;
@@ -49,7 +48,6 @@
     .locals 6
 
     .prologue
-    .line 12389
     const-wide/16 v2, 0x1388
 
     :try_start_0
@@ -57,7 +55,6 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 12393
     :goto_0
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$16;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -67,7 +64,6 @@
 
     monitor-enter v3
 
-    .line 12394
     :try_start_1
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$16;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -79,7 +75,6 @@
 
     move-result-object v1
 
-    .line 12395
     .local v1, "errorReport":Ljava/lang/String;
     invoke-virtual {v1}, Ljava/lang/String;->length()I
     :try_end_1
@@ -91,10 +86,8 @@
 
     monitor-exit v3
 
-    .line 12396
     return-void
 
-    .line 12390
     .end local v1    # "errorReport":Ljava/lang/String;
     :catch_0
     move-exception v0
@@ -102,7 +95,6 @@
     .local v0, "e":Ljava/lang/InterruptedException;
     goto :goto_0
 
-    .line 12398
     .end local v0    # "e":Ljava/lang/InterruptedException;
     .restart local v1    # "errorReport":Ljava/lang/String;
     :cond_0
@@ -127,7 +119,6 @@
 
     invoke-virtual {v2, v5, v4}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 12399
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$16;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-static {v2}, Lcom/android/server/am/ActivityManagerService;->-get4(Lcom/android/server/am/ActivityManagerService;)Ljava/lang/StringBuilder;
@@ -140,17 +131,14 @@
 
     monitor-exit v3
 
-    .line 12401
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$16;->val$dbox:Landroid/os/DropBoxManager;
 
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$16;->val$dropboxTag:Ljava/lang/String;
 
     invoke-virtual {v2, v3, v1}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 12386
     return-void
 
-    .line 12393
     .end local v1    # "errorReport":Ljava/lang/String;
     :catchall_0
     move-exception v2

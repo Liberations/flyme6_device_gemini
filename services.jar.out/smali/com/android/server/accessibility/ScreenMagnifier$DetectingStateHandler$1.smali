@@ -24,7 +24,6 @@
     .param p1, "this$1"    # Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
     .prologue
-    .line 648
     iput-object p1, p0, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler$1;->this$1:Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,21 +38,18 @@
     .param p1, "message"    # Landroid/os/Message;
 
     .prologue
-    .line 651
     iget v2, p1, Landroid/os/Message;->what:I
 
-    .line 652
     .local v2, "type":I
     packed-switch v2, :pswitch_data_0
 
-    .line 664
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Unknown message type: "
+    const-string v5, "Unknown message type: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -71,29 +67,24 @@
 
     throw v3
 
-    .line 654
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/MotionEvent;
 
-    .line 655
     .local v0, "event":Landroid/view/MotionEvent;
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    .line 656
     .local v1, "policyFlags":I
     iget-object v3, p0, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler$1;->this$1:Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
     invoke-static {v3, v0, v1}, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;->-wrap0(Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;Landroid/view/MotionEvent;I)V
 
-    .line 650
     .end local v0    # "event":Landroid/view/MotionEvent;
     .end local v1    # "policyFlags":I
     :goto_0
     return-void
 
-    .line 659
     :pswitch_1
     iget-object v3, p0, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler$1;->this$1:Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
@@ -103,19 +94,16 @@
 
     invoke-static {v3, v4}, Lcom/android/server/accessibility/ScreenMagnifier;->-wrap9(Lcom/android/server/accessibility/ScreenMagnifier;I)V
 
-    .line 660
     iget-object v3, p0, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler$1;->this$1:Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
     invoke-static {v3}, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;->-wrap1(Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;)V
 
-    .line 661
     iget-object v3, p0, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler$1;->this$1:Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;
 
     invoke-virtual {v3}, Lcom/android/server/accessibility/ScreenMagnifier$DetectingStateHandler;->clear()V
 
     goto :goto_0
 
-    .line 652
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

@@ -33,18 +33,14 @@
     .param p3, "listener"    # Landroid/hardware/input/IInputDevicesChangedListener;
 
     .prologue
-    .line 1942
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1943
     iput p2, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mPid:I
 
-    .line 1944
     iput-object p3, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mListener:Landroid/hardware/input/IInputDevicesChangedListener;
 
-    .line 1942
     return-void
 .end method
 
@@ -54,14 +50,12 @@
     .locals 2
 
     .prologue
-    .line 1952
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->this$0:Lcom/android/server/input/InputManagerService;
 
     iget v1, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mPid:I
 
     invoke-static {v0, v1}, Lcom/android/server/input/InputManagerService;->-wrap6(Lcom/android/server/input/InputManagerService;I)V
 
-    .line 1948
     return-void
 .end method
 
@@ -70,7 +64,6 @@
     .param p1, "info"    # [I
 
     .prologue
-    .line 1957
     :try_start_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mListener:Landroid/hardware/input/IInputDevicesChangedListener;
 
@@ -78,40 +71,33 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1955
     :goto_0
     return-void
 
-    .line 1958
     :catch_0
     move-exception v0
 
-    .line 1959
     .local v0, "ex":Landroid/os/RemoteException;
-    const-string/jumbo v1, "InputManager"
+    const-string v1, "InputManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Failed to notify process "
+    const-string v3, "Failed to notify process "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 1960
     iget v3, p0, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->mPid:I
 
-    .line 1959
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 1960
-    const-string/jumbo v3, " that input devices changed, assuming it died."
+    const-string v3, " that input devices changed, assuming it died."
 
-    .line 1959
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -122,7 +108,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1961
     invoke-virtual {p0}, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->binderDied()V
 
     goto :goto_0

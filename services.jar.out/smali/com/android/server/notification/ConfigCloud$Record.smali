@@ -40,19 +40,16 @@
     .param p1, "this$0"    # Lcom/android/server/notification/ConfigCloud;
 
     .prologue
-    .line 41
     iput-object p1, p0, Lcom/android/server/notification/ConfigCloud$Record;->this$0:Lcom/android/server/notification/ConfigCloud;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/ConfigCloud$Record;->values:Landroid/util/ArrayMap;
 
-    .line 41
     return-void
 .end method
 

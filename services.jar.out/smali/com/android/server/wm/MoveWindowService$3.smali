@@ -43,19 +43,16 @@
 
     const/4 v0, 0x1
 
-    .line 122
     iput-object p1, p0, Lcom/android/server/wm/MoveWindowService$3;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 123
     new-instance v2, Landroid/animation/IntEvaluator;
 
     invoke-direct {v2}, Landroid/animation/IntEvaluator;-><init>()V
 
     iput-object v2, p0, Lcom/android/server/wm/MoveWindowService$3;->intEvaluator:Landroid/animation/IntEvaluator;
 
-    .line 124
     iget-object v2, p0, Lcom/android/server/wm/MoveWindowService$3;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     iget-object v2, v2, Lcom/android/server/wm/MoveWindowService;->mRealWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -66,7 +63,6 @@
 
     iput-object v2, p0, Lcom/android/server/wm/MoveWindowService$3;->displayContent:Lcom/android/server/wm/DisplayContent;
 
-    .line 125
     iget-object v2, p0, Lcom/android/server/wm/MoveWindowService$3;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     iget-object v2, v2, Lcom/android/server/wm/MoveWindowService;->mRealWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -75,7 +71,6 @@
 
     if-eq v2, v0, :cond_0
 
-    .line 126
     iget-object v2, p0, Lcom/android/server/wm/MoveWindowService$3;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     iget-object v2, v2, Lcom/android/server/wm/MoveWindowService;->mRealWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -86,26 +81,21 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 125
     :cond_0
     :goto_0
     iput-boolean v0, p0, Lcom/android/server/wm/MoveWindowService$3;->rotated:Z
 
-    .line 127
     iget-boolean v0, p0, Lcom/android/server/wm/MoveWindowService$3;->rotated:Z
 
     if-eqz v0, :cond_3
 
-    .line 128
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$3;->displayContent:Lcom/android/server/wm/DisplayContent;
 
     iget v0, v0, Lcom/android/server/wm/DisplayContent;->mBaseDisplayWidth:I
 
-    .line 127
     :goto_1
     iput v0, p0, Lcom/android/server/wm/MoveWindowService$3;->realdh:I
 
-    .line 129
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$3;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     invoke-static {v0}, Lcom/android/server/wm/MoveWindowService;->-get0(Lcom/android/server/wm/MoveWindowService;)Lcom/android/server/wm/WindowState;
@@ -129,23 +119,19 @@
     :cond_1
     iput v1, p0, Lcom/android/server/wm/MoveWindowService$3;->fromY:I
 
-    .line 130
     iget v0, p0, Lcom/android/server/wm/MoveWindowService$3;->realdh:I
 
     div-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/android/server/wm/MoveWindowService$3;->toY:I
 
-    .line 122
     return-void
 
     :cond_2
     move v0, v1
 
-    .line 126
     goto :goto_0
 
-    .line 128
     :cond_3
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$3;->displayContent:Lcom/android/server/wm/DisplayContent;
 
@@ -161,7 +147,6 @@
     .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
     .prologue
-    .line 134
     iget-object v2, p0, Lcom/android/server/wm/MoveWindowService$3;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     invoke-static {v2}, Lcom/android/server/wm/MoveWindowService;->-get0(Lcom/android/server/wm/MoveWindowService;)Lcom/android/server/wm/WindowState;
@@ -182,7 +167,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 138
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -193,7 +177,6 @@
 
     move-result v0
 
-    .line 139
     .local v0, "f":F
     iget-object v2, p0, Lcom/android/server/wm/MoveWindowService$3;->intEvaluator:Landroid/animation/IntEvaluator;
 
@@ -217,7 +200,6 @@
 
     move-result v1
 
-    .line 140
     .local v1, "jY":I
     iget-object v2, p0, Lcom/android/server/wm/MoveWindowService$3;->this$0:Lcom/android/server/wm/MoveWindowService;
 
@@ -225,15 +207,12 @@
 
     invoke-static {v2, v3, v1}, Lcom/android/server/wm/MoveWindowService;->-wrap0(Lcom/android/server/wm/MoveWindowService;II)V
 
-    .line 133
     return-void
 
-    .line 135
     .end local v0    # "f":F
     .end local v1    # "jY":I
     :cond_0
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 136
     return-void
 .end method

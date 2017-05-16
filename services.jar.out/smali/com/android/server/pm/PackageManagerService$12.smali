@@ -30,7 +30,6 @@
     .param p2, "val$deletedPs"    # Lcom/android/server/pm/PackageSetting;
 
     .prologue
-    .line 12993
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$12;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$12;->val$deletedPs:Lcom/android/server/pm/PackageSetting;
@@ -46,7 +45,6 @@
     .locals 4
 
     .prologue
-    .line 12997
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$12;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$12;->val$deletedPs:Lcom/android/server/pm/PackageSetting;
@@ -57,12 +55,9 @@
 
     iget v2, v2, Lcom/android/server/pm/PackageSetting;->appId:I
 
-    .line 12998
-    const-string/jumbo v3, "permission grant or revoke changed gids"
+    const-string v3, "permission grant or revoke changed gids"
 
-    .line 12997
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/pm/PackageManagerService;->-wrap26(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;ILjava/lang/String;)V
 
-    .line 12995
     return-void
 .end method

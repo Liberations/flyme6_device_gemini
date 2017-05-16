@@ -46,7 +46,6 @@
     .param p1, "this$0"    # Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
     .prologue
-    .line 6248
     iput-object p1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
     invoke-direct {p0}, Landroid/app/admin/DevicePolicyManagerInternal;-><init>()V
@@ -78,13 +77,11 @@
     .end annotation
 
     .prologue
-    .line 6297
     .local p2, "packages":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-object v5, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
     monitor-enter v5
 
-    .line 6298
     :try_start_0
     new-instance v3, Ljava/util/ArrayList;
 
@@ -97,12 +94,10 @@
     .local v3, "listeners":Ljava/util/List;, "Ljava/util/List<Landroid/app/admin/DevicePolicyManagerInternal$OnCrossProfileWidgetProvidersChangeListener;>;"
     monitor-exit v5
 
-    .line 6300
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 6301
     .local v2, "listenerCount":I
     const/4 v0, 0x0
 
@@ -110,23 +105,19 @@
     :goto_0
     if-ge v0, v2, :cond_0
 
-    .line 6302
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/app/admin/DevicePolicyManagerInternal$OnCrossProfileWidgetProvidersChangeListener;
 
-    .line 6303
     .local v1, "listener":Landroid/app/admin/DevicePolicyManagerInternal$OnCrossProfileWidgetProvidersChangeListener;
     invoke-interface {v1, p1, p2}, Landroid/app/admin/DevicePolicyManagerInternal$OnCrossProfileWidgetProvidersChangeListener;->onCrossProfileWidgetProvidersChanged(ILjava/util/List;)V
 
-    .line 6301
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 6297
     .end local v0    # "i":I
     .end local v1    # "listener":Landroid/app/admin/DevicePolicyManagerInternal$OnCrossProfileWidgetProvidersChangeListener;
     .end local v2    # "listenerCount":I
@@ -138,7 +129,6 @@
 
     throw v4
 
-    .line 6295
     .restart local v0    # "i":I
     .restart local v2    # "listenerCount":I
     .restart local v3    # "listeners":Ljava/util/List;, "Ljava/util/List<Landroid/app/admin/DevicePolicyManagerInternal$OnCrossProfileWidgetProvidersChangeListener;>;"
@@ -153,25 +143,21 @@
     .param p1, "listener"    # Landroid/app/admin/DevicePolicyManagerInternal$OnCrossProfileWidgetProvidersChangeListener;
 
     .prologue
-    .line 6277
     iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
     monitor-enter v1
 
-    .line 6278
     :try_start_0
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->mWidgetProviderListeners:Ljava/util/List;
 
     if-nez v0, :cond_0
 
-    .line 6279
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->mWidgetProviderListeners:Ljava/util/List;
 
-    .line 6281
     :cond_0
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->mWidgetProviderListeners:Ljava/util/List;
 
@@ -181,7 +167,6 @@
 
     if-nez v0, :cond_1
 
-    .line 6282
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->mWidgetProviderListeners:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -191,10 +176,8 @@
     :cond_1
     monitor-exit v1
 
-    .line 6276
     return-void
 
-    .line 6277
     :catchall_0
     move-exception v0
 
@@ -217,12 +200,10 @@
     .end annotation
 
     .prologue
-    .line 6253
     iget-object v4, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
     monitor-enter v4
 
-    .line 6254
     :try_start_0
     iget-object v3, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
@@ -232,7 +213,6 @@
 
     if-nez v3, :cond_0
 
-    .line 6255
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -243,7 +223,6 @@
 
     return-object v3
 
-    .line 6257
     :cond_0
     :try_start_1
     iget-object v3, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
@@ -256,11 +235,9 @@
 
     move-result-object v1
 
-    .line 6258
     .local v1, "ownerComponent":Landroid/content/ComponentName;
     if-nez v1, :cond_1
 
-    .line 6259
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -271,7 +248,6 @@
 
     return-object v3
 
-    .line 6262
     :cond_1
     :try_start_2
     iget-object v3, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
@@ -280,7 +256,6 @@
 
     move-result-object v2
 
-    .line 6263
     .local v2, "policy":Lcom/android/server/devicepolicy/DevicePolicyManagerService$DevicePolicyData;
     iget-object v3, v2, Lcom/android/server/devicepolicy/DevicePolicyManagerService$DevicePolicyData;->mAdminMap:Ljava/util/HashMap;
 
@@ -290,7 +265,6 @@
 
     check-cast v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;
 
-    .line 6265
     .local v0, "admin":Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;
     if-eqz v0, :cond_2
 
@@ -298,7 +272,6 @@
 
     if-nez v3, :cond_3
 
-    .line 6267
     :cond_2
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
     :try_end_2
@@ -310,7 +283,6 @@
 
     return-object v3
 
-    .line 6266
     :cond_3
     :try_start_3
     iget-object v3, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;->crossProfileWidgetProviders:Ljava/util/List;
@@ -319,10 +291,8 @@
 
     move-result v3
 
-    .line 6265
     if-nez v3, :cond_2
 
-    .line 6270
     iget-object v3, v0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;->crossProfileWidgetProviders:Ljava/util/List;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -331,7 +301,6 @@
 
     return-object v3
 
-    .line 6253
     .end local v0    # "admin":Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin;
     .end local v1    # "ownerComponent":Landroid/content/ComponentName;
     .end local v2    # "policy":Lcom/android/server/devicepolicy/DevicePolicyManagerService$DevicePolicyData;
@@ -349,18 +318,15 @@
     .param p2, "reqPolicy"    # I
 
     .prologue
-    .line 6289
     invoke-static {p1}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v0
 
-    .line 6290
     .local v0, "userId":I
     iget-object v2, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
     monitor-enter v2
 
-    .line 6291
     :try_start_0
     iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$LocalService;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
@@ -386,7 +352,6 @@
 
     goto :goto_0
 
-    .line 6290
     :catchall_0
     move-exception v1
 

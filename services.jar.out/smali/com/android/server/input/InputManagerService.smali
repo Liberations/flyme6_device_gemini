@@ -365,110 +365,88 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 280
     invoke-direct {p0}, Landroid/hardware/input/IInputManager$Stub;-><init>()V
 
-    .line 131
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mTabletModeLock:Ljava/lang/Object;
 
-    .line 134
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 133
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mTabletModeChangedListeners:Landroid/util/SparseArray;
 
-    .line 136
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 135
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mTempTabletModeChangedListenersToNotify:Ljava/util/List;
 
-    .line 139
     new-instance v0, Lcom/android/server/input/PersistentDataStore;
 
     invoke-direct {v0}, Lcom/android/server/input/PersistentDataStore;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
-    .line 142
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesLock:Ljava/lang/Object;
 
-    .line 144
     const/4 v0, 0x0
 
     new-array v0, v0, [Landroid/view/InputDevice;
 
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mInputDevices:[Landroid/view/InputDevice;
 
-    .line 146
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 145
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesChangedListeners:Landroid/util/SparseArray;
 
-    .line 149
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 148
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mTempInputDevicesChangedListenersToNotify:Ljava/util/ArrayList;
 
-    .line 151
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mTempFullKeyboards:Ljava/util/ArrayList;
 
-    .line 157
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mVibratorLock:Ljava/lang/Object;
 
-    .line 159
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 158
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mVibratorTokens:Ljava/util/HashMap;
 
-    .line 163
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mInputFilterLock:Ljava/lang/Object;
 
-    .line 167
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 166
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
-    .line 281
     iput-object p1, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
-    .line 282
     new-instance v0, Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
     invoke-static {}, Lcom/android/server/DisplayThread;->get()Lcom/android/server/DisplayThread;
@@ -483,7 +461,6 @@
 
     iput-object v0, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
-    .line 285
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -494,26 +471,22 @@
 
     move-result v0
 
-    .line 284
     iput-boolean v0, p0, Lcom/android/server/input/InputManagerService;->mUseDevInputEventForAudioJack:Z
 
-    .line 286
-    const-string/jumbo v0, "InputManager"
+    const-string v0, "InputManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Initializing input manager, mUseDevInputEventForAudioJack="
+    const-string v2, "Initializing input manager, mUseDevInputEventForAudioJack="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 287
     iget-boolean v2, p0, Lcom/android/server/input/InputManagerService;->mUseDevInputEventForAudioJack:Z
 
-    .line 286
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -524,7 +497,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 288
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
@@ -543,7 +515,6 @@
 
     iput-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
-    .line 290
     const-class v0, Landroid/hardware/input/InputManagerInternal;
 
     new-instance v1, Lcom/android/server/input/InputManagerService$LocalService;
@@ -554,7 +525,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/LocalServices;->addService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 280
     return-void
 .end method
 
@@ -563,16 +533,13 @@
     .param p1, "v"    # Lcom/android/server/input/InputManagerService$VibratorToken;
 
     .prologue
-    .line 1460
     monitor-enter p1
 
-    .line 1461
     :try_start_0
     iget-boolean v0, p1, Lcom/android/server/input/InputManagerService$VibratorToken;->mVibrating:Z
 
     if-eqz v0, :cond_0
 
-    .line 1462
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     iget v2, p1, Lcom/android/server/input/InputManagerService$VibratorToken;->mDeviceId:I
@@ -581,7 +548,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/input/InputManagerService;->nativeCancelVibrate(JII)V
 
-    .line 1463
     const/4 v0, 0x0
 
     iput-boolean v0, p1, Lcom/android/server/input/InputManagerService$VibratorToken;->mVibrating:Z
@@ -591,10 +557,8 @@
     :cond_0
     monitor-exit p1
 
-    .line 1459
     return-void
 
-    .line 1460
     :catchall_0
     move-exception v0
 
@@ -613,7 +577,6 @@
 
     const/4 v3, 0x0
 
-    .line 1487
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
@@ -624,10 +587,8 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 1488
     return v4
 
-    .line 1491
     :cond_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
@@ -637,16 +598,14 @@
 
     if-nez v1, :cond_1
 
-    .line 1492
     return v4
 
-    .line 1494
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Permission Denial: "
+    const-string v2, "Permission Denial: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -656,44 +615,36 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, " from pid="
+    const-string v2, " from pid="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1495
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v2
 
-    .line 1494
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1496
-    const-string/jumbo v2, ", uid="
+    const-string v2, ", uid="
 
-    .line 1494
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1496
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
-    .line 1494
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1497
-    const-string/jumbo v2, " requires "
+    const-string v2, " requires "
 
-    .line 1494
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -706,13 +657,11 @@
 
     move-result-object v0
 
-    .line 1498
     .local v0, "msg":Ljava/lang/String;
-    const-string/jumbo v1, "InputManager"
+    const-string v1, "InputManager"
 
     invoke-static {v1, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1499
     return v3
 .end method
 
@@ -724,10 +673,9 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1619
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v2, "android.permission.INJECT_EVENTS"
+    const-string v2, "android.permission.INJECT_EVENTS"
 
     invoke-virtual {v1, v2, p1, p2}, Landroid/content/Context;->checkPermission(Ljava/lang/String;II)I
 
@@ -747,10 +695,8 @@
     .param p1, "descriptor"    # Ljava/lang/String;
 
     .prologue
-    .line 970
     array-length v2, p0
 
-    .line 971
     .local v2, "numDevices":I
     const/4 v0, 0x0
 
@@ -758,10 +704,8 @@
     :goto_0
     if-ge v0, v2, :cond_1
 
-    .line 972
     aget-object v1, p0, v0
 
-    .line 973
     .local v1, "inputDevice":Landroid/view/InputDevice;
     invoke-virtual {v1}, Landroid/view/InputDevice;->getDescriptor()Ljava/lang/String;
 
@@ -773,18 +717,15 @@
 
     if-eqz v3, :cond_0
 
-    .line 974
     const/4 v3, 0x1
 
     return v3
 
-    .line 971
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 977
     .end local v1    # "inputDevice":Landroid/view/InputDevice;
     :cond_1
     const/4 v3, 0x0
@@ -797,10 +738,8 @@
     .param p1, "oldInputDevices"    # [Landroid/view/InputDevice;
 
     .prologue
-    .line 717
     const/4 v11, 0x0
 
-    .line 718
     .local v11, "numFullKeyboardsAdded":I
     move-object/from16 v0, p0
 
@@ -808,21 +747,18 @@
 
     invoke-virtual {v14}, Ljava/util/ArrayList;->clear()V
 
-    .line 719
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/input/InputManagerService;->mTempFullKeyboards:Ljava/util/ArrayList;
 
     invoke-virtual {v14}, Ljava/util/ArrayList;->clear()V
 
-    .line 722
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/android/server/input/InputManagerService;->mInputDevicesLock:Ljava/lang/Object;
 
     monitor-enter v15
 
-    .line 723
     :try_start_0
     move-object/from16 v0, p0
 
@@ -834,10 +770,8 @@
 
     monitor-exit v15
 
-    .line 724
     return-void
 
-    .line 726
     :cond_0
     const/4 v14, 0x0
 
@@ -846,7 +780,6 @@
 
     iput-boolean v14, v0, Lcom/android/server/input/InputManagerService;->mInputDevicesChangedPending:Z
 
-    .line 728
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/input/InputManagerService;->mInputDevicesChangedListeners:Landroid/util/SparseArray;
@@ -855,7 +788,6 @@
 
     move-result v13
 
-    .line 729
     .local v13, "numListeners":I
     const/4 v2, 0x0
 
@@ -863,14 +795,12 @@
     :goto_0
     if-ge v2, v13, :cond_1
 
-    .line 730
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/input/InputManagerService;->mTempInputDevicesChangedListenersToNotify:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 
-    .line 731
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/input/InputManagerService;->mInputDevicesChangedListeners:Landroid/util/SparseArray;
@@ -881,17 +811,14 @@
 
     check-cast v14, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;
 
-    .line 730
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 729
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 734
     :cond_1
     move-object/from16 v0, p0
 
@@ -899,7 +826,6 @@
 
     array-length v9, v14
 
-    .line 735
     .local v9, "numDevices":I
     mul-int/lit8 v14, v9, 0x2
 
@@ -907,7 +833,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 736
     .local v1, "deviceIdAndGeneration":[I
     const/4 v2, 0x0
 
@@ -918,7 +843,6 @@
     :goto_1
     if-ge v2, v9, :cond_4
 
-    .line 737
     :try_start_2
     move-object/from16 v0, p0
 
@@ -926,7 +850,6 @@
 
     aget-object v3, v14, v2
 
-    .line 738
     .local v3, "inputDevice":Landroid/view/InputDevice;
     mul-int/lit8 v14, v2, 0x2
 
@@ -936,7 +859,6 @@
 
     aput v16, v1, v14
 
-    .line 739
     mul-int/lit8 v14, v2, 0x2
 
     add-int/lit8 v14, v14, 0x1
@@ -947,7 +869,6 @@
 
     aput v16, v1, v14
 
-    .line 741
     invoke-virtual {v3}, Landroid/view/InputDevice;->isVirtual()Z
 
     move-result v14
@@ -960,12 +881,10 @@
 
     if-eqz v14, :cond_c
 
-    .line 743
     invoke-virtual {v3}, Landroid/view/InputDevice;->getDescriptor()Ljava/lang/String;
 
     move-result-object v14
 
-    .line 742
     move-object/from16 v0, p1
 
     invoke-static {v0, v14}, Lcom/android/server/input/InputManagerService;->containsInputDeviceWithDescriptor([Landroid/view/InputDevice;Ljava/lang/String;)Z
@@ -974,7 +893,6 @@
 
     if-nez v14, :cond_3
 
-    .line 744
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/input/InputManagerService;->mTempFullKeyboards:Ljava/util/ArrayList;
@@ -990,7 +908,6 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 736
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
@@ -1003,12 +920,10 @@
     :cond_2
     move v11, v12
 
-    .line 741
     .end local v12    # "numFullKeyboardsAdded":I
     .restart local v11    # "numFullKeyboardsAdded":I
     goto :goto_2
 
-    .line 746
     .end local v11    # "numFullKeyboardsAdded":I
     .restart local v12    # "numFullKeyboardsAdded":I
     :cond_3
@@ -1033,13 +948,11 @@
     :cond_4
     monitor-exit v15
 
-    .line 753
     const/4 v2, 0x0
 
     :goto_3
     if-ge v2, v13, :cond_5
 
-    .line 754
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/input/InputManagerService;->mTempInputDevicesChangedListenersToNotify:Ljava/util/ArrayList;
@@ -1052,12 +965,10 @@
 
     invoke-virtual {v14, v1}, Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;->notifyInputDevicesChanged([I)V
 
-    .line 753
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 722
     .end local v1    # "deviceIdAndGeneration":[I
     .end local v2    # "i":I
     .end local v9    # "numDevices":I
@@ -1072,7 +983,6 @@
 
     throw v14
 
-    .line 757
     .end local v11    # "numFullKeyboardsAdded":I
     .restart local v1    # "deviceIdAndGeneration":[I
     .restart local v2    # "i":I
@@ -1086,14 +996,12 @@
 
     invoke-virtual {v14}, Ljava/util/ArrayList;->clear()V
 
-    .line 760
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/input/InputManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
     if-eqz v14, :cond_9
 
-    .line 761
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/input/InputManagerService;->mTempFullKeyboards:Ljava/util/ArrayList;
@@ -1102,23 +1010,18 @@
 
     move-result v10
 
-    .line 762
     .local v10, "numFullKeyboards":I
     const/4 v6, 0x0
 
-    .line 763
     .local v6, "missingLayoutForExternalKeyboard":Z
     const/4 v7, 0x0
 
-    .line 764
     .local v7, "missingLayoutForExternalKeyboardAdded":Z
     const/4 v8, 0x0
 
-    .line 765
     .local v8, "multipleMissingLayoutsForExternalKeyboardsAdded":Z
     const/4 v4, 0x0
 
-    .line 766
     .local v4, "keyboardMissingLayout":Landroid/view/InputDevice;
     move-object/from16 v0, p0
 
@@ -1126,14 +1029,12 @@
 
     monitor-enter v15
 
-    .line 767
     const/4 v2, 0x0
 
     .end local v4    # "keyboardMissingLayout":Landroid/view/InputDevice;
     :goto_5
     if-ge v2, v10, :cond_8
 
-    .line 768
     :try_start_5
     move-object/from16 v0, p0
 
@@ -1145,7 +1046,6 @@
 
     check-cast v3, Landroid/view/InputDevice;
 
-    .line 770
     .restart local v3    # "inputDevice":Landroid/view/InputDevice;
     invoke-virtual {v3}, Landroid/view/InputDevice;->getIdentifier()Landroid/hardware/input/InputDeviceIdentifier;
 
@@ -1159,33 +1059,25 @@
 
     move-result-object v5
 
-    .line 771
     .local v5, "layout":Ljava/lang/String;
     if-nez v5, :cond_6
 
-    .line 772
     const/4 v6, 0x1
 
-    .line 773
     if-ge v2, v12, :cond_6
 
-    .line 774
     const/4 v7, 0x1
 
-    .line 775
     if-nez v4, :cond_7
 
-    .line 776
     move-object v4, v3
 
-    .line 767
     :cond_6
     :goto_6
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_5
 
-    .line 778
     :cond_7
     const/4 v8, 0x1
 
@@ -1196,23 +1088,18 @@
     :cond_8
     monitor-exit v15
 
-    .line 784
     if-eqz v6, :cond_b
 
-    .line 785
     if-eqz v7, :cond_9
 
-    .line 786
     if-eqz v8, :cond_a
 
-    .line 790
     const/4 v14, 0x0
 
     move-object/from16 v0, p0
 
     invoke-direct {v0, v14}, Lcom/android/server/input/InputManagerService;->showMissingKeyboardLayoutNotification(Landroid/view/InputDevice;)V
 
-    .line 799
     .end local v6    # "missingLayoutForExternalKeyboard":Z
     .end local v7    # "missingLayoutForExternalKeyboardAdded":Z
     .end local v8    # "multipleMissingLayoutsForExternalKeyboardsAdded":Z
@@ -1225,10 +1112,8 @@
 
     invoke-virtual {v14}, Ljava/util/ArrayList;->clear()V
 
-    .line 715
     return-void
 
-    .line 766
     .restart local v6    # "missingLayoutForExternalKeyboard":Z
     .restart local v7    # "missingLayoutForExternalKeyboardAdded":Z
     .restart local v8    # "multipleMissingLayoutsForExternalKeyboardsAdded":Z
@@ -1240,7 +1125,6 @@
 
     throw v14
 
-    .line 792
     :cond_a
     move-object/from16 v0, p0
 
@@ -1248,7 +1132,6 @@
 
     goto :goto_7
 
-    .line 795
     :cond_b
     move-object/from16 v0, p0
 
@@ -1256,12 +1139,10 @@
 
     if-eqz v14, :cond_9
 
-    .line 796
     invoke-direct/range {p0 .. p0}, Lcom/android/server/input/InputManagerService;->hideMissingKeyboardLayoutNotification()V
 
     goto :goto_7
 
-    .line 722
     .end local v6    # "missingLayoutForExternalKeyboard":Z
     .end local v7    # "missingLayoutForExternalKeyboardAdded":Z
     .end local v8    # "multipleMissingLayoutsForExternalKeyboardsAdded":Z
@@ -1292,17 +1173,14 @@
     .param p3, "inTabletMode"    # Z
 
     .prologue
-    .line 888
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mTempTabletModeChangedListenersToNotify:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    .line 890
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mTabletModeLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 891
     :try_start_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mTabletModeChangedListeners:Landroid/util/SparseArray;
 
@@ -1310,7 +1188,6 @@
 
     move-result v1
 
-    .line 892
     .local v1, "numListeners":I
     const/4 v0, 0x0
 
@@ -1318,10 +1195,8 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 893
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mTempTabletModeChangedListenersToNotify:Ljava/util/List;
 
-    .line 894
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mTabletModeChangedListeners:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1330,12 +1205,10 @@
 
     check-cast v2, Lcom/android/server/input/InputManagerService$TabletModeChangedListenerRecord;
 
-    .line 893
     invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 892
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
@@ -1343,13 +1216,11 @@
     :cond_0
     monitor-exit v3
 
-    .line 897
     const/4 v0, 0x0
 
     :goto_1
     if-ge v0, v1, :cond_1
 
-    .line 898
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mTempTabletModeChangedListenersToNotify:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1360,12 +1231,10 @@
 
     invoke-virtual {v2, p1, p2, p3}, Lcom/android/server/input/InputManagerService$TabletModeChangedListenerRecord;->notifyTabletModeChanged(JZ)V
 
-    .line 897
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 890
     .end local v0    # "i":I
     .end local v1    # "numListeners":I
     :catchall_0
@@ -1375,7 +1244,6 @@
 
     throw v2
 
-    .line 887
     .restart local v0    # "i":I
     .restart local v1    # "numListeners":I
     :cond_1
@@ -1389,7 +1257,6 @@
     .param p3, "policyFlags"    # I
 
     .prologue
-    .line 1614
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->dispatchUnhandledKey(Lcom/android/server/input/InputWindowHandle;Landroid/view/KeyEvent;I)Landroid/view/KeyEvent;
@@ -1404,7 +1271,6 @@
     .param p1, "filter"    # Landroid/view/IInputFilter;
 
     .prologue
-    .line 586
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -1417,7 +1283,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 587
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1432,16 +1297,13 @@
 
     if-ne v1, p1, :cond_0
 
-    .line 588
     return v0
 
-    .line 586
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 591
     :cond_1
     const/4 v1, -0x1
 
@@ -1455,17 +1317,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1740
     invoke-static {p1}, Landroid/bluetooth/BluetoothAdapter;->checkBluetoothAddress(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1742
     return-object v1
 
-    .line 1744
     :cond_0
     return-object v1
 .end method
@@ -1474,7 +1333,6 @@
     .locals 1
 
     .prologue
-    .line 1687
     invoke-static {}, Landroid/view/ViewConfiguration;->getDoubleTapTimeout()I
 
     move-result v0
@@ -1486,16 +1344,13 @@
     .locals 12
 
     .prologue
-    .line 1631
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1634
     .local v7, "names":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v8, 0x0
 
-    .line 1636
     .local v8, "parser":Lorg/xmlpull/v1/XmlPullParser;
     new-instance v0, Ljava/io/File;
 
@@ -1503,15 +1358,13 @@
 
     move-result-object v9
 
-    const-string/jumbo v10, "etc/excluded-input-devices.xml"
+    const-string v10, "etc/excluded-input-devices.xml"
 
     invoke-direct {v0, v9, v10}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1637
     .local v0, "confFile":Ljava/io/File;
     const/4 v1, 0x0
 
-    .line 1639
     .local v1, "confreader":Ljava/io/FileReader;
     :try_start_0
     new-instance v2, Ljava/io/FileReader;
@@ -1522,7 +1375,6 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1640
     .end local v1    # "confreader":Ljava/io/FileReader;
     .local v2, "confreader":Ljava/io/FileReader;
     :try_start_1
@@ -1530,22 +1382,18 @@
 
     move-result-object v8
 
-    .line 1641
     .local v8, "parser":Lorg/xmlpull/v1/XmlPullParser;
     invoke-interface {v8, v2}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/Reader;)V
 
-    .line 1642
-    const-string/jumbo v9, "devices"
+    const-string v9, "devices"
 
     invoke-static {v8, v9}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
-    .line 1645
     :cond_0
     :goto_0
     invoke-static {v8}, Lcom/android/internal/util/XmlUtils;->nextElement(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    .line 1646
-    const-string/jumbo v9, "device"
+    const-string v9, "device"
 
     invoke-interface {v8}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
@@ -1561,7 +1409,6 @@
 
     if-nez v9, :cond_3
 
-    .line 1659
     if-eqz v2, :cond_1
 
     :try_start_2
@@ -1573,7 +1420,6 @@
     :goto_1
     move-object v1, v2
 
-    .line 1662
     .end local v2    # "confreader":Ljava/io/FileReader;
     .end local v8    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     :cond_2
@@ -1592,12 +1438,11 @@
 
     return-object v9
 
-    .line 1649
     .restart local v2    # "confreader":Ljava/io/FileReader;
     .restart local v8    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     :cond_3
     :try_start_3
-    const-string/jumbo v9, "name"
+    const-string v9, "name"
 
     const/4 v10, 0x0
 
@@ -1605,11 +1450,9 @@
 
     move-result-object v6
 
-    .line 1650
     .local v6, "name":Ljava/lang/String;
     if-eqz v6, :cond_0
 
-    .line 1651
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_3
     .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
@@ -1618,7 +1461,6 @@
 
     goto :goto_0
 
-    .line 1654
     .end local v6    # "name":Ljava/lang/String;
     .end local v8    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     :catch_0
@@ -1627,7 +1469,6 @@
     .local v3, "e":Ljava/io/FileNotFoundException;
     move-object v1, v2
 
-    .line 1659
     .end local v2    # "confreader":Ljava/io/FileReader;
     :goto_3
     if-eqz v1, :cond_2
@@ -1655,7 +1496,6 @@
     .restart local v4    # "e":Ljava/io/IOException;
     goto :goto_1
 
-    .line 1656
     .end local v2    # "confreader":Ljava/io/FileReader;
     .end local v4    # "e":Ljava/io/IOException;
     .restart local v1    # "confreader":Ljava/io/FileReader;
@@ -1663,19 +1503,18 @@
     :catch_3
     move-exception v5
 
-    .line 1657
     .end local v1    # "confreader":Ljava/io/FileReader;
     .end local v8    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     .local v5, "e":Ljava/lang/Exception;
     :goto_4
     :try_start_5
-    const-string/jumbo v9, "InputManager"
+    const-string v9, "InputManager"
 
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v11, "Exception while parsing \'"
+    const-string v11, "Exception while parsing \'"
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1689,7 +1528,7 @@
 
     move-result-object v10
 
-    const-string/jumbo v11, "\'"
+    const-string v11, "\'"
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1703,7 +1542,6 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 1659
     if-eqz v1, :cond_2
 
     :try_start_6
@@ -1719,13 +1557,11 @@
     .restart local v4    # "e":Ljava/io/IOException;
     goto :goto_2
 
-    .line 1658
     .end local v4    # "e":Ljava/io/IOException;
     .end local v5    # "e":Ljava/lang/Exception;
     :catchall_0
     move-exception v9
 
-    .line 1659
     :goto_5
     if-eqz v1, :cond_4
 
@@ -1734,19 +1570,16 @@
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
 
-    .line 1658
     :cond_4
     :goto_6
     throw v9
 
-    .line 1659
     :catch_5
     move-exception v4
 
     .restart local v4    # "e":Ljava/io/IOException;
     goto :goto_6
 
-    .line 1658
     .end local v4    # "e":Ljava/io/IOException;
     .restart local v2    # "confreader":Ljava/io/FileReader;
     :catchall_1
@@ -1758,7 +1591,6 @@
     .local v1, "confreader":Ljava/io/FileReader;
     goto :goto_5
 
-    .line 1654
     .local v1, "confreader":Ljava/io/FileReader;
     .restart local v8    # "parser":Lorg/xmlpull/v1/XmlPullParser;
     :catch_6
@@ -1767,7 +1599,6 @@
     .restart local v3    # "e":Ljava/io/FileNotFoundException;
     goto :goto_3
 
-    .line 1656
     .end local v1    # "confreader":Ljava/io/FileReader;
     .end local v3    # "e":Ljava/io/FileNotFoundException;
     .end local v8    # "parser":Lorg/xmlpull/v1/XmlPullParser;
@@ -1787,7 +1618,6 @@
     .locals 1
 
     .prologue
-    .line 1682
     invoke-static {}, Landroid/view/ViewConfiguration;->getHoverTapSlop()I
 
     move-result v0
@@ -1799,7 +1629,6 @@
     .locals 1
 
     .prologue
-    .line 1677
     invoke-static {}, Landroid/view/ViewConfiguration;->getHoverTapTimeout()I
 
     move-result v0
@@ -1811,7 +1640,6 @@
     .locals 1
 
     .prologue
-    .line 1672
     invoke-static {}, Landroid/view/ViewConfiguration;->getKeyRepeatDelay()I
 
     move-result v0
@@ -1823,7 +1651,6 @@
     .locals 1
 
     .prologue
-    .line 1667
     invoke-static {}, Landroid/view/ViewConfiguration;->getKeyRepeatTimeout()I
 
     move-result v0
@@ -1838,34 +1665,27 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1707
     iget-boolean v2, p0, Lcom/android/server/input/InputManagerService;->mSystemReady:Z
 
     if-nez v2, :cond_0
 
-    .line 1708
     return-object v5
 
-    .line 1711
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/input/InputManagerService;->getCurrentKeyboardLayoutForInputDevice(Landroid/hardware/input/InputDeviceIdentifier;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1712
     .local v0, "keyboardLayoutDescriptor":Ljava/lang/String;
     if-nez v0, :cond_1
 
-    .line 1713
     return-object v5
 
-    .line 1716
     :cond_1
     const/4 v2, 0x2
 
     new-array v1, v2, [Ljava/lang/String;
 
-    .line 1717
     .local v1, "result":[Ljava/lang/String;
     new-instance v2, Lcom/android/server/input/InputManagerService$9;
 
@@ -1873,21 +1693,19 @@
 
     invoke-direct {p0, v0, v2}, Lcom/android/server/input/InputManagerService;->visitKeyboardLayout(Ljava/lang/String;Lcom/android/server/input/InputManagerService$KeyboardLayoutVisitor;)V
 
-    .line 1730
     const/4 v2, 0x0
 
     aget-object v2, v1, v2
 
     if-nez v2, :cond_2
 
-    .line 1731
-    const-string/jumbo v2, "InputManager"
+    const-string v2, "InputManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Could not get keyboard layout with descriptor \'"
+    const-string v4, "Could not get keyboard layout with descriptor \'"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1897,10 +1715,8 @@
 
     move-result-object v3
 
-    .line 1732
-    const-string/jumbo v4, "\'."
+    const-string v4, "\'."
 
-    .line 1731
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -1911,10 +1727,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1733
     return-object v5
 
-    .line 1735
     :cond_2
     return-object v1
 .end method
@@ -1924,7 +1738,6 @@
     .param p1, "identifier"    # Landroid/hardware/input/InputDeviceIdentifier;
 
     .prologue
-    .line 1122
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/hardware/input/InputDeviceIdentifier;->getDescriptor()Ljava/lang/String;
@@ -1933,17 +1746,15 @@
 
     if-nez v1, :cond_1
 
-    .line 1123
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "identifier and descriptor must not be null"
+    const-string v2, "identifier and descriptor must not be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 1126
     :cond_1
     invoke-virtual {p1}, Landroid/hardware/input/InputDeviceIdentifier;->getVendorId()I
 
@@ -1957,22 +1768,19 @@
 
     if-nez v1, :cond_2
 
-    .line 1127
     invoke-virtual {p1}, Landroid/hardware/input/InputDeviceIdentifier;->getDescriptor()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 1129
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1130
     .local v0, "bob":Ljava/lang/StringBuilder;
-    const-string/jumbo v1, "vendor:"
+    const-string v1, "vendor:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1984,8 +1792,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1131
-    const-string/jumbo v1, ",product:"
+    const-string v1, ",product:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1997,7 +1804,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1132
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -2009,7 +1815,6 @@
     .locals 1
 
     .prologue
-    .line 1692
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result v0
@@ -2021,7 +1826,6 @@
     .locals 1
 
     .prologue
-    .line 1702
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/PointerIcon;->getDefaultIcon(Landroid/content/Context;)Landroid/view/PointerIcon;
@@ -2035,7 +1839,6 @@
     .locals 1
 
     .prologue
-    .line 1697
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v0}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->getPointerLayer()I
@@ -2049,10 +1852,8 @@
     .locals 5
 
     .prologue
-    .line 1374
     const/4 v1, 0x0
 
-    .line 1376
     .local v1, "speed":I
     :try_start_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
@@ -2061,23 +1862,19 @@
 
     move-result-object v2
 
-    .line 1377
-    const-string/jumbo v3, "pointer_speed"
+    const-string v3, "pointer_speed"
 
     const/4 v4, -0x2
 
-    .line 1376
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 1380
     :goto_0
     return v1
 
-    .line 1378
     :catch_0
     move-exception v0
 
@@ -2090,10 +1887,8 @@
     .param p1, "defaultValue"    # I
 
     .prologue
-    .line 1400
     move v0, p1
 
-    .line 1402
     .local v0, "result":I
     :try_start_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
@@ -2102,23 +1897,19 @@
 
     move-result-object v2
 
-    .line 1403
-    const-string/jumbo v3, "show_touches"
+    const-string v3, "show_touches"
 
     const/4 v4, -0x2
 
-    .line 1402
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v0
 
-    .line 1406
     :goto_0
     return v0
 
-    .line 1404
     :catch_0
     move-exception v1
 
@@ -2130,17 +1921,14 @@
     .locals 2
 
     .prologue
-    .line 1625
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 1626
     const v1, 0x10e0068
 
-    .line 1625
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
@@ -2156,16 +1944,13 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 1263
     invoke-virtual {p0, p1}, Lcom/android/server/input/InputManagerService;->getInputDevice(I)Landroid/view/InputDevice;
 
     move-result-object v1
 
-    .line 1264
     .local v1, "device":Landroid/view/InputDevice;
     if-eqz v1, :cond_2
 
-    .line 1268
     invoke-virtual {v1}, Landroid/view/InputDevice;->getIdentifier()Landroid/hardware/input/InputDeviceIdentifier;
 
     move-result-object v5
@@ -2174,13 +1959,11 @@
 
     move-result-object v2
 
-    .line 1269
     .local v2, "key":Ljava/lang/String;
     iget-object v6, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     monitor-enter v6
 
-    .line 1271
     :try_start_0
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -2188,7 +1971,6 @@
 
     move-result v0
 
-    .line 1272
     .local v0, "changed":Z
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -2198,7 +1980,6 @@
 
     move-result-object v4
 
-    .line 1275
     .local v4, "keyboardLayoutDescriptor":Ljava/lang/String;
     :try_start_1
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
@@ -2209,36 +1990,28 @@
 
     monitor-exit v6
 
-    .line 1279
     if-eqz v0, :cond_2
 
-    .line 1280
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mSwitchedKeyboardLayoutToast:Landroid/widget/Toast;
 
     if-eqz v5, :cond_0
 
-    .line 1281
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mSwitchedKeyboardLayoutToast:Landroid/widget/Toast;
 
     invoke-virtual {v5}, Landroid/widget/Toast;->cancel()V
 
-    .line 1282
     iput-object v7, p0, Lcom/android/server/input/InputManagerService;->mSwitchedKeyboardLayoutToast:Landroid/widget/Toast;
 
-    .line 1284
     :cond_0
     if-eqz v4, :cond_1
 
-    .line 1285
     invoke-virtual {p0, v4}, Lcom/android/server/input/InputManagerService;->getKeyboardLayout(Ljava/lang/String;)Landroid/hardware/input/KeyboardLayout;
 
     move-result-object v3
 
-    .line 1286
     .local v3, "keyboardLayout":Landroid/hardware/input/KeyboardLayout;
     if-eqz v3, :cond_1
 
-    .line 1288
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/hardware/input/KeyboardLayout;->getLabel()Ljava/lang/String;
@@ -2247,47 +2020,39 @@
 
     const/4 v7, 0x0
 
-    .line 1287
     invoke-static {v5, v6, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/server/input/InputManagerService;->mSwitchedKeyboardLayoutToast:Landroid/widget/Toast;
 
-    .line 1289
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mSwitchedKeyboardLayoutToast:Landroid/widget/Toast;
 
     invoke-virtual {v5}, Landroid/widget/Toast;->show()V
 
-    .line 1293
     .end local v3    # "keyboardLayout":Landroid/hardware/input/KeyboardLayout;
     :cond_1
     invoke-direct {p0}, Lcom/android/server/input/InputManagerService;->reloadKeyboardLayouts()V
 
-    .line 1262
     .end local v0    # "changed":Z
     .end local v2    # "key":Ljava/lang/String;
     .end local v4    # "keyboardLayoutDescriptor":Ljava/lang/String;
     :cond_2
     return-void
 
-    .line 1274
     .restart local v2    # "key":Ljava/lang/String;
     :catchall_0
     move-exception v5
 
-    .line 1275
     :try_start_2
     iget-object v7, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     invoke-virtual {v7}, Lcom/android/server/input/PersistentDataStore;->saveIfNeeded()V
 
-    .line 1274
     throw v5
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 1269
     :catchall_1
     move-exception v5
 
@@ -2300,32 +2065,24 @@
     .locals 4
 
     .prologue
-    .line 937
     iget-boolean v0, p0, Lcom/android/server/input/InputManagerService;->mKeyboardLayoutNotificationShown:Z
 
     if-eqz v0, :cond_0
 
-    .line 938
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/input/InputManagerService;->mKeyboardLayoutNotificationShown:Z
 
-    .line 939
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    .line 941
     sget-object v1, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 939
     const/4 v2, 0x0
 
-    .line 940
     const v3, 0x10403fd
 
-    .line 939
     invoke-virtual {v0, v2, v3, v1}, Landroid/app/NotificationManager;->cancelAsUser(Ljava/lang/String;ILandroid/os/UserHandle;)V
 
-    .line 936
     :cond_0
     return-void
 .end method
@@ -2337,65 +2094,54 @@
     .param p3, "mode"    # I
 
     .prologue
-    .line 600
     if-nez p1, :cond_0
 
-    .line 601
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "event must not be null"
+    const-string v1, "event must not be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 603
     :cond_0
     if-eqz p3, :cond_1
 
-    .line 604
     const/4 v0, 0x2
 
     if-eq p3, v0, :cond_1
 
-    .line 605
     const/4 v0, 0x1
 
     if-eq p3, v0, :cond_1
 
-    .line 606
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "mode is invalid"
+    const-string v1, "mode is invalid"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 609
     :cond_1
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v4
 
-    .line 610
     .local v4, "pid":I
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v5
 
-    .line 611
     .local v5, "uid":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v10
 
-    .line 614
     .local v10, "ident":J
     :try_start_0
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
-    .line 615
     const/16 v7, 0x7530
 
     const/high16 v8, 0x8000000
@@ -2406,29 +2152,25 @@
 
     move v6, p3
 
-    .line 614
     invoke-static/range {v0 .. v8}, Lcom/android/server/input/InputManagerService;->nativeInjectInputEvent(JLandroid/view/InputEvent;IIIIII)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v9
 
-    .line 617
     .local v9, "result":I
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 619
     packed-switch v9, :pswitch_data_0
 
-    .line 631
     :pswitch_0
-    const-string/jumbo v0, "InputManager"
+    const-string v0, "InputManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Input event injection from pid "
+    const-string v2, "Input event injection from pid "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2438,7 +2180,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, " failed."
+    const-string v2, " failed."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2450,32 +2192,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 632
     const/4 v0, 0x0
 
     return v0
 
-    .line 616
     .end local v9    # "result":I
     :catchall_0
     move-exception v0
 
-    .line 617
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 616
     throw v0
 
-    .line 621
     .restart local v9    # "result":I
     :pswitch_1
-    const-string/jumbo v0, "InputManager"
+    const-string v0, "InputManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Input event injection from pid "
+    const-string v2, "Input event injection from pid "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2485,7 +2222,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, " permission denied."
+    const-string v2, " permission denied."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2497,32 +2234,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 622
     new-instance v0, Ljava/lang/SecurityException;
 
-    .line 623
-    const-string/jumbo v1, "Injecting to another application requires INJECT_EVENTS permission"
+    const-string v1, "Injecting to another application requires INJECT_EVENTS permission"
 
-    .line 622
     invoke-direct {v0, v1}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 625
     :pswitch_2
     const/4 v0, 0x1
 
     return v0
 
-    .line 627
     :pswitch_3
-    const-string/jumbo v0, "InputManager"
+    const-string v0, "InputManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Input event injection from pid "
+    const-string v2, "Input event injection from pid "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2532,7 +2264,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, " timed out."
+    const-string v2, " timed out."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2544,12 +2276,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 628
     const/4 v0, 0x0
 
     return v0
 
-    .line 619
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2
@@ -2566,7 +2296,6 @@
     .param p3, "policyFlags"    # I
 
     .prologue
-    .line 1608
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->interceptKeyBeforeDispatching(Lcom/android/server/input/InputWindowHandle;Landroid/view/KeyEvent;I)J
@@ -2582,7 +2311,6 @@
     .param p2, "policyFlags"    # I
 
     .prologue
-    .line 1596
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v0, p1, p2}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->interceptKeyBeforeQueueing(Landroid/view/KeyEvent;I)I
@@ -2598,7 +2326,6 @@
     .param p3, "policyFlags"    # I
 
     .prologue
-    .line 1601
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->interceptMotionBeforeQueueingNonInteractive(JI)I
@@ -2693,7 +2420,6 @@
     .param p3, "reason"    # Ljava/lang/String;
 
     .prologue
-    .line 1567
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->notifyANR(Lcom/android/server/input/InputApplicationHandle;Lcom/android/server/input/InputWindowHandle;Ljava/lang/String;)J
@@ -2708,12 +2434,10 @@
     .param p1, "whenNanos"    # J
 
     .prologue
-    .line 1511
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v0}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->notifyConfigurationChanged()V
 
-    .line 1510
     return-void
 .end method
 
@@ -2722,12 +2446,10 @@
     .param p1, "inputWindowHandle"    # Lcom/android/server/input/InputWindowHandle;
 
     .prologue
-    .line 1561
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v0, p1}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->notifyInputChannelBroken(Lcom/android/server/input/InputWindowHandle;)V
 
-    .line 1560
     return-void
 .end method
 
@@ -2736,29 +2458,23 @@
     .param p1, "inputDevices"    # [Landroid/view/InputDevice;
 
     .prologue
-    .line 1516
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1517
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesChangedPending:Z
 
     if-nez v0, :cond_0
 
-    .line 1518
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesChangedPending:Z
 
-    .line 1519
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
-    .line 1520
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mInputDevices:[Landroid/view/InputDevice;
 
-    .line 1519
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3, v2}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -2767,7 +2483,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1523
     :cond_0
     iput-object p1, p0, Lcom/android/server/input/InputManagerService;->mInputDevices:[Landroid/view/InputDevice;
     :try_end_0
@@ -2775,10 +2490,8 @@
 
     monitor-exit v1
 
-    .line 1515
     return-void
 
-    .line 1516
     :catchall_0
     move-exception v0
 
@@ -2796,47 +2509,40 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1534
     and-int/lit8 v4, p4, 0x1
 
     if-eqz v4, :cond_0
 
-    .line 1535
     and-int/lit8 v4, p3, 0x1
 
     if-nez v4, :cond_5
 
     const/4 v2, 0x1
 
-    .line 1536
     .local v2, "lidOpen":Z
     :goto_0
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v4, p1, p2, v2}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->notifyLidSwitchChanged(JZ)V
 
-    .line 1539
     .end local v2    # "lidOpen":Z
     :cond_0
     and-int/lit16 v4, p4, 0x200
 
     if-eqz v4, :cond_1
 
-    .line 1540
     and-int/lit16 v4, p3, 0x200
 
     if-eqz v4, :cond_6
 
     const/4 v1, 0x1
 
-    .line 1541
     .local v1, "lensCovered":Z
     :goto_1
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     invoke-interface {v4, p1, p2, v1}, Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;->notifyCameraLensCoverSwitchChanged(JZ)V
 
-    .line 1544
     .end local v1    # "lensCovered":Z
     :cond_1
     iget-boolean v4, p0, Lcom/android/server/input/InputManagerService;->mUseDevInputEventForAudioJack:Z
@@ -2847,23 +2553,19 @@
 
     if-eqz v4, :cond_2
 
-    .line 1545
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mWiredAccessoryCallbacks:Lcom/android/server/input/InputManagerService$WiredAccessoryCallbacks;
 
     invoke-interface {v4, p1, p2, p3, p4}, Lcom/android/server/input/InputManagerService$WiredAccessoryCallbacks;->notifyWiredAccessoryChanged(JII)V
 
-    .line 1549
     :cond_2
     and-int/lit8 v4, p4, 0x2
 
     if-eqz v4, :cond_4
 
-    .line 1550
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 1551
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     const-wide/16 v4, -0x1
 
@@ -2873,7 +2575,6 @@
 
     iput v4, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 1552
     const/16 v4, 0x20
 
     shr-long v4, p1, v4
@@ -2882,7 +2583,6 @@
 
     iput v4, v0, Lcom/android/internal/os/SomeArgs;->argi2:I
 
-    .line 1553
     and-int/lit8 v4, p3, 0x2
 
     if-eqz v4, :cond_3
@@ -2896,7 +2596,6 @@
 
     iput-object v3, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 1554
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
     const/4 v4, 0x6
@@ -2907,19 +2606,16 @@
 
     invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1528
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :cond_4
     return-void
 
-    .line 1535
     :cond_5
     const/4 v2, 0x0
 
     .restart local v2    # "lidOpen":Z
     goto :goto_0
 
-    .line 1540
     .end local v2    # "lidOpen":Z
     :cond_6
     const/4 v1, 0x0
@@ -2933,12 +2629,10 @@
     .param p1, "pid"    # I
 
     .prologue
-    .line 709
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 710
     :try_start_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesChangedListeners:Landroid/util/SparseArray;
 
@@ -2948,10 +2642,8 @@
 
     monitor-exit v1
 
-    .line 708
     return-void
 
-    .line 709
     :catchall_0
     move-exception v0
 
@@ -2965,12 +2657,10 @@
     .param p1, "pid"    # I
 
     .prologue
-    .line 881
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mTabletModeLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 882
     :try_start_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mTabletModeChangedListeners:Landroid/util/SparseArray;
 
@@ -2980,10 +2670,8 @@
 
     monitor-exit v1
 
-    .line 880
     return-void
 
-    .line 881
     :catchall_0
     move-exception v0
 
@@ -2996,37 +2684,30 @@
     .locals 5
 
     .prologue
-    .line 1363
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 1364
-    const-string/jumbo v1, "pointer_speed"
+    const-string v1, "pointer_speed"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 1365
     new-instance v2, Lcom/android/server/input/InputManagerService$7;
 
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
     invoke-direct {v2, p0, v3}, Lcom/android/server/input/InputManagerService$7;-><init>(Lcom/android/server/input/InputManagerService;Landroid/os/Handler;)V
 
-    .line 1364
     const/4 v3, 0x1
 
-    .line 1370
     const/4 v4, -0x1
 
-    .line 1363
     invoke-virtual {v0, v1, v3, v2, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1362
     return-void
 .end method
 
@@ -3034,37 +2715,30 @@
     .locals 5
 
     .prologue
-    .line 1389
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 1390
-    const-string/jumbo v1, "show_touches"
+    const-string v1, "show_touches"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 1391
     new-instance v2, Lcom/android/server/input/InputManagerService$8;
 
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
     invoke-direct {v2, p0, v3}, Lcom/android/server/input/InputManagerService$8;-><init>(Lcom/android/server/input/InputManagerService;Landroid/os/Handler;)V
 
-    .line 1390
     const/4 v3, 0x1
 
-    .line 1396
     const/4 v4, -0x1
 
-    .line 1389
     invoke-virtual {v0, v1, v3, v2, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1388
     return-void
 .end method
 
@@ -3072,12 +2746,10 @@
     .locals 2
 
     .prologue
-    .line 371
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1}, Lcom/android/server/input/InputManagerService;->nativeReloadDeviceAliases(J)V
 
-    .line 367
     return-void
 .end method
 
@@ -3085,12 +2757,10 @@
     .locals 2
 
     .prologue
-    .line 364
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1}, Lcom/android/server/input/InputManagerService;->nativeReloadKeyboardLayouts(J)V
 
-    .line 360
     return-void
 .end method
 
@@ -3100,12 +2770,10 @@
     .param p2, "viewport"    # Landroid/hardware/display/DisplayViewport;
 
     .prologue
-    .line 388
     move-object/from16 v0, p0
 
     iget-wide v2, v0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
-    .line 389
     move-object/from16 v0, p2
 
     iget v5, v0, Landroid/hardware/display/DisplayViewport;->displayId:I
@@ -3114,7 +2782,6 @@
 
     iget v6, v0, Landroid/hardware/display/DisplayViewport;->orientation:I
 
-    .line 390
     move-object/from16 v0, p2
 
     iget-object v4, v0, Landroid/hardware/display/DisplayViewport;->logicalFrame:Landroid/graphics/Rect;
@@ -3127,7 +2794,6 @@
 
     iget v8, v4, Landroid/graphics/Rect;->top:I
 
-    .line 391
     move-object/from16 v0, p2
 
     iget-object v4, v0, Landroid/hardware/display/DisplayViewport;->logicalFrame:Landroid/graphics/Rect;
@@ -3140,7 +2806,6 @@
 
     iget v10, v4, Landroid/graphics/Rect;->bottom:I
 
-    .line 392
     move-object/from16 v0, p2
 
     iget-object v4, v0, Landroid/hardware/display/DisplayViewport;->physicalFrame:Landroid/graphics/Rect;
@@ -3153,7 +2818,6 @@
 
     iget v12, v4, Landroid/graphics/Rect;->top:I
 
-    .line 393
     move-object/from16 v0, p2
 
     iget-object v4, v0, Landroid/hardware/display/DisplayViewport;->physicalFrame:Landroid/graphics/Rect;
@@ -3166,7 +2830,6 @@
 
     iget v14, v4, Landroid/graphics/Rect;->bottom:I
 
-    .line 394
     move-object/from16 v0, p2
 
     iget v15, v0, Landroid/hardware/display/DisplayViewport;->deviceWidth:I
@@ -3179,10 +2842,8 @@
 
     move/from16 v4, p1
 
-    .line 388
     invoke-static/range {v2 .. v16}, Lcom/android/server/input/InputManagerService;->nativeSetDisplayViewport(JZIIIIIIIIIIII)V
 
-    .line 387
     return-void
 .end method
 
@@ -3194,37 +2855,30 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 376
     iget-boolean v0, p1, Landroid/hardware/display/DisplayViewport;->valid:Z
 
     if-eqz v0, :cond_0
 
-    .line 377
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/input/InputManagerService;->setDisplayViewport(ZLandroid/hardware/display/DisplayViewport;)V
 
-    .line 380
     :cond_0
     iget-boolean v0, p2, Landroid/hardware/display/DisplayViewport;->valid:Z
 
     if-eqz v0, :cond_2
 
-    .line 381
     invoke-direct {p0, v1, p2}, Lcom/android/server/input/InputManagerService;->setDisplayViewport(ZLandroid/hardware/display/DisplayViewport;)V
 
-    .line 375
     :cond_1
     :goto_0
     return-void
 
-    .line 382
     :cond_2
     iget-boolean v0, p1, Landroid/hardware/display/DisplayViewport;->valid:Z
 
     if-eqz v0, :cond_1
 
-    .line 383
     invoke-direct {p0, v1, p1}, Lcom/android/server/input/InputManagerService;->setDisplayViewport(ZLandroid/hardware/display/DisplayViewport;)V
 
     goto :goto_0
@@ -3235,27 +2889,22 @@
     .param p1, "speed"    # I
 
     .prologue
-    .line 1357
     const/4 v0, -0x7
 
     invoke-static {p1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    .line 1358
     const/4 v1, 0x7
 
-    .line 1357
     invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result p1
 
-    .line 1359
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1, p1}, Lcom/android/server/input/InputManagerService;->nativeSetPointerSpeed(JI)V
 
-    .line 1356
     return-void
 .end method
 
@@ -3270,24 +2919,20 @@
 
     const/4 v4, 0x0
 
-    .line 905
     iget-boolean v0, p0, Lcom/android/server/input/InputManagerService;->mKeyboardLayoutNotificationShown:Z
 
     if-nez v0, :cond_1
 
-    .line 906
     new-instance v2, Landroid/content/Intent;
 
-    const-string/jumbo v0, "android.settings.INPUT_METHOD_SETTINGS"
+    const-string v0, "android.settings.INPUT_METHOD_SETTINGS"
 
     invoke-direct {v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 907
     .local v2, "intent":Landroid/content/Intent;
     if-eqz p1, :cond_0
 
-    .line 908
-    const-string/jumbo v0, "input_device_identifier"
+    const-string v0, "input_device_identifier"
 
     invoke-virtual {p1}, Landroid/view/InputDevice;->getIdentifier()Landroid/hardware/input/InputDeviceIdentifier;
 
@@ -3295,26 +2940,21 @@
 
     invoke-virtual {v2, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 910
     :cond_0
     const/high16 v0, 0x14200000
 
     invoke-virtual {v2, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 913
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
-    .line 914
     sget-object v5, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
 
     move v3, v1
 
-    .line 913
     invoke-static/range {v0 .. v5}, Landroid/app/PendingIntent;->getActivityAsUser(Landroid/content/Context;ILandroid/content/Intent;ILandroid/os/Bundle;Landroid/os/UserHandle;)Landroid/app/PendingIntent;
 
     move-result-object v6
 
-    .line 916
     .local v6, "keyboardLayoutIntent":Landroid/app/PendingIntent;
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
@@ -3322,7 +2962,6 @@
 
     move-result-object v8
 
-    .line 917
     .local v8, "r":Landroid/content/res/Resources;
     new-instance v0, Landroid/app/Notification$Builder;
 
@@ -3330,25 +2969,20 @@
 
     invoke-direct {v0, v1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 918
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 917
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v0
 
-    .line 921
     const v1, 0x10403fe
 
-    .line 920
     invoke-virtual {v8, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 917
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v0
@@ -3357,34 +2991,26 @@
 
     move-result-object v0
 
-    .line 923
     const v1, 0x1080420
 
-    .line 917
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
     move-result-object v0
 
-    .line 924
     const/4 v1, -0x1
 
-    .line 917
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setPriority(I)Landroid/app/Notification$Builder;
 
     move-result-object v0
 
-    .line 925
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
-    .line 926
     const v3, 0x1060059
 
-    .line 925
     invoke-virtual {v1, v3}, Landroid/content/Context;->getColor(I)I
 
     move-result v1
 
-    .line 917
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setColor(I)Landroid/app/Notification$Builder;
 
     move-result-object v0
@@ -3393,22 +3019,17 @@
 
     move-result-object v7
 
-    .line 928
     .local v7, "notification":Landroid/app/Notification;
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    .line 930
     sget-object v1, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
-    .line 928
     invoke-virtual {v0, v4, v9, v7, v1}, Landroid/app/NotificationManager;->notifyAsUser(Ljava/lang/String;ILandroid/app/Notification;Landroid/os/UserHandle;)V
 
-    .line 931
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/input/InputManagerService;->mKeyboardLayoutNotificationShown:Z
 
-    .line 904
     .end local v2    # "intent":Landroid/content/Intent;
     .end local v6    # "keyboardLayoutIntent":Landroid/app/PendingIntent;
     .end local v7    # "notification":Landroid/app/Notification;
@@ -3421,12 +3042,10 @@
     .locals 4
 
     .prologue
-    .line 948
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 949
     .local v0, "availableKeyboardLayouts":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     new-instance v1, Lcom/android/server/input/InputManagerService$4;
 
@@ -3434,12 +3053,10 @@
 
     invoke-direct {p0, v1}, Lcom/android/server/input/InputManagerService;->visitAllKeyboardLayouts(Lcom/android/server/input/InputManagerService$KeyboardLayoutVisitor;)V
 
-    .line 956
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     monitor-enter v2
 
-    .line 958
     :try_start_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -3447,7 +3064,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 960
     :try_start_1
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -3457,28 +3073,22 @@
 
     monitor-exit v2
 
-    .line 965
     invoke-direct {p0}, Lcom/android/server/input/InputManagerService;->reloadKeyboardLayouts()V
 
-    .line 946
     return-void
 
-    .line 959
     :catchall_0
     move-exception v1
 
-    .line 960
     :try_start_2
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     invoke-virtual {v3}, Lcom/android/server/input/PersistentDataStore;->saveIfNeeded()V
 
-    .line 959
     throw v1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 956
     :catchall_1
     move-exception v1
 
@@ -3492,26 +3102,22 @@
     .param p1, "visitor"    # Lcom/android/server/input/InputManagerService$KeyboardLayoutVisitor;
 
     .prologue
-    .line 1015
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 1016
     .local v1, "pm":Landroid/content/pm/PackageManager;
     new-instance v6, Landroid/content/Intent;
 
-    const-string/jumbo v0, "android.hardware.input.action.QUERY_KEYBOARD_LAYOUTS"
+    const-string v0, "android.hardware.input.action.QUERY_KEYBOARD_LAYOUTS"
 
     invoke-direct {v6, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1018
     .local v6, "intent":Landroid/content/Intent;
     const/16 v0, 0x80
 
-    .line 1017
     invoke-virtual {v1, v6, v0}, Landroid/content/pm/PackageManager;->queryBroadcastReceivers(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v0
@@ -3534,15 +3140,12 @@
 
     check-cast v7, Landroid/content/pm/ResolveInfo;
 
-    .line 1019
     .local v7, "resolveInfo":Landroid/content/pm/ResolveInfo;
     iget-object v2, v7, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 1020
     .local v2, "activityInfo":Landroid/content/pm/ActivityInfo;
     iget v4, v7, Landroid/content/pm/ResolveInfo;->priority:I
 
-    .line 1021
     .local v4, "priority":I
     const/4 v3, 0x0
 
@@ -3554,7 +3157,6 @@
 
     goto :goto_0
 
-    .line 1014
     .end local v2    # "activityInfo":Landroid/content/pm/ActivityInfo;
     .end local v4    # "priority":I
     .end local v7    # "resolveInfo":Landroid/content/pm/ResolveInfo;
@@ -3568,23 +3170,19 @@
     .param p2, "visitor"    # Lcom/android/server/input/InputManagerService$KeyboardLayoutVisitor;
 
     .prologue
-    .line 1027
     invoke-static {p1}, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;->parse(Ljava/lang/String;)Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;
 
     move-result-object v6
 
-    .line 1028
     .local v6, "d":Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;
     if-eqz v6, :cond_0
 
-    .line 1029
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 1032
     .local v1, "pm":Landroid/content/pm/PackageManager;
     :try_start_0
     new-instance v0, Landroid/content/ComponentName;
@@ -3595,15 +3193,12 @@
 
     invoke-direct {v0, v3, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1033
     const/16 v3, 0x80
 
-    .line 1031
     invoke-virtual {v1, v0, v3}, Landroid/content/pm/PackageManager;->getReceiverInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ActivityInfo;
 
     move-result-object v2
 
-    .line 1034
     .local v2, "receiver":Landroid/content/pm/ActivityInfo;
     iget-object v3, v6, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;->keyboardLayoutName:Ljava/lang/String;
 
@@ -3617,14 +3212,12 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1026
     .end local v1    # "pm":Landroid/content/pm/PackageManager;
     .end local v2    # "receiver":Landroid/content/pm/ActivityInfo;
     :cond_0
     :goto_0
     return-void
 
-    .line 1035
     .restart local v1    # "pm":Landroid/content/pm/PackageManager;
     :catch_0
     move-exception v7
@@ -3642,71 +3235,59 @@
     .param p5, "visitor"    # Lcom/android/server/input/InputManagerService$KeyboardLayoutVisitor;
 
     .prologue
-    .line 1042
     move-object/from16 v0, p2
 
     iget-object v13, v0, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
 
-    .line 1043
     .local v13, "metaData":Landroid/os/Bundle;
     if-nez v13, :cond_0
 
-    .line 1044
     return-void
 
-    .line 1047
     :cond_0
-    const-string/jumbo v2, "android.hardware.input.metadata.KEYBOARD_LAYOUTS"
+    const-string v2, "android.hardware.input.metadata.KEYBOARD_LAYOUTS"
 
     invoke-virtual {v13, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v10
 
-    .line 1048
     .local v10, "configResId":I
     if-nez v10, :cond_1
 
-    .line 1049
-    const-string/jumbo v2, "InputManager"
+    const-string v2, "InputManager"
 
     new-instance v17, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v18, "Missing meta-data \'android.hardware.input.metadata.KEYBOARD_LAYOUTS\' on receiver "
+    const-string v18, "Missing meta-data \'android.hardware.input.metadata.KEYBOARD_LAYOUTS\' on receiver "
 
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1050
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 1049
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1050
-    const-string/jumbo v18, "/"
+    const-string v18, "/"
 
-    .line 1049
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1050
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 1049
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
@@ -3719,10 +3300,8 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1051
     return-void
 
-    .line 1054
     :cond_1
     move-object/from16 v0, p2
 
@@ -3732,7 +3311,6 @@
 
     move-result-object v16
 
-    .line 1055
     .local v16, "receiverLabel":Ljava/lang/CharSequence;
     if-eqz v16, :cond_2
 
@@ -3740,7 +3318,6 @@
 
     move-result-object v6
 
-    .line 1057
     .local v6, "collection":Ljava/lang/String;
     :goto_0
     move-object/from16 v0, p2
@@ -3753,10 +3330,8 @@
 
     if-eqz v2, :cond_3
 
-    .line 1058
     move/from16 v8, p4
 
-    .line 1064
     .local v8, "priority":I
     :goto_1
     :try_start_0
@@ -3770,7 +3345,6 @@
 
     move-result-object v3
 
-    .line 1065
     .local v3, "resources":Landroid/content/res/Resources;
     invoke-virtual {v3, v10}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
     :try_end_0
@@ -3778,64 +3352,55 @@
 
     move-result-object v15
 
-    .line 1067
     .local v15, "parser":Landroid/content/res/XmlResourceParser;
     :try_start_1
-    const-string/jumbo v2, "keyboard-layouts"
+    const-string v2, "keyboard-layouts"
 
     invoke-static {v15, v2}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
-    .line 1070
     :goto_2
     invoke-static {v15}, Lcom/android/internal/util/XmlUtils;->nextElement(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    .line 1071
     invoke-interface {v15}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result-object v11
 
-    .line 1072
     .local v11, "element":Ljava/lang/String;
     if-nez v11, :cond_4
 
-    .line 1109
     :try_start_2
     invoke-interface {v15}, Landroid/content/res/XmlResourceParser;->close()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 1041
     .end local v3    # "resources":Landroid/content/res/Resources;
     .end local v11    # "element":Ljava/lang/String;
     .end local v15    # "parser":Landroid/content/res/XmlResourceParser;
     :goto_3
     return-void
 
-    .line 1055
     .end local v6    # "collection":Ljava/lang/String;
     .end local v8    # "priority":I
     :cond_2
-    const-string/jumbo v6, ""
+    const-string v6, ""
 
     .restart local v6    # "collection":Ljava/lang/String;
     goto :goto_0
 
-    .line 1060
     :cond_3
     const/4 v8, 0x0
 
     .restart local v8    # "priority":I
     goto :goto_1
 
-    .line 1075
     .restart local v3    # "resources":Landroid/content/res/Resources;
     .restart local v11    # "element":Ljava/lang/String;
     .restart local v15    # "parser":Landroid/content/res/XmlResourceParser;
     :cond_4
     :try_start_3
-    const-string/jumbo v2, "keyboard-layout"
+    const-string v2, "keyboard-layout"
 
     invoke-virtual {v11, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3843,97 +3408,80 @@
 
     if-eqz v2, :cond_9
 
-    .line 1077
     sget-object v2, Lcom/android/internal/R$styleable;->KeyboardLayout:[I
 
-    .line 1076
     invoke-virtual {v3, v15, v2}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     move-result-object v9
 
-    .line 1080
     .local v9, "a":Landroid/content/res/TypedArray;
     const/4 v2, 0x1
 
-    .line 1079
     :try_start_4
     invoke-virtual {v9, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v14
 
-    .line 1082
     .local v14, "name":Ljava/lang/String;
     const/4 v2, 0x0
 
-    .line 1081
     invoke-virtual {v9, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1084
     .local v5, "label":Ljava/lang/String;
     const/4 v2, 0x2
 
-    .line 1085
     const/16 v17, 0x0
 
-    .line 1083
     move/from16 v0, v17
 
     invoke-virtual {v9, v2, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v7
 
-    .line 1086
     .local v7, "keyboardLayoutResId":I
     if-eqz v14, :cond_5
 
     if-nez v5, :cond_7
 
-    .line 1087
     :cond_5
-    const-string/jumbo v2, "InputManager"
+    const-string v2, "InputManager"
 
     new-instance v17, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v18, "Missing required \'name\', \'label\' or \'keyboardLayout\' attributes in keyboard layout resource from receiver "
+    const-string v18, "Missing required \'name\', \'label\' or \'keyboardLayout\' attributes in keyboard layout resource from receiver "
 
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1090
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 1087
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1090
-    const-string/jumbo v18, "/"
+    const-string v18, "/"
 
-    .line 1087
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1090
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 1087
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
@@ -3948,7 +3496,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 1100
     :cond_6
     :goto_4
     :try_start_5
@@ -3958,7 +3505,6 @@
 
     goto :goto_2
 
-    .line 1108
     .end local v5    # "label":Ljava/lang/String;
     .end local v7    # "keyboardLayoutResId":I
     .end local v9    # "a":Landroid/content/res/TypedArray;
@@ -3967,63 +3513,53 @@
     :catchall_0
     move-exception v2
 
-    .line 1109
     :try_start_6
     invoke-interface {v15}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 1108
     throw v2
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
 
-    .line 1111
     .end local v3    # "resources":Landroid/content/res/Resources;
     .end local v15    # "parser":Landroid/content/res/XmlResourceParser;
     :catch_0
     move-exception v12
 
-    .line 1112
     .local v12, "ex":Ljava/lang/Exception;
-    const-string/jumbo v2, "InputManager"
+    const-string v2, "InputManager"
 
     new-instance v17, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v18, "Could not parse keyboard layout resource from receiver "
+    const-string v18, "Could not parse keyboard layout resource from receiver "
 
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1113
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 1112
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1113
-    const-string/jumbo v18, "/"
+    const-string v18, "/"
 
-    .line 1112
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1113
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 1112
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
@@ -4038,7 +3574,6 @@
 
     goto/16 :goto_3
 
-    .line 1086
     .end local v12    # "ex":Ljava/lang/Exception;
     .restart local v3    # "resources":Landroid/content/res/Resources;
     .restart local v5    # "label":Ljava/lang/String;
@@ -4050,7 +3585,6 @@
     :cond_7
     if-eqz v7, :cond_5
 
-    .line 1093
     :try_start_7
     move-object/from16 v0, p2
 
@@ -4062,14 +3596,12 @@
 
     move-object/from16 v17, v0
 
-    .line 1092
     move-object/from16 v0, v17
 
     invoke-static {v2, v0, v14}, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;->format(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1094
     .local v4, "descriptor":Ljava/lang/String;
     if-eqz p3, :cond_8
 
@@ -4084,14 +3616,12 @@
     :cond_8
     move-object/from16 v2, p5
 
-    .line 1095
     invoke-interface/range {v2 .. v8}, Lcom/android/server/input/InputManagerService$KeyboardLayoutVisitor;->visitKeyboardLayout(Landroid/content/res/Resources;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     goto :goto_4
 
-    .line 1099
     .end local v4    # "descriptor":Ljava/lang/String;
     .end local v5    # "label":Ljava/lang/String;
     .end local v7    # "keyboardLayoutResId":I
@@ -4099,23 +3629,20 @@
     :catchall_1
     move-exception v2
 
-    .line 1100
     :try_start_8
     invoke-virtual {v9}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1099
     throw v2
 
-    .line 1103
     .end local v9    # "a":Landroid/content/res/TypedArray;
     :cond_9
-    const-string/jumbo v2, "InputManager"
+    const-string v2, "InputManager"
 
     new-instance v17, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v18, "Skipping unrecognized element \'"
+    const-string v18, "Skipping unrecognized element \'"
 
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4127,42 +3654,34 @@
 
     move-result-object v17
 
-    .line 1104
-    const-string/jumbo v18, "\' in keyboard layout resource from receiver "
+    const-string v18, "\' in keyboard layout resource from receiver "
 
-    .line 1103
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1105
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 1103
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1105
-    const-string/jumbo v18, "/"
+    const-string v18, "/"
 
-    .line 1103
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
 
-    .line 1105
     move-object/from16 v0, p2
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 1103
     invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v17
@@ -4188,54 +3707,45 @@
     .param p2, "keyboardLayoutDescriptor"    # Ljava/lang/String;
 
     .prologue
-    .line 1197
-    const-string/jumbo v2, "android.permission.SET_KEYBOARD_LAYOUT"
+    const-string v2, "android.permission.SET_KEYBOARD_LAYOUT"
 
-    .line 1198
-    const-string/jumbo v3, "addKeyboardLayoutForInputDevice()"
+    const-string v3, "addKeyboardLayoutForInputDevice()"
 
-    .line 1197
     invoke-direct {p0, v2, v3}, Lcom/android/server/input/InputManagerService;->checkCallingPermission(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1199
     new-instance v2, Ljava/lang/SecurityException;
 
-    const-string/jumbo v3, "Requires SET_KEYBOARD_LAYOUT permission"
+    const-string v3, "Requires SET_KEYBOARD_LAYOUT permission"
 
     invoke-direct {v2, v3}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 1201
     :cond_0
     if-nez p2, :cond_1
 
-    .line 1202
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "keyboardLayoutDescriptor must not be null"
+    const-string v3, "keyboardLayoutDescriptor must not be null"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 1205
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService;->getLayoutDescriptor(Landroid/hardware/input/InputDeviceIdentifier;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1206
     .local v0, "key":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     monitor-enter v3
 
-    .line 1208
     :try_start_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -4243,7 +3753,6 @@
 
     move-result-object v1
 
-    .line 1209
     .local v1, "oldLayout":Ljava/lang/String;
     if-nez v1, :cond_2
 
@@ -4257,7 +3766,6 @@
 
     if-eqz v2, :cond_4
 
-    .line 1212
     :cond_2
     :goto_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
@@ -4268,14 +3776,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 1214
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     invoke-virtual {v2, v0}, Lcom/android/server/input/PersistentDataStore;->getCurrentKeyboardLayout(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1213
     invoke-static {v1, v2}, Llibcore/util/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -4284,7 +3790,6 @@
 
     if-eqz v2, :cond_5
 
-    .line 1218
     :cond_3
     :goto_1
     :try_start_1
@@ -4296,10 +3801,8 @@
 
     monitor-exit v3
 
-    .line 1196
     return-void
 
-    .line 1210
     :cond_4
     :try_start_2
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
@@ -4314,7 +3817,6 @@
 
     goto :goto_0
 
-    .line 1215
     :cond_5
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
@@ -4326,23 +3828,19 @@
 
     goto :goto_1
 
-    .line 1217
     .end local v1    # "oldLayout":Ljava/lang/String;
     :catchall_0
     move-exception v2
 
-    .line 1218
     :try_start_3
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     invoke-virtual {v4}, Lcom/android/server/input/PersistentDataStore;->saveIfNeeded()V
 
-    .line 1217
     throw v2
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 1206
     :catchall_1
     move-exception v2
 
@@ -4357,12 +3855,10 @@
     .param p2, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 1441
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mVibratorLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 1442
     :try_start_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mVibratorTokens:Ljava/util/HashMap;
 
@@ -4372,7 +3868,6 @@
 
     check-cast v0, Lcom/android/server/input/InputManagerService$VibratorToken;
 
-    .line 1443
     .local v0, "v":Lcom/android/server/input/InputManagerService$VibratorToken;
     if-eqz v0, :cond_0
 
@@ -4385,19 +3880,15 @@
     :cond_0
     monitor-exit v2
 
-    .line 1444
     return-void
 
     :cond_1
     monitor-exit v2
 
-    .line 1448
     invoke-direct {p0, v0}, Lcom/android/server/input/InputManagerService;->cancelVibrateIfNeeded(Lcom/android/server/input/InputManagerService$VibratorToken;)V
 
-    .line 1439
     return-void
 
-    .line 1441
     .end local v0    # "v":Lcom/android/server/input/InputManagerService$VibratorToken;
     :catchall_0
     move-exception v1
@@ -4414,10 +3905,9 @@
     .param p3, "args"    # [Ljava/lang/String;
 
     .prologue
-    .line 1470
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v2, "android.permission.DUMP"
+    const-string v2, "android.permission.DUMP"
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
 
@@ -4425,41 +3915,34 @@
 
     if-eqz v1, :cond_0
 
-    .line 1472
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Permission Denial: can\'t dump InputManager from from pid="
+    const-string v2, "Permission Denial: can\'t dump InputManager from from pid="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1473
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v2
 
-    .line 1472
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1474
-    const-string/jumbo v2, ", uid="
+    const-string v2, ", uid="
 
-    .line 1472
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 1474
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
-    .line 1472
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -4470,30 +3953,24 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1475
     return-void
 
-    .line 1478
     :cond_0
-    const-string/jumbo v1, "INPUT MANAGER (dumpsys input)\n"
+    const-string v1, "INPUT MANAGER (dumpsys input)\n"
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1479
     iget-wide v2, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v2, v3}, Lcom/android/server/input/InputManagerService;->nativeDump(J)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1480
     .local v0, "dumpStr":Ljava/lang/String;
     if-eqz v0, :cond_1
 
-    .line 1481
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1469
     :cond_1
     return-void
 .end method
@@ -4506,16 +3983,13 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1573
     const/4 v1, 0x0
 
-    .line 1574
     .local v1, "head":Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mInputFilterLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 1575
     :try_start_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
@@ -4525,7 +3999,6 @@
 
     if-nez v2, :cond_0
 
-    .line 1576
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
     const/4 v4, 0x0
@@ -4542,10 +4015,8 @@
     :cond_0
     monitor-exit v3
 
-    .line 1582
     if-eqz v1, :cond_1
 
-    .line 1584
     :try_start_1
     invoke-static {v1}, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->-get0(Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;)Landroid/view/IInputFilter;
 
@@ -4555,11 +4026,9 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1588
     :goto_0
     return v5
 
-    .line 1574
     :catchall_0
     move-exception v2
 
@@ -4567,16 +4036,13 @@
 
     throw v2
 
-    .line 1590
     :cond_1
     invoke-virtual {p1}, Landroid/view/InputEvent;->recycle()V
 
-    .line 1591
     const/4 v2, 0x1
 
     return v2
 
-    .line 1585
     :catch_0
     move-exception v0
 
@@ -4589,21 +4055,17 @@
     .param p1, "identifier"    # Landroid/hardware/input/InputDeviceIdentifier;
 
     .prologue
-    .line 1138
     invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService;->getLayoutDescriptor(Landroid/hardware/input/InputDeviceIdentifier;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1139
     .local v0, "key":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     monitor-enter v3
 
-    .line 1140
     const/4 v1, 0x0
 
-    .line 1142
     .local v1, "layout":Ljava/lang/String;
     :try_start_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
@@ -4612,7 +4074,6 @@
 
     move-result-object v1
 
-    .line 1143
     .local v1, "layout":Ljava/lang/String;
     if-nez v1, :cond_0
 
@@ -4632,10 +4093,8 @@
     :goto_0
     monitor-exit v3
 
-    .line 1151
     return-object v1
 
-    .line 1145
     :cond_1
     :try_start_1
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
@@ -4652,7 +4111,6 @@
 
     goto :goto_0
 
-    .line 1139
     .end local v1    # "layout":Ljava/lang/String;
     :catchall_0
     move-exception v2
@@ -4667,18 +4125,15 @@
     .param p1, "deviceId"    # I
 
     .prologue
-    .line 643
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 644
     :try_start_0
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mInputDevices:[Landroid/view/InputDevice;
 
     array-length v0, v3
 
-    .line 645
     .local v0, "count":I
     const/4 v1, 0x0
 
@@ -4686,12 +4141,10 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 646
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mInputDevices:[Landroid/view/InputDevice;
 
     aget-object v2, v3, v1
 
-    .line 647
     .local v2, "inputDevice":Landroid/view/InputDevice;
     invoke-virtual {v2}, Landroid/view/InputDevice;->getId()I
     :try_end_0
@@ -4703,10 +4156,8 @@
 
     monitor-exit v4
 
-    .line 648
     return-object v2
 
-    .line 645
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
@@ -4716,12 +4167,10 @@
     :cond_1
     monitor-exit v4
 
-    .line 652
     const/4 v3, 0x0
 
     return-object v3
 
-    .line 643
     .end local v0    # "count":I
     .end local v1    # "i":I
     :catchall_0
@@ -4736,22 +4185,18 @@
     .locals 5
 
     .prologue
-    .line 661
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 662
     :try_start_0
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mInputDevices:[Landroid/view/InputDevice;
 
     array-length v0, v3
 
-    .line 663
     .local v0, "count":I
     new-array v2, v0, [I
 
-    .line 664
     .local v2, "ids":[I
     const/4 v1, 0x0
 
@@ -4759,7 +4204,6 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 665
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mInputDevices:[Landroid/view/InputDevice;
 
     aget-object v3, v3, v1
@@ -4772,7 +4216,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 664
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -4780,10 +4223,8 @@
     :cond_0
     monitor-exit v4
 
-    .line 667
     return-object v2
 
-    .line 661
     .end local v0    # "count":I
     .end local v1    # "i":I
     .end local v2    # "ids":[I
@@ -4799,12 +4240,10 @@
     .locals 2
 
     .prologue
-    .line 676
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 677
     :try_start_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mInputDevices:[Landroid/view/InputDevice;
     :try_end_0
@@ -4814,7 +4253,6 @@
 
     return-object v1
 
-    .line 676
     :catchall_0
     move-exception v1
 
@@ -4830,7 +4268,6 @@
     .param p3, "keyCode"    # I
 
     .prologue
-    .line 407
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1, p1, p2, p3}, Lcom/android/server/input/InputManagerService;->nativeGetKeyCodeState(JIII)I
@@ -4847,25 +4284,21 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 995
     if-nez p1, :cond_0
 
-    .line 996
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "keyboardLayoutDescriptor must not be null"
+    const-string v2, "keyboardLayoutDescriptor must not be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 999
     :cond_0
     const/4 v1, 0x1
 
     new-array v0, v1, [Landroid/hardware/input/KeyboardLayout;
 
-    .line 1000
     .local v0, "result":[Landroid/hardware/input/KeyboardLayout;
     new-instance v1, Lcom/android/server/input/InputManagerService$6;
 
@@ -4873,19 +4306,17 @@
 
     invoke-direct {p0, p1, v1}, Lcom/android/server/input/InputManagerService;->visitKeyboardLayout(Ljava/lang/String;Lcom/android/server/input/InputManagerService$KeyboardLayoutVisitor;)V
 
-    .line 1007
     aget-object v1, v0, v4
 
     if-nez v1, :cond_1
 
-    .line 1008
-    const-string/jumbo v1, "InputManager"
+    const-string v1, "InputManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Could not get keyboard layout with descriptor \'"
+    const-string v3, "Could not get keyboard layout with descriptor \'"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4895,10 +4326,8 @@
 
     move-result-object v2
 
-    .line 1009
-    const-string/jumbo v3, "\'."
+    const-string v3, "\'."
 
-    .line 1008
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -4909,7 +4338,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1011
     :cond_1
     aget-object v1, v0, v4
 
@@ -4920,12 +4348,10 @@
     .locals 2
 
     .prologue
-    .line 982
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 983
     .local v0, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/hardware/input/KeyboardLayout;>;"
     new-instance v1, Lcom/android/server/input/InputManagerService$5;
 
@@ -4933,7 +4359,6 @@
 
     invoke-direct {p0, v1}, Lcom/android/server/input/InputManagerService;->visitAllKeyboardLayouts(Lcom/android/server/input/InputManagerService$KeyboardLayoutVisitor;)V
 
-    .line 990
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -4954,18 +4379,15 @@
     .param p1, "identifier"    # Landroid/hardware/input/InputDeviceIdentifier;
 
     .prologue
-    .line 1183
     invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService;->getLayoutDescriptor(Landroid/hardware/input/InputDeviceIdentifier;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1184
     .local v0, "key":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     monitor-enter v3
 
-    .line 1185
     :try_start_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -4973,7 +4395,6 @@
 
     move-result-object v1
 
-    .line 1186
     .local v1, "layouts":[Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -4981,7 +4402,6 @@
 
     if-nez v2, :cond_1
 
-    .line 1187
     :cond_0
     invoke-virtual {p1}, Landroid/hardware/input/InputDeviceIdentifier;->getDescriptor()Ljava/lang/String;
 
@@ -4999,10 +4419,8 @@
     :goto_0
     monitor-exit v3
 
-    .line 1190
     return-object v1
 
-    .line 1188
     :cond_2
     :try_start_1
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
@@ -5019,7 +4437,6 @@
 
     goto :goto_0
 
-    .line 1184
     .end local v1    # "layouts":[Ljava/lang/String;
     :catchall_0
     move-exception v2
@@ -5036,7 +4453,6 @@
     .param p3, "scanCode"    # I
 
     .prologue
-    .line 420
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1, p1, p2, p3}, Lcom/android/server/input/InputManagerService;->nativeGetScanCodeState(JIII)I
@@ -5053,7 +4469,6 @@
     .param p3, "switchCode"    # I
 
     .prologue
-    .line 433
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1, p1, p2, p3}, Lcom/android/server/input/InputManagerService;->nativeGetSwitchState(JIII)I
@@ -5069,25 +4484,21 @@
     .param p2, "surfaceRotation"    # I
 
     .prologue
-    .line 805
     if-nez p1, :cond_0
 
-    .line 806
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "inputDeviceDescriptor must not be null"
+    const-string v1, "inputDeviceDescriptor must not be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 809
     :cond_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     monitor-enter v1
 
-    .line 810
     :try_start_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -5101,7 +4512,6 @@
 
     return-object v0
 
-    .line 809
     :catchall_0
     move-exception v0
 
@@ -5118,19 +4528,16 @@
     .param p4, "keyExists"    # [Z
 
     .prologue
-    .line 450
     if-nez p3, :cond_0
 
-    .line 451
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "keyCodes must not be null."
+    const-string v1, "keyCodes must not be null."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 453
     :cond_0
     if-eqz p4, :cond_1
 
@@ -5140,17 +4547,15 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 454
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "keyExists must not be null and must be at least as large as keyCodes."
+    const-string v1, "keyExists must not be null and must be at least as large as keyCodes."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 458
     :cond_2
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
@@ -5175,7 +4580,6 @@
     .param p2, "mode"    # I
 
     .prologue
-    .line 596
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0, p2}, Lcom/android/server/input/InputManagerService;->injectInputEventInternal(Landroid/view/InputEvent;II)Z
@@ -5189,29 +4593,24 @@
     .locals 3
 
     .prologue
-    .line 845
-    const-string/jumbo v0, "android.permission.TABLET_MODE"
+    const-string v0, "android.permission.TABLET_MODE"
 
-    .line 846
-    const-string/jumbo v1, "isInTabletMode()"
+    const-string v1, "isInTabletMode()"
 
-    .line 845
     invoke-direct {p0, v0, v1}, Lcom/android/server/input/InputManagerService;->checkCallingPermission(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 847
     new-instance v0, Ljava/lang/SecurityException;
 
-    const-string/jumbo v1, "Requires TABLET_MODE permission"
+    const-string v1, "Requires TABLET_MODE permission"
 
     invoke-direct {v0, v1}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 849
     :cond_0
     const/4 v0, -0x1
 
@@ -5230,19 +4629,16 @@
     .locals 2
 
     .prologue
-    .line 1505
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mInputFilterLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     monitor-exit v0
 
-    .line 1506
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1}, Lcom/android/server/input/InputManagerService;->nativeMonitor(J)V
 
-    .line 1504
     return-void
 .end method
 
@@ -5257,25 +4653,21 @@
 
     const/4 v4, 0x0
 
-    .line 467
     if-nez p1, :cond_0
 
-    .line 468
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "inputChannelName must not be null."
+    const-string v2, "inputChannelName must not be null."
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 471
     :cond_0
     invoke-static {p1}, Landroid/view/InputChannel;->openInputChannelPair(Ljava/lang/String;)[Landroid/view/InputChannel;
 
     move-result-object v0
 
-    .line 472
     .local v0, "inputChannels":[Landroid/view/InputChannel;
     iget-wide v2, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
@@ -5283,12 +4675,10 @@
 
     invoke-static {v2, v3, v1, v6, v5}, Lcom/android/server/input/InputManagerService;->nativeRegisterInputChannel(JLandroid/view/InputChannel;Lcom/android/server/input/InputWindowHandle;Z)V
 
-    .line 473
     aget-object v1, v0, v4
 
     invoke-virtual {v1}, Landroid/view/InputChannel;->dispose()V
 
-    .line 474
     aget-object v1, v0, v5
 
     return-object v1
@@ -5299,12 +4689,10 @@
     .param p1, "v"    # Lcom/android/server/input/InputManagerService$VibratorToken;
 
     .prologue
-    .line 1452
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mVibratorLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1453
     :try_start_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mVibratorTokens:Ljava/util/HashMap;
 
@@ -5316,13 +4704,10 @@
 
     monitor-exit v1
 
-    .line 1456
     invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService;->cancelVibrateIfNeeded(Lcom/android/server/input/InputManagerService$VibratorToken;)V
 
-    .line 1451
     return-void
 
-    .line 1452
     :catchall_0
     move-exception v0
 
@@ -5337,19 +4722,16 @@
     .param p2, "inputWindowHandle"    # Lcom/android/server/input/InputWindowHandle;
 
     .prologue
-    .line 485
     if-nez p1, :cond_0
 
-    .line 486
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "inputChannel must not be null."
+    const-string v1, "inputChannel must not be null."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 489
     :cond_0
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
@@ -5357,7 +4739,6 @@
 
     invoke-static {v0, v1, p1, p2, v2}, Lcom/android/server/input/InputManagerService;->nativeRegisterInputChannel(JLandroid/view/InputChannel;Lcom/android/server/input/InputWindowHandle;Z)V
 
-    .line 484
     return-void
 .end method
 
@@ -5366,31 +4747,26 @@
     .param p1, "listener"    # Landroid/hardware/input/IInputDevicesChangedListener;
 
     .prologue
-    .line 683
     if-nez p1, :cond_0
 
-    .line 684
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v5, "listener must not be null"
+    const-string v5, "listener must not be null"
 
     invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v4
 
-    .line 687
     :cond_0
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 688
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
 
-    .line 689
     .local v1, "callingPid":I
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesChangedListeners:Landroid/util/SparseArray;
 
@@ -5400,10 +4776,9 @@
 
     if-eqz v4, :cond_1
 
-    .line 690
     new-instance v4, Ljava/lang/SecurityException;
 
-    const-string/jumbo v6, "The calling process has already registered an InputDevicesChangedListener."
+    const-string v6, "The calling process has already registered an InputDevicesChangedListener."
 
     invoke-direct {v4, v6}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
@@ -5411,7 +4786,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 687
     .end local v1    # "callingPid":I
     :catchall_0
     move-exception v4
@@ -5420,7 +4794,6 @@
 
     throw v4
 
-    .line 695
     .restart local v1    # "callingPid":I
     :cond_1
     :try_start_1
@@ -5430,14 +4803,12 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 697
     .local v3, "record":Lcom/android/server/input/InputManagerService$InputDevicesChangedListenerRecord;
     :try_start_2
     invoke-interface {p1}, Landroid/hardware/input/IInputDevicesChangedListener;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 698
     .local v0, "binder":Landroid/os/IBinder;
     const/4 v4, 0x0
 
@@ -5446,7 +4817,6 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 704
     :try_start_3
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mInputDevicesChangedListeners:Landroid/util/SparseArray;
 
@@ -5456,15 +4826,12 @@
 
     monitor-exit v5
 
-    .line 682
     return-void
 
-    .line 699
     .end local v0    # "binder":Landroid/os/IBinder;
     :catch_0
     move-exception v2
 
-    .line 701
     .local v2, "ex":Landroid/os/RemoteException;
     :try_start_4
     new-instance v4, Ljava/lang/RuntimeException;
@@ -5481,12 +4848,10 @@
     .param p1, "filter"    # Landroid/view/IInputFilter;
 
     .prologue
-    .line 557
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mInputFilterLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 558
     :try_start_0
     new-instance v0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
@@ -5496,7 +4861,6 @@
 
     invoke-direct {v0, p0, p1, v1, v3}, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;-><init>(Lcom/android/server/input/InputManagerService;Landroid/view/IInputFilter;Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;)V
 
-    .line 559
     .local v0, "host":Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
@@ -5506,7 +4870,6 @@
 
     if-nez v1, :cond_0
 
-    .line 560
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
@@ -5525,16 +4888,13 @@
 
     invoke-static {v1, v0}, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->-set0(Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;)Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
-    .line 562
     :cond_0
     invoke-virtual {v0}, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->connectLocked()V
 
-    .line 563
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 565
     iget-wide v4, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
@@ -5554,16 +4914,13 @@
 
     monitor-exit v2
 
-    .line 556
     return-void
 
-    .line 565
     :cond_1
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 557
     .end local v0    # "host":Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
     :catchall_0
     move-exception v1
@@ -5578,54 +4935,45 @@
     .param p1, "listener"    # Landroid/hardware/input/ITabletModeChangedListener;
 
     .prologue
-    .line 854
-    const-string/jumbo v4, "android.permission.TABLET_MODE"
+    const-string v4, "android.permission.TABLET_MODE"
 
-    .line 855
-    const-string/jumbo v5, "registerTabletModeChangedListener()"
+    const-string v5, "registerTabletModeChangedListener()"
 
-    .line 854
     invoke-direct {p0, v4, v5}, Lcom/android/server/input/InputManagerService;->checkCallingPermission(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 856
     new-instance v4, Ljava/lang/SecurityException;
 
-    const-string/jumbo v5, "Requires TABLET_MODE_LISTENER permission"
+    const-string v5, "Requires TABLET_MODE_LISTENER permission"
 
     invoke-direct {v4, v5}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v4
 
-    .line 858
     :cond_0
     if-nez p1, :cond_1
 
-    .line 859
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v5, "listener must not be null"
+    const-string v5, "listener must not be null"
 
     invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v4
 
-    .line 862
     :cond_1
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mTabletModeLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 863
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
 
-    .line 864
     .local v1, "callingPid":I
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mTabletModeChangedListeners:Landroid/util/SparseArray;
 
@@ -5635,10 +4983,9 @@
 
     if-eqz v4, :cond_2
 
-    .line 865
     new-instance v4, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v6, "The calling process has already registered a TabletModeChangedListener."
+    const-string v6, "The calling process has already registered a TabletModeChangedListener."
 
     invoke-direct {v4, v6}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -5646,7 +4993,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 862
     .end local v1    # "callingPid":I
     :catchall_0
     move-exception v4
@@ -5655,7 +5001,6 @@
 
     throw v4
 
-    .line 869
     .restart local v1    # "callingPid":I
     :cond_2
     :try_start_1
@@ -5665,14 +5010,12 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 871
     .local v3, "record":Lcom/android/server/input/InputManagerService$TabletModeChangedListenerRecord;
     :try_start_2
     invoke-interface {p1}, Landroid/hardware/input/ITabletModeChangedListener;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 872
     .local v0, "binder":Landroid/os/IBinder;
     const/4 v4, 0x0
 
@@ -5681,7 +5024,6 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 876
     :try_start_3
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mTabletModeChangedListeners:Landroid/util/SparseArray;
 
@@ -5691,15 +5033,12 @@
 
     monitor-exit v5
 
-    .line 853
     return-void
 
-    .line 873
     .end local v0    # "binder":Landroid/os/IBinder;
     :catch_0
     move-exception v2
 
-    .line 874
     .local v2, "ex":Landroid/os/RemoteException;
     :try_start_4
     new-instance v4, Ljava/lang/RuntimeException;
@@ -5717,54 +5056,45 @@
     .param p2, "keyboardLayoutDescriptor"    # Ljava/lang/String;
 
     .prologue
-    .line 1226
-    const-string/jumbo v3, "android.permission.SET_KEYBOARD_LAYOUT"
+    const-string v3, "android.permission.SET_KEYBOARD_LAYOUT"
 
-    .line 1227
-    const-string/jumbo v4, "removeKeyboardLayoutForInputDevice()"
+    const-string v4, "removeKeyboardLayoutForInputDevice()"
 
-    .line 1226
     invoke-direct {p0, v3, v4}, Lcom/android/server/input/InputManagerService;->checkCallingPermission(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 1228
     new-instance v3, Ljava/lang/SecurityException;
 
-    const-string/jumbo v4, "Requires SET_KEYBOARD_LAYOUT permission"
+    const-string v4, "Requires SET_KEYBOARD_LAYOUT permission"
 
     invoke-direct {v3, v4}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v3
 
-    .line 1230
     :cond_0
     if-nez p2, :cond_1
 
-    .line 1231
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v4, "keyboardLayoutDescriptor must not be null"
+    const-string v4, "keyboardLayoutDescriptor must not be null"
 
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v3
 
-    .line 1234
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService;->getLayoutDescriptor(Landroid/hardware/input/InputDeviceIdentifier;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1235
     .local v0, "key":Ljava/lang/String;
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     monitor-enter v4
 
-    .line 1237
     :try_start_0
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -5772,7 +5102,6 @@
 
     move-result-object v1
 
-    .line 1238
     .local v1, "oldLayout":Ljava/lang/String;
     if-nez v1, :cond_2
 
@@ -5786,7 +5115,6 @@
 
     if-eqz v3, :cond_5
 
-    .line 1241
     :cond_2
     :goto_0
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
@@ -5795,7 +5123,6 @@
 
     move-result v2
 
-    .line 1242
     .local v2, "removed":Z
     invoke-virtual {p1}, Landroid/hardware/input/InputDeviceIdentifier;->getDescriptor()Ljava/lang/String;
 
@@ -5807,7 +5134,6 @@
 
     if-nez v3, :cond_3
 
-    .line 1244
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     invoke-virtual {p1}, Landroid/hardware/input/InputDeviceIdentifier;->getDescriptor()Ljava/lang/String;
@@ -5820,18 +5146,15 @@
 
     or-int/2addr v2, v3
 
-    .line 1247
     :cond_3
     if-eqz v2, :cond_4
 
-    .line 1248
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     invoke-virtual {v3, v0}, Lcom/android/server/input/PersistentDataStore;->getCurrentKeyboardLayout(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1247
     invoke-static {v1, v3}, Llibcore/util/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -5840,7 +5163,6 @@
 
     if-eqz v3, :cond_6
 
-    .line 1252
     :cond_4
     :goto_1
     :try_start_1
@@ -5852,10 +5174,8 @@
 
     monitor-exit v4
 
-    .line 1225
     return-void
 
-    .line 1239
     .end local v2    # "removed":Z
     :cond_5
     :try_start_2
@@ -5871,7 +5191,6 @@
 
     goto :goto_0
 
-    .line 1249
     .restart local v2    # "removed":Z
     :cond_6
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
@@ -5884,24 +5203,20 @@
 
     goto :goto_1
 
-    .line 1251
     .end local v1    # "oldLayout":Ljava/lang/String;
     .end local v2    # "removed":Z
     :catchall_0
     move-exception v3
 
-    .line 1252
     :try_start_3
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     invoke-virtual {v5}, Lcom/android/server/input/PersistentDataStore;->saveIfNeeded()V
 
-    .line 1251
     throw v3
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 1235
     :catchall_1
     move-exception v3
 
@@ -5916,54 +5231,45 @@
     .param p2, "keyboardLayoutDescriptor"    # Ljava/lang/String;
 
     .prologue
-    .line 1158
-    const-string/jumbo v1, "android.permission.SET_KEYBOARD_LAYOUT"
+    const-string v1, "android.permission.SET_KEYBOARD_LAYOUT"
 
-    .line 1159
-    const-string/jumbo v2, "setCurrentKeyboardLayoutForInputDevice()"
+    const-string v2, "setCurrentKeyboardLayoutForInputDevice()"
 
-    .line 1158
     invoke-direct {p0, v1, v2}, Lcom/android/server/input/InputManagerService;->checkCallingPermission(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1160
     new-instance v1, Ljava/lang/SecurityException;
 
-    const-string/jumbo v2, "Requires SET_KEYBOARD_LAYOUT permission"
+    const-string v2, "Requires SET_KEYBOARD_LAYOUT permission"
 
     invoke-direct {v1, v2}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 1162
     :cond_0
     if-nez p2, :cond_1
 
-    .line 1163
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "keyboardLayoutDescriptor must not be null"
+    const-string v2, "keyboardLayoutDescriptor must not be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 1166
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService;->getLayoutDescriptor(Landroid/hardware/input/InputDeviceIdentifier;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1167
     .local v0, "key":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     monitor-enter v2
 
-    .line 1169
     :try_start_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -5973,7 +5279,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 1173
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
     const/4 v3, 0x3
@@ -5982,7 +5287,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1176
     :cond_2
     :try_start_1
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
@@ -5993,25 +5297,20 @@
 
     monitor-exit v2
 
-    .line 1157
     return-void
 
-    .line 1175
     :catchall_0
     move-exception v1
 
-    .line 1176
     :try_start_2
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     invoke-virtual {v3}, Lcom/android/server/input/PersistentDataStore;->saveIfNeeded()V
 
-    .line 1175
     throw v1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 1167
     :catchall_1
     move-exception v1
 
@@ -6025,12 +5324,10 @@
     .param p1, "application"    # Lcom/android/server/input/InputApplicationHandle;
 
     .prologue
-    .line 1303
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1, p1}, Lcom/android/server/input/InputManagerService;->nativeSetFocusedApplication(JLcom/android/server/input/InputApplicationHandle;)V
 
-    .line 1302
     return-void
 .end method
 
@@ -6040,12 +5337,10 @@
     .param p2, "frozen"    # Z
 
     .prologue
-    .line 1307
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1, p1, p2}, Lcom/android/server/input/InputManagerService;->nativeSetInputDispatchMode(JZZ)V
 
-    .line 1306
     return-void
 .end method
 
@@ -6056,63 +5351,52 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 516
     iget-object v4, p0, Lcom/android/server/input/InputManagerService;->mInputFilterLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 517
     :try_start_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mInputFilter:Landroid/view/IInputFilter;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 518
     .local v1, "oldFilter":Landroid/view/IInputFilter;
     if-ne v1, p1, :cond_0
 
     monitor-exit v4
 
-    .line 519
     return-void
 
-    .line 522
     :cond_0
     if-eqz v1, :cond_1
 
-    .line 523
     :try_start_1
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mInputFilterHost:Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
     invoke-virtual {v5}, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->disconnectLocked()V
 
-    .line 524
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
     iget-object v6, p0, Lcom/android/server/input/InputManagerService;->mInputFilterHost:Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 525
     const/4 v5, 0x0
 
     iput-object v5, p0, Lcom/android/server/input/InputManagerService;->mInputFilterHost:Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 527
     :try_start_2
     invoke-interface {v1}, Landroid/view/IInputFilter;->uninstall()V
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 533
     :cond_1
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 534
     :try_start_3
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
@@ -6124,7 +5408,6 @@
 
     const/4 v0, 0x0
 
-    .line 536
     :goto_1
     new-instance v5, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
@@ -6134,12 +5417,10 @@
 
     iput-object v5, p0, Lcom/android/server/input/InputManagerService;->mInputFilterHost:Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
-    .line 537
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mInputFilterHost:Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
     invoke-virtual {v5}, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->connectLocked()V
 
-    .line 538
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
     iget-object v6, p0, Lcom/android/server/input/InputManagerService;->mInputFilterHost:Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
@@ -6148,7 +5429,6 @@
 
     invoke-virtual {v5, v7, v6}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 541
     :cond_2
     iget-wide v6, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
@@ -6167,17 +5447,14 @@
 
     monitor-exit v4
 
-    .line 515
     return-void
 
-    .line 528
     :catch_0
     move-exception v2
 
     .local v2, "re":Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 535
     .end local v2    # "re":Landroid/os/RemoteException;
     :cond_3
     :try_start_4
@@ -6196,14 +5473,12 @@
     .local v0, "head":Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
     goto :goto_1
 
-    .line 541
     .end local v0    # "head":Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
     :cond_4
     const/4 v3, 0x1
 
     goto :goto_2
 
-    .line 516
     .end local v1    # "oldFilter":Landroid/view/IInputFilter;
     :catchall_0
     move-exception v3
@@ -6218,12 +5493,10 @@
     .param p1, "windowHandles"    # [Lcom/android/server/input/InputWindowHandle;
 
     .prologue
-    .line 1299
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1, p1}, Lcom/android/server/input/InputManagerService;->nativeSetInputWindows(J[Lcom/android/server/input/InputWindowHandle;)V
 
-    .line 1298
     return-void
 .end method
 
@@ -6232,12 +5505,10 @@
     .param p1, "visibility"    # I
 
     .prologue
-    .line 1311
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1, p1}, Lcom/android/server/input/InputManagerService;->nativeSetSystemUiVisibility(JI)V
 
-    .line 1310
     return-void
 .end method
 
@@ -6248,55 +5519,46 @@
     .param p3, "calibration"    # Landroid/hardware/input/TouchCalibration;
 
     .prologue
-    .line 817
-    const-string/jumbo v0, "android.permission.SET_INPUT_CALIBRATION"
+    const-string v0, "android.permission.SET_INPUT_CALIBRATION"
 
-    .line 818
-    const-string/jumbo v1, "setTouchCalibrationForInputDevice()"
+    const-string v1, "setTouchCalibrationForInputDevice()"
 
-    .line 817
     invoke-direct {p0, v0, v1}, Lcom/android/server/input/InputManagerService;->checkCallingPermission(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 819
     new-instance v0, Ljava/lang/SecurityException;
 
-    const-string/jumbo v1, "Requires SET_INPUT_CALIBRATION permission"
+    const-string v1, "Requires SET_INPUT_CALIBRATION permission"
 
     invoke-direct {v0, v1}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 821
     :cond_0
     if-nez p1, :cond_1
 
-    .line 822
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "inputDeviceDescriptor must not be null"
+    const-string v1, "inputDeviceDescriptor must not be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 824
     :cond_1
     if-nez p3, :cond_2
 
-    .line 825
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "calibration must not be null"
+    const-string v1, "calibration must not be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 827
     :cond_2
     if-ltz p2, :cond_3
 
@@ -6304,23 +5566,20 @@
 
     if-le p2, v0, :cond_4
 
-    .line 828
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "surfaceRotation value out of bounds"
+    const-string v1, "surfaceRotation value out of bounds"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 831
     :cond_4
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     monitor-enter v1
 
-    .line 833
     :try_start_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
@@ -6330,14 +5589,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 835
     iget-wide v2, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v2, v3}, Lcom/android/server/input/InputManagerService;->nativeReloadCalibration(J)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 838
     :cond_5
     :try_start_1
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
@@ -6348,25 +5605,20 @@
 
     monitor-exit v1
 
-    .line 816
     return-void
 
-    .line 837
     :catchall_0
     move-exception v0
 
-    .line 838
     :try_start_2
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mDataStore:Lcom/android/server/input/PersistentDataStore;
 
     invoke-virtual {v2}, Lcom/android/server/input/PersistentDataStore;->saveIfNeeded()V
 
-    .line 837
     throw v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 831
     :catchall_1
     move-exception v0
 
@@ -6380,10 +5632,8 @@
     .param p1, "callbacks"    # Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
     .prologue
-    .line 294
     iput-object p1, p0, Lcom/android/server/input/InputManagerService;->mWindowManagerCallbacks:Lcom/android/server/input/InputManagerService$WindowManagerCallbacks;
 
-    .line 293
     return-void
 .end method
 
@@ -6392,10 +5642,8 @@
     .param p1, "callbacks"    # Lcom/android/server/input/InputManagerService$WiredAccessoryCallbacks;
 
     .prologue
-    .line 298
     iput-object p1, p0, Lcom/android/server/input/InputManagerService;->mWiredAccessoryCallbacks:Lcom/android/server/input/InputManagerService$WiredAccessoryCallbacks;
 
-    .line 297
     return-void
 .end method
 
@@ -6403,42 +5651,35 @@
     .locals 5
 
     .prologue
-    .line 302
-    const-string/jumbo v0, "InputManager"
+    const-string v0, "InputManager"
 
-    const-string/jumbo v1, "Starting input manager"
+    const-string v1, "Starting input manager"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 303
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1}, Lcom/android/server/input/InputManagerService;->nativeStart(J)V
 
-    .line 306
     invoke-static {}, Lcom/android/server/Watchdog;->getInstance()Lcom/android/server/Watchdog;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Lcom/android/server/Watchdog;->addMonitor(Lcom/android/server/Watchdog$Monitor;)V
 
-    .line 308
     invoke-direct {p0}, Lcom/android/server/input/InputManagerService;->registerPointerSpeedSettingObserver()V
 
-    .line 309
     invoke-direct {p0}, Lcom/android/server/input/InputManagerService;->registerShowTouchesSettingObserver()V
 
-    .line 311
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     new-instance v1, Lcom/android/server/input/InputManagerService$1;
 
     invoke-direct {v1, p0}, Lcom/android/server/input/InputManagerService$1;-><init>(Lcom/android/server/input/InputManagerService;)V
 
-    .line 317
     new-instance v2, Landroid/content/IntentFilter;
 
-    const-string/jumbo v3, "android.intent.action.USER_SWITCHED"
+    const-string v3, "android.intent.action.USER_SWITCHED"
 
     invoke-direct {v2, v3}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -6446,16 +5687,12 @@
 
     const/4 v4, 0x0
 
-    .line 311
     invoke-virtual {v0, v1, v2, v4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 319
     invoke-virtual {p0}, Lcom/android/server/input/InputManagerService;->updatePointerSpeedFromSettings()V
 
-    .line 320
     invoke-virtual {p0}, Lcom/android/server/input/InputManagerService;->updateShowTouchesFromSettings()V
 
-    .line 301
     return-void
 .end method
 
@@ -6465,7 +5702,6 @@
     .param p2, "direction"    # I
 
     .prologue
-    .line 1258
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
     const/4 v1, 0x2
@@ -6476,7 +5712,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1257
     return-void
 .end method
 
@@ -6486,13 +5721,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 328
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
-    .line 329
-    const-string/jumbo v2, "notification"
+    const-string v2, "notification"
 
-    .line 328
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
@@ -6501,61 +5733,50 @@
 
     iput-object v1, p0, Lcom/android/server/input/InputManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    .line 330
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/input/InputManagerService;->mSystemReady:Z
 
-    .line 332
     new-instance v0, Landroid/content/IntentFilter;
 
-    const-string/jumbo v1, "android.intent.action.PACKAGE_ADDED"
+    const-string v1, "android.intent.action.PACKAGE_ADDED"
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 333
     .local v0, "filter":Landroid/content/IntentFilter;
-    const-string/jumbo v1, "android.intent.action.PACKAGE_REMOVED"
+    const-string v1, "android.intent.action.PACKAGE_REMOVED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 334
-    const-string/jumbo v1, "android.intent.action.PACKAGE_CHANGED"
+    const-string v1, "android.intent.action.PACKAGE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 335
-    const-string/jumbo v1, "android.intent.action.PACKAGE_REPLACED"
+    const-string v1, "android.intent.action.PACKAGE_REPLACED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 336
-    const-string/jumbo v1, "package"
+    const-string v1, "package"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 337
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
     new-instance v2, Lcom/android/server/input/InputManagerService$2;
 
     invoke-direct {v2, p0}, Lcom/android/server/input/InputManagerService$2;-><init>(Lcom/android/server/input/InputManagerService;)V
 
-    .line 342
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
-    .line 337
     invoke-virtual {v1, v2, v0, v4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 344
     new-instance v0, Landroid/content/IntentFilter;
 
     .end local v0    # "filter":Landroid/content/IntentFilter;
-    const-string/jumbo v1, "android.bluetooth.device.action.ALIAS_CHANGED"
+    const-string v1, "android.bluetooth.device.action.ALIAS_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 345
     .restart local v0    # "filter":Landroid/content/IntentFilter;
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mContext:Landroid/content/Context;
 
@@ -6563,37 +5784,30 @@
 
     invoke-direct {v2, p0}, Lcom/android/server/input/InputManagerService$3;-><init>(Lcom/android/server/input/InputManagerService;)V
 
-    .line 350
     iget-object v3, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
-    .line 345
     invoke-virtual {v1, v2, v0, v4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 352
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
     const/4 v2, 0x5
 
     invoke-virtual {v1, v2}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->sendEmptyMessage(I)Z
 
-    .line 353
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mHandler:Lcom/android/server/input/InputManagerService$InputManagerHandler;
 
     const/4 v2, 0x4
 
     invoke-virtual {v1, v2}, Lcom/android/server/input/InputManagerService$InputManagerHandler;->sendEmptyMessage(I)Z
 
-    .line 355
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mWiredAccessoryCallbacks:Lcom/android/server/input/InputManagerService$WiredAccessoryCallbacks;
 
     if-eqz v1, :cond_0
 
-    .line 356
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mWiredAccessoryCallbacks:Lcom/android/server/input/InputManagerService$WiredAccessoryCallbacks;
 
     invoke-interface {v1}, Lcom/android/server/input/InputManagerService$WiredAccessoryCallbacks;->systemReady()V
 
-    .line 324
     :cond_0
     return-void
 .end method
@@ -6604,32 +5818,27 @@
     .param p2, "toChannel"    # Landroid/view/InputChannel;
 
     .prologue
-    .line 1328
     if-nez p1, :cond_0
 
-    .line 1329
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "fromChannel must not be null."
+    const-string v1, "fromChannel must not be null."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 1331
     :cond_0
     if-nez p2, :cond_1
 
-    .line 1332
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "toChannel must not be null."
+    const-string v1, "toChannel must not be null."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 1334
     :cond_1
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
@@ -6645,29 +5854,24 @@
     .param p1, "speed"    # I
 
     .prologue
-    .line 1339
-    const-string/jumbo v0, "android.permission.SET_POINTER_SPEED"
+    const-string v0, "android.permission.SET_POINTER_SPEED"
 
-    .line 1340
-    const-string/jumbo v1, "tryPointerSpeed()"
+    const-string v1, "tryPointerSpeed()"
 
-    .line 1339
     invoke-direct {p0, v0, v1}, Lcom/android/server/input/InputManagerService;->checkCallingPermission(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1341
     new-instance v0, Ljava/lang/SecurityException;
 
-    const-string/jumbo v1, "Requires SET_POINTER_SPEED permission"
+    const-string v1, "Requires SET_POINTER_SPEED permission"
 
     invoke-direct {v0, v1}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 1344
     :cond_0
     const/4 v0, -0x7
 
@@ -6677,21 +5881,18 @@
 
     if-le p1, v0, :cond_2
 
-    .line 1345
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "speed out of range"
+    const-string v1, "speed out of range"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 1348
     :cond_2
     invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService;->setPointerSpeedUnchecked(I)V
 
-    .line 1338
     return-void
 .end method
 
@@ -6700,25 +5901,21 @@
     .param p1, "inputChannel"    # Landroid/view/InputChannel;
 
     .prologue
-    .line 497
     if-nez p1, :cond_0
 
-    .line 498
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "inputChannel must not be null."
+    const-string v1, "inputChannel must not be null."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 501
     :cond_0
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     invoke-static {v0, v1, p1}, Lcom/android/server/input/InputManagerService;->nativeUnregisterInputChannel(JLandroid/view/InputChannel;)V
 
-    .line 496
     return-void
 .end method
 
@@ -6731,22 +5928,18 @@
 
     const/4 v3, 0x0
 
-    .line 570
     iget-object v5, p0, Lcom/android/server/input/InputManagerService;->mInputFilterLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 571
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/server/input/InputManagerService;->findInputFilterIndexLocked(Landroid/view/IInputFilter;)I
 
     move-result v1
 
-    .line 572
     .local v1, "index":I
     if-ltz v1, :cond_1
 
-    .line 573
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -6755,14 +5948,11 @@
 
     check-cast v0, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
-    .line 574
     .local v0, "host":Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
     invoke-virtual {v0}, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->disconnectLocked()V
 
-    .line 575
     if-lt v1, v4, :cond_0
 
-    .line 576
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
     add-int/lit8 v6, v1, -0x1
@@ -6779,13 +5969,11 @@
 
     invoke-static {v2, v6}, Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;->-set0(Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;)Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
 
-    .line 578
     :cond_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService;->mInputFilterChain:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 581
     .end local v0    # "host":Lcom/android/server/input/InputManagerService$ChainedInputFilterHost;
     :cond_1
     iget-wide v6, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
@@ -6807,16 +5995,13 @@
 
     monitor-exit v5
 
-    .line 569
     return-void
 
     :cond_2
     move v2, v4
 
-    .line 581
     goto :goto_0
 
-    .line 570
     .end local v1    # "index":I
     :catchall_0
     move-exception v2
@@ -6830,16 +6015,13 @@
     .locals 1
 
     .prologue
-    .line 1352
     invoke-direct {p0}, Lcom/android/server/input/InputManagerService;->getPointerSpeedSetting()I
 
     move-result v0
 
-    .line 1353
     .local v0, "speed":I
     invoke-direct {p0, v0}, Lcom/android/server/input/InputManagerService;->setPointerSpeedUnchecked(I)V
 
-    .line 1351
     return-void
 .end method
 
@@ -6849,12 +6031,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1384
     invoke-direct {p0, v1}, Lcom/android/server/input/InputManagerService;->getShowTouchesSetting(I)I
 
     move-result v0
 
-    .line 1385
     .local v0, "setting":I
     iget-wide v2, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
@@ -6865,7 +6045,6 @@
     :cond_0
     invoke-static {v2, v3, v1}, Lcom/android/server/input/InputManagerService;->nativeSetShowTouches(JZ)V
 
-    .line 1383
     return-void
 .end method
 
@@ -6877,25 +6056,21 @@
     .param p4, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 1412
     array-length v0, p2
 
     if-lt p3, v0, :cond_0
 
-    .line 1413
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
     invoke-direct {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
 
     throw v0
 
-    .line 1417
     :cond_0
     iget-object v1, p0, Lcom/android/server/input/InputManagerService;->mVibratorLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1418
     :try_start_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mVibratorTokens:Ljava/util/HashMap;
 
@@ -6905,11 +6080,9 @@
 
     check-cast v7, Lcom/android/server/input/InputManagerService$VibratorToken;
 
-    .line 1419
     .local v7, "v":Lcom/android/server/input/InputManagerService$VibratorToken;
     if-nez v7, :cond_1
 
-    .line 1420
     new-instance v7, Lcom/android/server/input/InputManagerService$VibratorToken;
 
     .end local v7    # "v":Lcom/android/server/input/InputManagerService$VibratorToken;
@@ -6923,7 +6096,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1422
     .restart local v7    # "v":Lcom/android/server/input/InputManagerService$VibratorToken;
     const/4 v0, 0x0
 
@@ -6933,7 +6105,6 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1427
     :try_start_2
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mVibratorTokens:Ljava/util/HashMap;
 
@@ -6944,16 +6115,13 @@
     :cond_1
     monitor-exit v1
 
-    .line 1431
     monitor-enter v7
 
-    .line 1432
     const/4 v0, 0x1
 
     :try_start_3
     iput-boolean v0, v7, Lcom/android/server/input/InputManagerService$VibratorToken;->mVibrating:Z
 
-    .line 1433
     iget-wide v0, p0, Lcom/android/server/input/InputManagerService;->mPtr:J
 
     iget v5, v7, Lcom/android/server/input/InputManagerService$VibratorToken;->mTokenValue:I
@@ -6970,14 +6138,11 @@
 
     monitor-exit v7
 
-    .line 1411
     return-void
 
-    .line 1423
     :catch_0
     move-exception v6
 
-    .line 1425
     .local v6, "ex":Landroid/os/RemoteException;
     :try_start_4
     new-instance v0, Ljava/lang/RuntimeException;
@@ -6988,7 +6153,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 1417
     .end local v6    # "ex":Landroid/os/RemoteException;
     .end local v7    # "v":Lcom/android/server/input/InputManagerService$VibratorToken;
     :catchall_0
@@ -6998,7 +6162,6 @@
 
     throw v0
 
-    .line 1431
     .restart local v7    # "v":Lcom/android/server/input/InputManagerService$VibratorToken;
     :catchall_1
     move-exception v0

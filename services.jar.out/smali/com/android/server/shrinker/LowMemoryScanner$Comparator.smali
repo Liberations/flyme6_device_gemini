@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 198
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +45,6 @@
     .param p2, "rhs"    # Lcom/android/server/shrinker/PackageRecordExt;
 
     .prologue
-    .line 201
     iget-wide v0, p2, Lcom/android/server/shrinker/PackageRecordExt;->totalRss:J
 
     iget-wide v2, p1, Lcom/android/server/shrinker/PackageRecordExt;->totalRss:J
@@ -64,7 +62,6 @@
     .param p2, "rhs"    # Ljava/lang/Object;
 
     .prologue
-    .line 200
     check-cast p1, Lcom/android/server/shrinker/PackageRecordExt;
 
     .end local p1    # "lhs":Ljava/lang/Object;

@@ -33,7 +33,6 @@
     .locals 0
 
     .prologue
-    .line 5948
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +45,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 6005
     if-nez p0, :cond_0
 
     :goto_0
@@ -66,7 +64,6 @@
     .locals 1
 
     .prologue
-    .line 6001
     iget-object v0, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
 
     invoke-static {v0}, Lcom/android/server/audio/AudioService$VolumeController;->binder(Landroid/media/IVolumeController;)Landroid/os/IBinder;
@@ -81,7 +78,6 @@
     .param p1, "controller"    # Landroid/media/IVolumeController;
 
     .prologue
-    .line 5997
     invoke-virtual {p0}, Lcom/android/server/audio/AudioService$VolumeController;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -102,21 +98,18 @@
     .param p1, "cr"    # Landroid/content/ContentResolver;
 
     .prologue
-    .line 5963
-    const-string/jumbo v0, "long_press_timeout"
+    const-string v0, "long_press_timeout"
 
     const/16 v1, 0x1f4
 
     const/4 v2, -0x2
 
-    .line 5962
     invoke-static {p1, v0, v1, v2}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/audio/AudioService$VolumeController;->mLongPressTimeout:I
 
-    .line 5961
     return-void
 .end method
 
@@ -124,15 +117,12 @@
     .locals 3
 
     .prologue
-    .line 6054
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
 
     if-nez v1, :cond_0
 
-    .line 6055
     return-void
 
-    .line 6057
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
@@ -141,19 +131,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6053
     :goto_0
     return-void
 
-    .line 6058
     :catch_0
     move-exception v0
 
-    .line 6059
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "VolumeController"
+    const-string v1, "VolumeController"
 
-    const-string/jumbo v2, "Error calling dismiss"
+    const-string v2, "Error calling dismiss"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -165,15 +152,12 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 6014
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
 
     if-nez v1, :cond_0
 
-    .line 6015
     return-void
 
-    .line 6017
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
@@ -182,19 +166,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6013
     :goto_0
     return-void
 
-    .line 6018
     :catch_0
     move-exception v0
 
-    .line 6019
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "VolumeController"
+    const-string v1, "VolumeController"
 
-    const-string/jumbo v2, "Error calling displaySafeVolumeWarning"
+    const-string v2, "Error calling displaySafeVolumeWarning"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -206,15 +187,12 @@
     .param p1, "flags"    # I
 
     .prologue
-    .line 6034
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
 
     if-nez v1, :cond_0
 
-    .line 6035
     return-void
 
-    .line 6037
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
@@ -223,19 +201,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6033
     :goto_0
     return-void
 
-    .line 6038
     :catch_0
     move-exception v0
 
-    .line 6039
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "VolumeController"
+    const-string v1, "VolumeController"
 
-    const-string/jumbo v2, "Error calling masterMuteChanged"
+    const-string v2, "Error calling masterMuteChanged"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -248,15 +223,12 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 6024
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
 
     if-nez v1, :cond_0
 
-    .line 6025
     return-void
 
-    .line 6027
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
@@ -265,19 +237,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6023
     :goto_0
     return-void
 
-    .line 6028
     :catch_0
     move-exception v0
 
-    .line 6029
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "VolumeController"
+    const-string v1, "VolumeController"
 
-    const-string/jumbo v2, "Error calling volumeChanged"
+    const-string v2, "Error calling volumeChanged"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -289,15 +258,12 @@
     .param p1, "controller"    # Landroid/media/IVolumeController;
 
     .prologue
-    .line 5957
     iput-object p1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
 
-    .line 5958
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/audio/AudioService$VolumeController;->mVisible:Z
 
-    .line 5956
     return-void
 .end method
 
@@ -306,15 +272,12 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
-    .line 6044
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
 
     if-nez v1, :cond_0
 
-    .line 6045
     return-void
 
-    .line 6047
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mController:Landroid/media/IVolumeController;
@@ -323,19 +286,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6043
     :goto_0
     return-void
 
-    .line 6048
     :catch_0
     move-exception v0
 
-    .line 6049
     .local v0, "e":Landroid/os/RemoteException;
-    const-string/jumbo v1, "VolumeController"
+    const-string v1, "VolumeController"
 
-    const-string/jumbo v2, "Error calling setLayoutDirection"
+    const-string v2, "Error calling setLayoutDirection"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -347,10 +307,8 @@
     .param p1, "visible"    # Z
 
     .prologue
-    .line 5993
     iput-boolean p1, p0, Lcom/android/server/audio/AudioService$VolumeController;->mVisible:Z
 
-    .line 5992
     return-void
 .end method
 
@@ -365,17 +323,13 @@
 
     const/4 v3, 0x0
 
-    .line 5967
     if-eqz p3, :cond_0
 
-    .line 5968
     return v3
 
-    .line 5970
     :cond_0
     const/4 v2, 0x0
 
-    .line 5971
     .local v2, "suppress":Z
     const/4 v3, 0x2
 
@@ -385,12 +339,10 @@
 
     if-eqz v3, :cond_2
 
-    .line 5972
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 5973
     .local v0, "now":J
     and-int/lit8 v3, p2, 0x1
 
@@ -400,7 +352,6 @@
 
     if-eqz v3, :cond_3
 
-    .line 5979
     :cond_1
     iget-wide v4, p0, Lcom/android/server/audio/AudioService$VolumeController;->mNextLongPress:J
 
@@ -408,23 +359,19 @@
 
     if-lez v3, :cond_2
 
-    .line 5980
     iget-wide v4, p0, Lcom/android/server/audio/AudioService$VolumeController;->mNextLongPress:J
 
     cmp-long v3, v0, v4
 
     if-lez v3, :cond_5
 
-    .line 5982
     iput-wide v6, p0, Lcom/android/server/audio/AudioService$VolumeController;->mNextLongPress:J
 
-    .line 5989
     .end local v0    # "now":J
     :cond_2
     :goto_0
     return v2
 
-    .line 5975
     .restart local v0    # "now":J
     :cond_3
     iget-wide v4, p0, Lcom/android/server/audio/AudioService$VolumeController;->mNextLongPress:J
@@ -433,7 +380,6 @@
 
     if-gez v3, :cond_4
 
-    .line 5976
     iget v3, p0, Lcom/android/server/audio/AudioService$VolumeController;->mLongPressTimeout:I
 
     int-to-long v4, v3
@@ -442,14 +388,11 @@
 
     iput-wide v4, p0, Lcom/android/server/audio/AudioService$VolumeController;->mNextLongPress:J
 
-    .line 5978
     :cond_4
     const/4 v2, 0x1
 
-    .line 5973
     goto :goto_0
 
-    .line 5985
     :cond_5
     const/4 v2, 0x1
 
@@ -460,12 +403,11 @@
     .locals 2
 
     .prologue
-    .line 6010
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "VolumeController("
+    const-string v1, "VolumeController("
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -479,7 +421,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, ",mVisible="
+    const-string v1, ",mVisible="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -491,7 +433,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, ")"
+    const-string v1, ")"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

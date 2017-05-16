@@ -30,7 +30,6 @@
     .param p2, "val$awakenFromDreams"    # Z
 
     .prologue
-    .line 3587
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$16;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iput-boolean p2, p0, Lcom/android/server/policy/PhoneWindowManager$16;->val$awakenFromDreams:Z
@@ -47,10 +46,8 @@
     .param p1, "success"    # Z
 
     .prologue
-    .line 3590
     if-eqz p1, :cond_0
 
-    .line 3592
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -60,15 +57,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3595
     :goto_0
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$16;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    const-string/jumbo v2, "homekey"
+    const-string v2, "homekey"
 
     invoke-virtual {v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->sendCloseSystemWindows(Ljava/lang/String;)V
 
-    .line 3596
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$16;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-boolean v2, p0, Lcom/android/server/policy/PhoneWindowManager$16;->val$awakenFromDreams:Z
@@ -77,11 +72,9 @@
 
     invoke-virtual {v1, v3, v2}, Lcom/android/server/policy/PhoneWindowManager;->startDockOrHome(ZZ)V
 
-    .line 3589
     :cond_0
     return-void
 
-    .line 3593
     :catch_0
     move-exception v0
 

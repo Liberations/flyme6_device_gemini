@@ -24,7 +24,6 @@
     .param p1, "this$0"    # Lcom/android/server/dreams/DreamManagerService;
 
     .prologue
-    .line 626
     iput-object p1, p0, Lcom/android/server/dreams/DreamManagerService$LocalService;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     invoke-direct {p0}, Landroid/service/dreams/DreamManagerInternal;-><init>()V
@@ -48,7 +47,6 @@
     .locals 1
 
     .prologue
-    .line 639
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$LocalService;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->-wrap3(Lcom/android/server/dreams/DreamManagerService;)Z
@@ -63,12 +61,10 @@
     .param p1, "doze"    # Z
 
     .prologue
-    .line 629
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$LocalService;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/dreams/DreamManagerService;->-wrap12(Lcom/android/server/dreams/DreamManagerService;Z)V
 
-    .line 628
     return-void
 .end method
 
@@ -77,11 +73,9 @@
     .param p1, "immediate"    # Z
 
     .prologue
-    .line 634
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$LocalService;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/dreams/DreamManagerService;->-wrap14(Lcom/android/server/dreams/DreamManagerService;Z)V
 
-    .line 633
     return-void
 .end method

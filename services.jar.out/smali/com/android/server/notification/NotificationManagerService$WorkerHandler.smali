@@ -24,7 +24,6 @@
     .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
     .prologue
-    .line 2694
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -49,17 +48,14 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 2699
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2697
     :goto_0
     :pswitch_0
     return-void
 
-    .line 2702
     :pswitch_1
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -71,7 +67,6 @@
 
     goto :goto_0
 
-    .line 2705
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -79,7 +74,6 @@
 
     goto :goto_0
 
-    .line 2708
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -87,7 +81,6 @@
 
     goto :goto_0
 
-    .line 2711
     :pswitch_4
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -97,7 +90,6 @@
 
     goto :goto_0
 
-    .line 2714
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -107,7 +99,6 @@
 
     goto :goto_0
 
-    .line 2699
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_1

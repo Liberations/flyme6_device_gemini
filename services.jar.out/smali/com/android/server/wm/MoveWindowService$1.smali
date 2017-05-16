@@ -33,7 +33,6 @@
     .param p3, "val$durationTime"    # I
 
     .prologue
-    .line 77
     iput-object p1, p0, Lcom/android/server/wm/MoveWindowService$1;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     iput p2, p0, Lcom/android/server/wm/MoveWindowService$1;->val$cmd:I
@@ -51,17 +50,14 @@
     .locals 2
 
     .prologue
-    .line 80
     iget v0, p0, Lcom/android/server/wm/MoveWindowService$1;->val$cmd:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 79
     :cond_0
     :goto_0
     return-void
 
-    .line 82
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$1;->this$0:Lcom/android/server/wm/MoveWindowService;
 
@@ -97,7 +93,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 83
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$1;->this$0:Lcom/android/server/wm/MoveWindowService;
 
     iget v1, p0, Lcom/android/server/wm/MoveWindowService$1;->val$durationTime:I
@@ -106,7 +101,6 @@
 
     goto :goto_0
 
-    .line 87
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$1;->this$0:Lcom/android/server/wm/MoveWindowService;
 
@@ -142,7 +136,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 88
     :cond_1
     iget-object v0, p0, Lcom/android/server/wm/MoveWindowService$1;->this$0:Lcom/android/server/wm/MoveWindowService;
 
@@ -152,7 +145,6 @@
 
     goto :goto_0
 
-    .line 80
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

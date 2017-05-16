@@ -26,13 +26,10 @@
     .param p3, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 833
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 834
     invoke-direct {p0, p2, p3}, Lcom/android/server/policy/WakeGestureListener;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 833
     return-void
 .end method
 
@@ -42,7 +39,6 @@
     .locals 6
 
     .prologue
-    .line 839
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->-get2(Lcom/android/server/policy/PhoneWindowManager;)Ljava/lang/Object;
@@ -51,7 +47,6 @@
 
     monitor-enter v1
 
-    .line 840
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -61,7 +56,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 841
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     const/4 v2, 0x0
@@ -72,7 +66,6 @@
 
     invoke-virtual {v0, v2, v3, v4}, Lcom/android/server/policy/PhoneWindowManager;->performHapticFeedbackLw(Landroid/view/WindowManagerPolicy$WindowState;IZ)Z
 
-    .line 842
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyWakeGestureListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -85,10 +78,8 @@
 
     move-result v4
 
-    .line 843
-    const-string/jumbo v5, "android.policy:GESTURE"
+    const-string v5, "android.policy:GESTURE"
 
-    .line 842
     invoke-static {v0, v2, v3, v4, v5}, Lcom/android/server/policy/PhoneWindowManager;->-wrap1(Lcom/android/server/policy/PhoneWindowManager;JZLjava/lang/String;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -96,10 +87,8 @@
     :cond_0
     monitor-exit v1
 
-    .line 838
     return-void
 
-    .line 839
     :catchall_0
     move-exception v0
 

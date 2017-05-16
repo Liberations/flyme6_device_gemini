@@ -32,7 +32,6 @@
     .locals 0
 
     .prologue
-    .line 170
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,14 +54,12 @@
     .param p2, "rhs"    # Lcom/android/server/shrinker/PackageRecordExt;
 
     .prologue
-    .line 173
     iget v0, p1, Lcom/android/server/shrinker/PackageRecordExt;->oomPriority:I
 
     iget v1, p2, Lcom/android/server/shrinker/PackageRecordExt;->oomPriority:I
 
     if-eq v0, v1, :cond_0
 
-    .line 174
     iget v0, p2, Lcom/android/server/shrinker/PackageRecordExt;->oomPriority:I
 
     iget v1, p1, Lcom/android/server/shrinker/PackageRecordExt;->oomPriority:I
@@ -71,7 +68,6 @@
 
     return v0
 
-    .line 176
     :cond_0
     iget-wide v0, p1, Lcom/android/server/shrinker/PackageRecordExt;->totalPss:J
 
@@ -90,7 +86,6 @@
     .param p2, "rhs"    # Ljava/lang/Object;
 
     .prologue
-    .line 172
     check-cast p1, Lcom/android/server/shrinker/PackageRecordExt;
 
     .end local p1    # "lhs":Ljava/lang/Object;

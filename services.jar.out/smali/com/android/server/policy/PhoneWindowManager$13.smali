@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
     .prologue
-    .line 5760
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$13;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .locals 4
 
     .prologue
-    .line 5763
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$13;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
@@ -52,7 +50,6 @@
 
     monitor-enter v1
 
-    .line 5764
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$13;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -66,10 +63,8 @@
 
     monitor-exit v1
 
-    .line 5766
     return-void
 
-    .line 5768
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$13;->this$0:Lcom/android/server/policy/PhoneWindowManager;
@@ -80,7 +75,6 @@
 
     invoke-static {v0, v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->-set0(Lcom/android/server/policy/PhoneWindowManager;J)J
 
-    .line 5769
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$13;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/PhoneWindowManager;->-get3(Lcom/android/server/policy/PhoneWindowManager;)Lcom/android/server/policy/BarController;
@@ -93,10 +87,8 @@
 
     monitor-exit v1
 
-    .line 5762
     return-void
 
-    .line 5763
     :catchall_0
     move-exception v0
 

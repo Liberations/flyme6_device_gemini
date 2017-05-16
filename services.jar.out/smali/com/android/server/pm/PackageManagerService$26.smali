@@ -39,7 +39,6 @@
     .param p8, "val$moveId"    # I
 
     .prologue
-    .line 16218
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$26;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$26;->val$installedLatch:Ljava/util/concurrent/CountDownLatch;
@@ -65,7 +64,6 @@
     .prologue
     const-wide/16 v4, 0x50
 
-    .line 16223
     :goto_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$26;->val$installedLatch:Ljava/util/concurrent/CountDownLatch;
@@ -82,14 +80,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 16220
     return-void
 
-    .line 16226
     :catch_0
     move-exception v8
 
-    .line 16229
     :cond_0
     iget-wide v0, p0, Lcom/android/server/pm/PackageManagerService$26;->val$startFreeBytes:J
 
@@ -101,7 +96,6 @@
 
     sub-long v6, v0, v2
 
-    .line 16231
     .local v6, "deltaFreeBytes":J
     mul-long v0, v6, v4
 
@@ -111,7 +105,6 @@
 
     const-wide/16 v2, 0x0
 
-    .line 16230
     invoke-static/range {v0 .. v5}, Landroid/util/MathUtils;->constrain(JJJ)J
 
     move-result-wide v0
@@ -120,7 +113,6 @@
 
     add-int/lit8 v9, v0, 0xa
 
-    .line 16232
     .local v9, "progress":I
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$26;->this$0:Lcom/android/server/pm/PackageManagerService;
 

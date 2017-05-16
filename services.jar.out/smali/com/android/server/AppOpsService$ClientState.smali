@@ -43,36 +43,29 @@
     .param p2, "appToken"    # Landroid/os/IBinder;
 
     .prologue
-    .line 198
     iput-object p1, p0, Lcom/android/server/AppOpsService$ClientState;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 199
     iput-object p2, p0, Lcom/android/server/AppOpsService$ClientState;->mAppToken:Landroid/os/IBinder;
 
-    .line 200
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/server/AppOpsService$ClientState;->mPid:I
 
-    .line 201
     instance-of v1, p2, Landroid/os/Binder;
 
     if-eqz v1, :cond_0
 
-    .line 203
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/AppOpsService$ClientState;->mStartedOps:Ljava/util/ArrayList;
 
-    .line 198
     :goto_0
     return-void
 
-    .line 205
     :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
@@ -80,7 +73,6 @@
 
     iput-object v1, p0, Lcom/android/server/AppOpsService$ClientState;->mStartedOps:Ljava/util/ArrayList;
 
-    .line 207
     :try_start_0
     iget-object v1, p0, Lcom/android/server/AppOpsService$ClientState;->mAppToken:Landroid/os/IBinder;
 
@@ -92,7 +84,6 @@
 
     goto :goto_0
 
-    .line 208
     :catch_0
     move-exception v0
 
@@ -106,12 +97,10 @@
     .locals 4
 
     .prologue
-    .line 223
     iget-object v2, p0, Lcom/android/server/AppOpsService$ClientState;->this$0:Lcom/android/server/AppOpsService;
 
     monitor-enter v2
 
-    .line 224
     :try_start_0
     iget-object v1, p0, Lcom/android/server/AppOpsService$ClientState;->mStartedOps:Ljava/util/ArrayList;
 
@@ -125,7 +114,6 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 225
     iget-object v3, p0, Lcom/android/server/AppOpsService$ClientState;->this$0:Lcom/android/server/AppOpsService;
 
     iget-object v1, p0, Lcom/android/server/AppOpsService$ClientState;->mStartedOps:Ljava/util/ArrayList;
@@ -138,12 +126,10 @@
 
     invoke-virtual {v3, v1}, Lcom/android/server/AppOpsService;->finishOperationLocked(Lcom/android/server/AppOpsService$Op;)V
 
-    .line 224
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 227
     :cond_0
     iget-object v1, p0, Lcom/android/server/AppOpsService$ClientState;->this$0:Lcom/android/server/AppOpsService;
 
@@ -157,10 +143,8 @@
 
     monitor-exit v2
 
-    .line 222
     return-void
 
-    .line 223
     .end local v0    # "i":I
     :catchall_0
     move-exception v1
@@ -174,34 +158,28 @@
     .locals 3
 
     .prologue
-    .line 215
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "ClientState{mAppToken="
+    const-string v1, "ClientState{mAppToken="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 216
     iget-object v1, p0, Lcom/android/server/AppOpsService$ClientState;->mAppToken:Landroid/os/IBinder;
 
-    .line 215
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 217
-    const-string/jumbo v1, ", "
+    const-string v1, ", "
 
-    .line 215
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 217
     iget-object v0, p0, Lcom/android/server/AppOpsService$ClientState;->mStartedOps:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
@@ -210,7 +188,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "pid="
+    const-string v2, "pid="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -226,16 +204,13 @@
 
     move-result-object v0
 
-    .line 215
     :goto_0
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 218
     const/16 v1, 0x7d
 
-    .line 215
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -246,9 +221,8 @@
 
     return-object v0
 
-    .line 217
     :cond_0
-    const-string/jumbo v0, "local"
+    const-string v0, "local"
 
     goto :goto_0
 .end method

@@ -24,7 +24,6 @@
     .param p1, "this$0"    # Lcom/android/server/pm/UpdateAppsReceiver;
 
     .prologue
-    .line 306
     iput-object p1, p0, Lcom/android/server/pm/UpdateAppsReceiver$PackageInstallObserver;->this$0:Lcom/android/server/pm/UpdateAppsReceiver;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageInstallObserver$Stub;-><init>()V
@@ -50,12 +49,10 @@
     .param p2, "returnCode"    # I
 
     .prologue
-    .line 308
     const/4 v0, 0x1
 
     if-ne p2, v0, :cond_1
 
-    .line 309
     iget-object v0, p0, Lcom/android/server/pm/UpdateAppsReceiver$PackageInstallObserver;->this$0:Lcom/android/server/pm/UpdateAppsReceiver;
 
     invoke-static {v0}, Lcom/android/server/pm/UpdateAppsReceiver;->-get1(Lcom/android/server/pm/UpdateAppsReceiver;)Landroid/os/Handler;
@@ -68,17 +65,14 @@
 
     move-result-object v1
 
-    .line 310
     const/16 v2, 0x67
 
-    .line 309
     invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 312
     invoke-static {}, Lcom/android/server/pm/UpdateAppsReceiver;->-get4()I
 
     move-result v0
@@ -101,7 +95,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 313
     iget-object v0, p0, Lcom/android/server/pm/UpdateAppsReceiver$PackageInstallObserver;->this$0:Lcom/android/server/pm/UpdateAppsReceiver;
 
     invoke-static {v0}, Lcom/android/server/pm/UpdateAppsReceiver;->-get0(Lcom/android/server/pm/UpdateAppsReceiver;)Landroid/content/pm/FlymePackageManager;
@@ -110,12 +103,10 @@
 
     invoke-virtual {v0}, Landroid/content/pm/FlymePackageManager;->syncPackageState()V
 
-    .line 307
     :cond_0
     :goto_0
     return-void
 
-    .line 316
     :cond_1
     iget-object v0, p0, Lcom/android/server/pm/UpdateAppsReceiver$PackageInstallObserver;->this$0:Lcom/android/server/pm/UpdateAppsReceiver;
 
@@ -129,14 +120,12 @@
 
     move-result-object v1
 
-    .line 317
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     const/16 v3, 0x68
 
-    .line 316
     invoke-virtual {v1, v3, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1

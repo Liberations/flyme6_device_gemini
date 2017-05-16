@@ -68,13 +68,10 @@
     .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
-    .line 764
     iput-object p1, p0, Lcom/android/server/notification/ZenModeHelper$H;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
-    .line 765
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 764
     return-void
 .end method
 
@@ -95,13 +92,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 769
     invoke-virtual {p0, v0}, Lcom/android/server/notification/ZenModeHelper$H;->removeMessages(I)V
 
-    .line 770
     invoke-virtual {p0, v0}, Lcom/android/server/notification/ZenModeHelper$H;->sendEmptyMessage(I)Z
 
-    .line 768
     return-void
 .end method
 
@@ -111,15 +105,12 @@
     .prologue
     const/4 v2, 0x2
 
-    .line 774
     invoke-virtual {p0, v2}, Lcom/android/server/notification/ZenModeHelper$H;->removeMessages(I)V
 
-    .line 775
     const-wide/32 v0, 0x1499700
 
     invoke-virtual {p0, v2, v0, v1}, Lcom/android/server/notification/ZenModeHelper$H;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 773
     return-void
 .end method
 
@@ -129,7 +120,6 @@
     .param p2, "reason"    # Ljava/lang/String;
 
     .prologue
-    .line 779
     new-instance v0, Lcom/android/server/notification/ZenModeHelper$H$ConfigMessageData;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/server/notification/ZenModeHelper$H$ConfigMessageData;-><init>(Lcom/android/server/notification/ZenModeHelper$H;Landroid/service/notification/ZenModeConfig;Ljava/lang/String;)V
@@ -142,7 +132,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/server/notification/ZenModeHelper$H;->sendMessage(Landroid/os/Message;)Z
 
-    .line 778
     return-void
 .end method
 
@@ -153,16 +142,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 784
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 783
     :goto_0
     return-void
 
-    .line 786
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/notification/ZenModeHelper$H;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
@@ -170,7 +156,6 @@
 
     goto :goto_0
 
-    .line 789
     :pswitch_1
     iget-object v1, p0, Lcom/android/server/notification/ZenModeHelper$H;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
@@ -182,13 +167,11 @@
 
     goto :goto_0
 
-    .line 792
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/server/notification/ZenModeHelper$H$ConfigMessageData;
 
-    .line 793
     .local v0, "configData":Lcom/android/server/notification/ZenModeHelper$H$ConfigMessageData;
     iget-object v1, p0, Lcom/android/server/notification/ZenModeHelper$H;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
@@ -200,7 +183,6 @@
 
     goto :goto_0
 
-    .line 784
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

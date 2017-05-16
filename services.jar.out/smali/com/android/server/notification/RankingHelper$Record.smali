@@ -39,12 +39,10 @@
     .locals 1
 
     .prologue
-    .line 455
     const/16 v0, -0x2710
 
     sput v0, Lcom/android/server/notification/RankingHelper$Record;->UNKNOWN_UID:I
 
-    .line 454
     return-void
 .end method
 

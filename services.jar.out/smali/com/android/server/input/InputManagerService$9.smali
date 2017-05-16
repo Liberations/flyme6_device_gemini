@@ -30,7 +30,6 @@
     .param p2, "val$result"    # [Ljava/lang/String;
 
     .prologue
-    .line 1717
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$9;->this$0:Lcom/android/server/input/InputManagerService;
 
     iput-object p2, p0, Lcom/android/server/input/InputManagerService$9;->val$result:[Ljava/lang/String;
@@ -52,7 +51,6 @@
     .param p6, "priority"    # I
 
     .prologue
-    .line 1722
     :try_start_0
     iget-object v2, p0, Lcom/android/server/input/InputManagerService$9;->val$result:[Ljava/lang/String;
 
@@ -60,17 +58,14 @@
 
     aput-object p2, v2, v3
 
-    .line 1723
     iget-object v2, p0, Lcom/android/server/input/InputManagerService$9;->val$result:[Ljava/lang/String;
 
     new-instance v3, Ljava/io/InputStreamReader;
 
-    .line 1724
     invoke-virtual {p1, p5}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
     move-result-object v4
 
-    .line 1723
     invoke-direct {v3, v4}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
     invoke-static {v3}, Llibcore/io/Streams;->readFully(Ljava/io/Reader;)Ljava/lang/String;
@@ -84,18 +79,15 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1720
     :goto_0
     return-void
 
-    .line 1725
     :catch_0
     move-exception v1
 
     .local v1, "ex":Ljava/io/IOException;
     goto :goto_0
 
-    .line 1726
     .end local v1    # "ex":Ljava/io/IOException;
     :catch_1
     move-exception v0

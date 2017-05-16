@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/display/DisplayPowerController;
 
     .prologue
-    .line 1232
     iput-object p1, p0, Lcom/android/server/display/DisplayPowerController$7;->this$0:Lcom/android/server/display/DisplayPowerController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .param p2, "accuracy"    # I
 
     .prologue
-    .line 1244
     return-void
 .end method
 
@@ -52,7 +50,6 @@
     .param p1, "event"    # Landroid/hardware/SensorEvent;
 
     .prologue
-    .line 1235
     iget-object v4, p0, Lcom/android/server/display/DisplayPowerController$7;->this$0:Lcom/android/server/display/DisplayPowerController;
 
     invoke-static {v4}, Lcom/android/server/display/DisplayPowerController;->-get3(Lcom/android/server/display/DisplayPowerController;)Z
@@ -61,12 +58,10 @@
 
     if-eqz v4, :cond_0
 
-    .line 1236
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 1237
     .local v2, "time":J
     iget-object v4, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -74,7 +69,6 @@
 
     aget v0, v4, v5
 
-    .line 1238
     .local v0, "distance":F
     const/4 v4, 0x0
 
@@ -94,21 +88,18 @@
 
     const/4 v1, 0x1
 
-    .line 1239
     .local v1, "positive":Z
     :goto_0
     iget-object v4, p0, Lcom/android/server/display/DisplayPowerController$7;->this$0:Lcom/android/server/display/DisplayPowerController;
 
     invoke-static {v4, v2, v3, v1}, Lcom/android/server/display/DisplayPowerController;->-wrap2(Lcom/android/server/display/DisplayPowerController;JZ)V
 
-    .line 1234
     .end local v0    # "distance":F
     .end local v1    # "positive":Z
     .end local v2    # "time":J
     :cond_0
     return-void
 
-    .line 1238
     .restart local v0    # "distance":F
     .restart local v2    # "time":J
     :cond_1

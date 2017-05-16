@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/policy/MzPhoneWindowManager;
 
     .prologue
-    .line 279
     iput-object p1, p0, Lcom/android/server/policy/MzPhoneWindowManager$1;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 282
     iget-object v0, p0, Lcom/android/server/policy/MzPhoneWindowManager$1;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/MzPhoneWindowManager;->-get1(Lcom/android/server/policy/MzPhoneWindowManager;)Lcom/android/server/policy/PhoneWindowManager;
@@ -56,26 +54,22 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "mz_intelligent_voice"
+    const-string v1, "mz_intelligent_voice"
 
-    .line 283
     const/4 v2, -0x3
 
-    .line 282
     invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 284
     iget-object v0, p0, Lcom/android/server/policy/MzPhoneWindowManager$1;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/server/policy/MzPhoneWindowManager;->-set0(Lcom/android/server/policy/MzPhoneWindowManager;Z)Z
 
-    .line 289
     iget-object v0, p0, Lcom/android/server/policy/MzPhoneWindowManager$1;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
 
     iget-object v1, p0, Lcom/android/server/policy/MzPhoneWindowManager$1;->this$0:Lcom/android/server/policy/MzPhoneWindowManager;
@@ -88,7 +82,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/policy/MzPhoneWindowManager;->-wrap2(Lcom/android/server/policy/MzPhoneWindowManager;Landroid/content/Context;)Z
 
-    .line 281
     :cond_0
     return-void
 .end method

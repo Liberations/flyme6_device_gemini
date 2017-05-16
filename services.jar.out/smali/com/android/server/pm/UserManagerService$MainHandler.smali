@@ -24,7 +24,6 @@
     .param p1, "this$0"    # Lcom/android/server/pm/UserManagerService;
 
     .prologue
-    .line 2032
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$MainHandler;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +38,13 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 2036
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 2035
     :goto_0
     return-void
 
-    .line 2038
     :pswitch_0
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -56,7 +52,6 @@
 
     invoke-virtual {p0, v3, v2}, Lcom/android/server/pm/UserManagerService$MainHandler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 2039
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$MainHandler;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v2}, Lcom/android/server/pm/UserManagerService;->-get1(Lcom/android/server/pm/UserManagerService;)Ljava/lang/Object;
@@ -65,7 +60,6 @@
 
     monitor-enter v3
 
-    .line 2040
     :try_start_0
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -73,7 +67,6 @@
 
     iget v0, v2, Landroid/content/pm/UserInfo;->id:I
 
-    .line 2041
     .local v0, "userId":I
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$MainHandler;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -87,11 +80,9 @@
 
     check-cast v1, Landroid/content/pm/UserInfo;
 
-    .line 2042
     .local v1, "userInfo":Landroid/content/pm/UserInfo;
     if-eqz v1, :cond_0
 
-    .line 2043
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService$MainHandler;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v2, v1}, Lcom/android/server/pm/UserManagerService;->-wrap1(Lcom/android/server/pm/UserManagerService;Landroid/content/pm/UserInfo;)V
@@ -103,7 +94,6 @@
 
     goto :goto_0
 
-    .line 2039
     .end local v0    # "userId":I
     .end local v1    # "userInfo":Landroid/content/pm/UserInfo;
     :catchall_0
@@ -113,7 +103,6 @@
 
     throw v2
 
-    .line 2036
     nop
 
     :pswitch_data_0

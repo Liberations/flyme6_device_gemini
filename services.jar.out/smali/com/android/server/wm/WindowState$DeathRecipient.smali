@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/wm/WindowState;
 
     .prologue
-    .line 1204
     iput-object p1, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +50,6 @@
     .locals 7
 
     .prologue
-    .line 1208
     :try_start_0
     iget-object v2, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
@@ -63,7 +61,6 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1209
     :try_start_1
     iget-object v2, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
@@ -83,15 +80,14 @@
 
     move-result-object v1
 
-    .line 1210
     .local v1, "win":Lcom/android/server/wm/WindowState;
-    const-string/jumbo v2, "WindowState"
+    const-string v2, "WindowState"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "WIN DEATH: "
+    const-string v5, "WIN DEATH: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -107,10 +103,8 @@
 
     invoke-static {v2, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1211
     if-eqz v1, :cond_1
 
-    .line 1212
     iget-object v2, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
     iget-object v2, v2, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -126,12 +120,10 @@
     :try_end_2
     .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 1206
     .end local v1    # "win":Lcom/android/server/wm/WindowState;
     :goto_1
     return-void
 
-    .line 1213
     .restart local v1    # "win":Lcom/android/server/wm/WindowState;
     :cond_1
     :try_start_3
@@ -141,14 +133,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 1214
-    const-string/jumbo v2, "WindowState"
+    const-string v2, "WindowState"
 
-    const-string/jumbo v4, "!!! LEAK !!! Window removed but surface still valid."
+    const-string v4, "!!! LEAK !!! Window removed but surface still valid."
 
     invoke-static {v2, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1215
     iget-object v2, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
     iget-object v2, v2, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -161,7 +151,6 @@
 
     goto :goto_0
 
-    .line 1208
     .end local v1    # "win":Lcom/android/server/wm/WindowState;
     :catchall_0
     move-exception v2
@@ -173,7 +162,6 @@
     :try_end_4
     .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_0
 
-    .line 1218
     :catch_0
     move-exception v0
 

@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/LocationManagerService;
 
     .prologue
-    .line 230
     iput-object p1, p0, Lcom/android/server/LocationManagerService$2;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .param p1, "userId"    # I
 
     .prologue
-    .line 233
     iget-object v0, p0, Lcom/android/server/LocationManagerService$2;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v0}, Lcom/android/server/LocationManagerService;->-get1(Lcom/android/server/LocationManagerService;)Landroid/content/Context;
@@ -53,10 +51,8 @@
 
     move-result-object v0
 
-    .line 234
     const v1, 0x1070029
 
-    .line 233
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
     move-result-object v0

@@ -29,20 +29,15 @@
     .param p2, "type"    # I
 
     .prologue
-    .line 247
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 248
     iput p1, p0, Lcom/android/server/NetworkManagementService$IdleTimerParams;->timeout:I
 
-    .line 249
     iput p2, p0, Lcom/android/server/NetworkManagementService$IdleTimerParams;->type:I
 
-    .line 250
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/NetworkManagementService$IdleTimerParams;->networkCount:I
 
-    .line 247
     return-void
 .end method

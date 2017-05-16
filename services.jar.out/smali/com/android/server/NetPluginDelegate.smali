@@ -22,13 +22,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 46
     sput-object v0, Lcom/android/server/NetPluginDelegate;->tetherExtensionClass:Ljava/lang/Class;
 
-    .line 47
     sput-object v0, Lcom/android/server/NetPluginDelegate;->tetherExtensionObj:Ljava/lang/Object;
 
-    .line 41
     return-void
 .end method
 
@@ -36,7 +33,6 @@
     .locals 0
 
     .prologue
-    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,22 +45,19 @@
     .param p2, "xtStats"    # Landroid/net/NetworkStats;
 
     .prologue
-    .line 54
     invoke-static {}, Lcom/android/server/NetPluginDelegate;->loadTetherExtJar()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 55
     return-void
 
-    .line 59
     :cond_0
     :try_start_0
     sget-object v1, Lcom/android/server/NetPluginDelegate;->tetherExtensionClass:Ljava/lang/Class;
 
-    const-string/jumbo v2, "getTetherStats"
+    const-string v2, "getTetherStats"
 
     const/4 v3, 0x3
 
@@ -76,7 +69,6 @@
 
     aput-object v4, v3, v5
 
-    .line 60
     const-class v4, Landroid/net/NetworkStats;
 
     const/4 v5, 0x1
@@ -89,25 +81,20 @@
 
     aput-object v4, v3, v5
 
-    .line 59
     invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
 
-    .line 60
     sget-object v2, Lcom/android/server/NetPluginDelegate;->tetherExtensionObj:Ljava/lang/Object;
 
-    .line 59
     const/4 v3, 0x3
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 60
     const/4 v4, 0x0
 
     aput-object p0, v3, v4
 
-    .line 61
     const/4 v4, 0x1
 
     aput-object p1, v3, v4
@@ -116,27 +103,22 @@
 
     aput-object p2, v3, v4
 
-    .line 59
     invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 52
     :goto_0
     return-void
 
-    .line 62
     :catch_0
     move-exception v0
 
-    .line 63
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 64
-    const-string/jumbo v1, "ConnectivityExtension"
+    const-string v1, "ConnectivityExtension"
 
-    const-string/jumbo v2, "error in invoke method"
+    const-string v2, "error in invoke method"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -151,14 +133,11 @@
 
     const/4 v4, 0x0
 
-    .line 98
-    const-string/jumbo v2, "com.qualcomm.qti.tetherstatsextension.TetherStatsReporting"
+    const-string v2, "com.qualcomm.qti.tetherstatsextension.TetherStatsReporting"
 
-    .line 99
     .local v2, "realProvider":Ljava/lang/String;
-    const-string/jumbo v3, "/system/framework/ConnectivityExt.jar"
+    const-string v3, "/system/framework/ConnectivityExt.jar"
 
-    .line 100
     .local v3, "realProviderPath":Ljava/lang/String;
     sget-boolean v6, Lcom/android/server/NetPluginDelegate;->extensionFailed:Z
 
@@ -172,23 +151,19 @@
 
     if-nez v6, :cond_0
 
-    .line 104
     :try_start_0
     new-instance v0, Ldalvik/system/PathClassLoader;
 
-    const-string/jumbo v6, "/system/framework/ConnectivityExt.jar"
+    const-string v6, "/system/framework/ConnectivityExt.jar"
 
-    .line 105
     invoke-static {}, Ljava/lang/ClassLoader;->getSystemClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v7
 
-    .line 104
     invoke-direct {v0, v6, v7}, Ldalvik/system/PathClassLoader;-><init>(Ljava/lang/String;Ljava/lang/ClassLoader;)V
 
-    .line 107
     .local v0, "classLoader":Ldalvik/system/PathClassLoader;
-    const-string/jumbo v6, "com.qualcomm.qti.tetherstatsextension.TetherStatsReporting"
+    const-string v6, "com.qualcomm.qti.tetherstatsextension.TetherStatsReporting"
 
     invoke-virtual {v0, v6}, Ldalvik/system/PathClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -196,7 +171,6 @@
 
     sput-object v6, Lcom/android/server/NetPluginDelegate;->tetherExtensionClass:Ljava/lang/Class;
 
-    .line 108
     sget-object v6, Lcom/android/server/NetPluginDelegate;->tetherExtensionClass:Ljava/lang/Class;
 
     invoke-virtual {v6}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
@@ -205,14 +179,12 @@
 
     sput-object v6, Lcom/android/server/NetPluginDelegate;->tetherExtensionObj:Ljava/lang/Object;
 
-    .line 111
     const/4 v6, 0x0
 
     sput-boolean v6, Lcom/android/server/NetPluginDelegate;->extensionFailed:Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 117
     .end local v0    # "classLoader":Ldalvik/system/PathClassLoader;
     :cond_0
     :goto_0
@@ -223,19 +195,16 @@
     :goto_1
     return v4
 
-    .line 112
     :catch_0
     move-exception v1
 
-    .line 113
     .local v1, "e":Ljava/lang/Exception;
-    const-string/jumbo v6, "ConnectivityExtension"
+    const-string v6, "ConnectivityExtension"
 
-    const-string/jumbo v7, "Connectivity extension is not available"
+    const-string v7, "Connectivity extension is not available"
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 114
     sput-boolean v5, Lcom/android/server/NetPluginDelegate;->extensionFailed:Z
 
     goto :goto_0
@@ -244,7 +213,6 @@
     :cond_1
     move v4, v5
 
-    .line 117
     goto :goto_1
 .end method
 
@@ -254,22 +222,19 @@
     .param p1, "quota"    # J
 
     .prologue
-    .line 71
     invoke-static {}, Lcom/android/server/NetPluginDelegate;->loadTetherExtJar()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 72
     return-void
 
-    .line 76
     :cond_0
     :try_start_0
     sget-object v1, Lcom/android/server/NetPluginDelegate;->tetherExtensionClass:Ljava/lang/Class;
 
-    const-string/jumbo v2, "setQuota"
+    const-string v2, "setQuota"
 
     const/4 v3, 0x2
 
@@ -291,15 +256,12 @@
 
     move-result-object v1
 
-    .line 77
     sget-object v2, Lcom/android/server/NetPluginDelegate;->tetherExtensionObj:Ljava/lang/Object;
 
-    .line 76
     const/4 v3, 0x2
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 77
     const/4 v4, 0x0
 
     aput-object p0, v3, v4
@@ -312,24 +274,20 @@
 
     aput-object v4, v3, v5
 
-    .line 76
     invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 69
     :goto_0
     return-void
 
-    .line 78
     :catch_0
     move-exception v0
 
-    .line 79
     .local v0, "ex":Ljava/lang/Exception;
-    const-string/jumbo v1, "ConnectivityExtension"
+    const-string v1, "ConnectivityExtension"
 
-    const-string/jumbo v2, "Error calling setQuota Method on extension jar"
+    const-string v2, "Error calling setQuota Method on extension jar"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -341,14 +299,12 @@
     .param p0, "net"    # Landroid/net/Network;
 
     .prologue
-    .line 86
     invoke-static {}, Lcom/android/server/NetPluginDelegate;->loadTetherExtJar()Z
 
-    .line 88
     :try_start_0
     sget-object v1, Lcom/android/server/NetPluginDelegate;->tetherExtensionClass:Ljava/lang/Class;
 
-    const-string/jumbo v2, "setUpstream"
+    const-string v2, "setUpstream"
 
     const/4 v3, 0x1
 
@@ -364,37 +320,30 @@
 
     move-result-object v1
 
-    .line 89
     sget-object v2, Lcom/android/server/NetPluginDelegate;->tetherExtensionObj:Ljava/lang/Object;
 
-    .line 88
     const/4 v3, 0x1
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 89
     const/4 v4, 0x0
 
     aput-object p0, v3, v4
 
-    .line 88
     invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 84
     :goto_0
     return-void
 
-    .line 90
     :catch_0
     move-exception v0
 
-    .line 91
     .local v0, "ex":Ljava/lang/Exception;
-    const-string/jumbo v1, "ConnectivityExtension"
+    const-string v1, "ConnectivityExtension"
 
-    const-string/jumbo v2, "Error calling setUpstream Method on extension jar"
+    const-string v2, "Error calling setUpstream Method on extension jar"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 

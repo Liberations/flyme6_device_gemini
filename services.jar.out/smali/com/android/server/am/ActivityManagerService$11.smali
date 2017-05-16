@@ -27,7 +27,6 @@
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
     .prologue
-    .line 11436
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$11;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +40,8 @@
     .locals 1
 
     .prologue
-    .line 11439
     monitor-enter p0
 
-    .line 11440
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/am/ActivityManagerService$11;->notifyAll()V
     :try_end_0
@@ -52,10 +49,8 @@
 
     monitor-exit p0
 
-    .line 11438
     return-void
 
-    .line 11439
     :catchall_0
     move-exception v0
 

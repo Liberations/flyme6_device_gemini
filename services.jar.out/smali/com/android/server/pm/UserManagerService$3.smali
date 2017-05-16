@@ -30,7 +30,6 @@
     .param p2, "val$userHandle"    # I
 
     .prologue
-    .line 1605
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
     iput p2, p0, Lcom/android/server/pm/UserManagerService$3;->val$userHandle:I
@@ -46,17 +45,14 @@
     .locals 9
 
     .prologue
-    .line 1609
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v3}, Lcom/android/server/pm/UserManagerService;->-get2(Lcom/android/server/pm/UserManagerService;)Lcom/android/server/pm/PackageManagerService;
 
     move-result-object v3
 
-    .line 1610
     iget v6, p0, Lcom/android/server/pm/UserManagerService$3;->val$userHandle:I
 
-    .line 1609
     const/16 v7, 0x2000
 
     invoke-virtual {v3, v7, v6}, Lcom/android/server/pm/PackageManagerService;->getInstalledApplications(II)Landroid/content/pm/ParceledListSlice;
@@ -67,13 +63,11 @@
 
     move-result-object v2
 
-    .line 1611
     .local v2, "apps":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v4
 
-    .line 1613
     .local v4, "ident":J
     :try_start_0
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -95,7 +89,6 @@
 
     check-cast v0, Landroid/content/pm/ApplicationInfo;
 
-    .line 1614
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
     iget v3, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -105,14 +98,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 1615
     iget v3, v0, Landroid/content/pm/ApplicationInfo;->privateFlags:I
 
     and-int/lit8 v3, v3, 0x1
 
     if-eqz v3, :cond_0
 
-    .line 1617
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService$3;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-static {v3}, Lcom/android/server/pm/UserManagerService;->-get2(Lcom/android/server/pm/UserManagerService;)Lcom/android/server/pm/PackageManagerService;
@@ -121,10 +112,8 @@
 
     iget-object v6, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    .line 1618
     iget v7, p0, Lcom/android/server/pm/UserManagerService$3;->val$userHandle:I
 
-    .line 1617
     const/4 v8, 0x0
 
     invoke-virtual {v3, v6, v8, v7}, Lcom/android/server/pm/PackageManagerService;->setApplicationHiddenSettingAsUser(Ljava/lang/String;ZI)Z
@@ -133,23 +122,18 @@
 
     goto :goto_0
 
-    .line 1621
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v1    # "appInfo$iterator":Ljava/util/Iterator;
     :catchall_0
     move-exception v3
 
-    .line 1622
     invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1621
     throw v3
 
-    .line 1622
     .restart local v1    # "appInfo$iterator":Ljava/util/Iterator;
     :cond_1
     invoke-static {v4, v5}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1607
     return-void
 .end method

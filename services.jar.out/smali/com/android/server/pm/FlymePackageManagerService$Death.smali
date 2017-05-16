@@ -30,15 +30,12 @@
     .param p2, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 167
     iput-object p1, p0, Lcom/android/server/pm/FlymePackageManagerService$Death;->this$0:Lcom/android/server/pm/FlymePackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 168
     iput-object p2, p0, Lcom/android/server/pm/FlymePackageManagerService$Death;->token:Landroid/os/IBinder;
 
-    .line 167
     return-void
 .end method
 
@@ -48,27 +45,23 @@
     .locals 2
 
     .prologue
-    .line 173
     iget-object v0, p0, Lcom/android/server/pm/FlymePackageManagerService$Death;->this$0:Lcom/android/server/pm/FlymePackageManagerService;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/server/pm/FlymePackageManagerService;->privacyBlock:Z
 
-    .line 174
     iget-object v0, p0, Lcom/android/server/pm/FlymePackageManagerService$Death;->this$0:Lcom/android/server/pm/FlymePackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/FlymePackageManagerService;->mayForbitPackage:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 175
-    const-string/jumbo v0, "FlymePackageManager"
+    const-string v0, "FlymePackageManager"
 
-    const-string/jumbo v1, "binderDied"
+    const-string v1, "binderDied"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
     return-void
 .end method

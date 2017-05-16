@@ -35,7 +35,6 @@
     .locals 0
 
     .prologue
-    .line 592
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,21 +58,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 610
     instance-of v2, p1, Lcom/android/server/LockSettingsStorage$Cache$CacheKey;
 
     if-nez v2, :cond_0
 
-    .line 611
     return v1
 
     :cond_0
     move-object v0, p1
 
-    .line 612
     check-cast v0, Lcom/android/server/LockSettingsStorage$Cache$CacheKey;
 
-    .line 613
     .local v0, "o":Lcom/android/server/LockSettingsStorage$Cache$CacheKey;
     iget v2, p0, Lcom/android/server/LockSettingsStorage$Cache$CacheKey;->userId:I
 
@@ -103,7 +98,6 @@
     .locals 2
 
     .prologue
-    .line 618
     iget-object v0, p0, Lcom/android/server/LockSettingsStorage$Cache$CacheKey;->key:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -128,15 +122,11 @@
     .param p3, "userId"    # I
 
     .prologue
-    .line 602
     iput p1, p0, Lcom/android/server/LockSettingsStorage$Cache$CacheKey;->type:I
 
-    .line 603
     iput-object p2, p0, Lcom/android/server/LockSettingsStorage$Cache$CacheKey;->key:Ljava/lang/String;
 
-    .line 604
     iput p3, p0, Lcom/android/server/LockSettingsStorage$Cache$CacheKey;->userId:I
 
-    .line 605
     return-object p0
 .end method

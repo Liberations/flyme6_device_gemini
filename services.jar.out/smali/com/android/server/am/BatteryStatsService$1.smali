@@ -45,7 +45,6 @@
     .param p7, "val$volt"    # I
 
     .prologue
-    .line 869
     iput-object p1, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     iput p2, p0, Lcom/android/server/am/BatteryStatsService$1;->val$plugType:I
@@ -71,14 +70,12 @@
     .locals 9
 
     .prologue
-    .line 872
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     iget-object v8, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
 
     monitor-enter v8
 
-    .line 873
     :try_start_0
     iget v0, p0, Lcom/android/server/am/BatteryStatsService$1;->val$plugType:I
 
@@ -86,7 +83,6 @@
 
     const/4 v7, 0x1
 
-    .line 874
     .local v7, "onBattery":Z
     :goto_0
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
@@ -99,7 +95,6 @@
 
     if-ne v0, v7, :cond_1
 
-    .line 877
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     iget-object v0, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
@@ -122,10 +117,8 @@
 
     monitor-exit v8
 
-    .line 878
     return-void
 
-    .line 873
     .end local v7    # "onBattery":Z
     :cond_0
     const/4 v7, 0x0
@@ -136,23 +129,20 @@
     :cond_1
     monitor-exit v8
 
-    .line 884
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
-    const-string/jumbo v1, "battery-state"
+    const-string v1, "battery-state"
 
     const/16 v2, 0xf
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/am/BatteryStatsService;->updateExternalStats(Ljava/lang/String;I)V
 
-    .line 885
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     iget-object v8, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
 
     monitor-enter v8
 
-    .line 886
     :try_start_1
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$1;->this$0:Lcom/android/server/am/BatteryStatsService;
 
@@ -176,10 +166,8 @@
 
     monitor-exit v8
 
-    .line 871
     return-void
 
-    .line 872
     .end local v7    # "onBattery":Z
     :catchall_0
     move-exception v0
@@ -188,7 +176,6 @@
 
     throw v0
 
-    .line 885
     .restart local v7    # "onBattery":Z
     :catchall_1
     move-exception v0

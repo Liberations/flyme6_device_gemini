@@ -24,7 +24,11 @@
 
 
 # instance fields
+.field private mAction:I
+
 .field private mCancelOnUp:Z
+
+.field private mConfirm:Z
 
 .field private mEnableAccessibilityController:Lcom/android/server/policy/EnableAccessibilityController;
 
@@ -33,48 +37,6 @@
 .field mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
 .field private final mWindowTouchSlop:I
-
-
-# direct methods
-.method static synthetic -get0(Lcom/android/server/policy/MzGlobalActions;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/server/policy/MzGlobalActions;->mCancelOnUp:Z
-
-    return v0
-.end method
-
-.method static synthetic -get1()Landroid/content/Context;
-    .locals 1
-
-    sget-object v0, Lcom/android/server/policy/MzGlobalActions;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic -get2(Lcom/android/server/policy/MzGlobalActions;)Lcom/android/server/policy/EnableAccessibilityController;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/server/policy/MzGlobalActions;->mEnableAccessibilityController:Lcom/android/server/policy/EnableAccessibilityController;
-
-    return-object v0
-.end method
-
-.method static synthetic -get3(Lcom/android/server/policy/MzGlobalActions;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/server/policy/MzGlobalActions;->mIntercepted:Z
-
-    return v0
-.end method
-
-.method static synthetic -get4(Lcom/android/server/policy/MzGlobalActions;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/server/policy/MzGlobalActions;->mWindowTouchSlop:I
-
-    return v0
-.end method
 
 .method static synthetic -set0(Lcom/android/server/policy/MzGlobalActions;Z)Z
     .locals 0
@@ -116,16 +78,18 @@
     .param p2, "windowManagerFuncs"    # Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     .prologue
-    .line 72
+    const/4 v0, 0x0
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
+    iput-boolean v0, p0, Lcom/android/server/policy/MzGlobalActions;->mConfirm:Z
+
+    iput v0, p0, Lcom/android/server/policy/MzGlobalActions;->mAction:I
+
     sput-object p1, Lcom/android/server/policy/MzGlobalActions;->mContext:Landroid/content/Context;
 
-    .line 75
     iput-object p2, p0, Lcom/android/server/policy/MzGlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
-    .line 76
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
@@ -136,7 +100,6 @@
 
     iput v0, p0, Lcom/android/server/policy/MzGlobalActions;->mWindowTouchSlop:I
 
-    .line 73
     return-void
 .end method
 
@@ -146,19 +109,16 @@
     .param p1, "windowManagerFuncs"    # Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     .prologue
-    .line 81
     sget-object v0, Lcom/android/server/policy/MzGlobalActions;->mInstance:Lcom/android/server/policy/MzGlobalActions;
 
     if-nez v0, :cond_0
 
-    .line 82
     new-instance v0, Lcom/android/server/policy/MzGlobalActions;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/policy/MzGlobalActions;-><init>(Landroid/content/Context;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;)V
 
     sput-object v0, Lcom/android/server/policy/MzGlobalActions;->mInstance:Lcom/android/server/policy/MzGlobalActions;
 
-    .line 84
     :cond_0
     sget-object v0, Lcom/android/server/policy/MzGlobalActions;->mInstance:Lcom/android/server/policy/MzGlobalActions;
 
@@ -169,7 +129,6 @@
     .locals 1
 
     .prologue
-    .line 641
     const/4 v0, 0x0
 
     return v0
@@ -178,28 +137,122 @@
 
 # virtual methods
 .method public showGlobalActionsDialog()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 88
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, v0}, Lcom/android/server/policy/MzGlobalActions;->showGlobalActionsDialog(ZI)V
+
+    return-void
+.end method
+
+
+# direct methods
+.method static synthetic -get0(Lcom/android/server/policy/MzGlobalActions;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/server/policy/MzGlobalActions;->mAction:I
+
+    return v0
+.end method
+
+.method static synthetic -get1(Lcom/android/server/policy/MzGlobalActions;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/server/policy/MzGlobalActions;->mCancelOnUp:Z
+
+    return v0
+.end method
+
+.method static synthetic -get2(Lcom/android/server/policy/MzGlobalActions;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/server/policy/MzGlobalActions;->mConfirm:Z
+
+    return v0
+.end method
+
+.method static synthetic -get3()Landroid/content/Context;
+    .locals 1
+
+    sget-object v0, Lcom/android/server/policy/MzGlobalActions;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic -get4(Lcom/android/server/policy/MzGlobalActions;)Lcom/android/server/policy/EnableAccessibilityController;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/server/policy/MzGlobalActions;->mEnableAccessibilityController:Lcom/android/server/policy/EnableAccessibilityController;
+
+    return-object v0
+.end method
+
+.method static synthetic -get5(Lcom/android/server/policy/MzGlobalActions;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/server/policy/MzGlobalActions;->mIntercepted:Z
+
+    return v0
+.end method
+
+.method static synthetic -get6(Lcom/android/server/policy/MzGlobalActions;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/server/policy/MzGlobalActions;->mWindowTouchSlop:I
+
+    return v0
+.end method
+
+.method public showGlobalActionsDialog(ZI)V
+    .locals 3
+    .param p1, "isConfirming"    # Z
+    .param p2, "action"    # I
+
+    .prologue
+    iput-boolean p1, p0, Lcom/android/server/policy/MzGlobalActions;->mConfirm:Z
+
+    iput p2, p0, Lcom/android/server/policy/MzGlobalActions;->mAction:I
+
+    const-string v0, "MzGlobalActions"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "showGlobalActionsDialog , mConfirm = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-boolean v2, p0, Lcom/android/server/policy/MzGlobalActions;->mConfirm:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     sget-object v0, Lcom/android/server/policy/MzGlobalActions;->mMzDialog:Landroid/app/Dialog;
 
     if-nez v0, :cond_0
 
-    .line 89
     new-instance v0, Lcom/android/server/policy/MzGlobalActions$MzGlobalActionsDialog;
 
     sget-object v1, Lcom/android/server/policy/MzGlobalActions;->mContext:Landroid/content/Context;
 
-    .line 90
     sget v2, Lcom/flyme/internal/R$style;->GlobalActionsDialog:I
 
-    .line 89
     invoke-direct {v0, p0, v1, v2}, Lcom/android/server/policy/MzGlobalActions$MzGlobalActionsDialog;-><init>(Lcom/android/server/policy/MzGlobalActions;Landroid/content/Context;I)V
 
     sput-object v0, Lcom/android/server/policy/MzGlobalActions;->mMzDialog:Landroid/app/Dialog;
 
-    .line 91
     sget-object v0, Lcom/android/server/policy/MzGlobalActions;->mMzDialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -210,13 +263,10 @@
 
     move-result-object v0
 
-    .line 92
     const/high16 v1, 0x10000
 
-    .line 91
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    .line 93
     sget-object v0, Lcom/android/server/policy/MzGlobalActions;->mMzDialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -231,12 +281,10 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->statusBarColor:I
 
-    .line 95
     :cond_0
     sget-object v0, Lcom/android/server/policy/MzGlobalActions;->mMzDialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    .line 87
     return-void
 .end method

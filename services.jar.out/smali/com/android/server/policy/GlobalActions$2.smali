@@ -24,7 +24,6 @@
     .param p1, "this$0"    # Lcom/android/server/policy/GlobalActions;
 
     .prologue
-    .line 1080
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -39,7 +38,6 @@
     .param p1, "serviceState"    # Landroid/telephony/ServiceState;
 
     .prologue
-    .line 1083
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get8(Lcom/android/server/policy/GlobalActions;)Z
@@ -50,7 +48,6 @@
 
     return-void
 
-    .line 1084
     :cond_0
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getState()I
 
@@ -62,7 +59,6 @@
 
     const/4 v0, 0x1
 
-    .line 1085
     .local v0, "inAirplaneMode":Z
     :goto_0
     iget-object v2, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
@@ -74,7 +70,6 @@
     :goto_1
     invoke-static {v2, v1}, Lcom/android/server/policy/GlobalActions;->-set0(Lcom/android/server/policy/GlobalActions;Lcom/android/server/policy/GlobalActions$ToggleAction$State;)Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 
-    .line 1086
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get1(Lcom/android/server/policy/GlobalActions;)Lcom/android/server/policy/GlobalActions$ToggleAction;
@@ -89,7 +84,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/policy/GlobalActions$ToggleAction;->updateState(Lcom/android/server/policy/GlobalActions$ToggleAction$State;)V
 
-    .line 1087
     iget-object v1, p0, Lcom/android/server/policy/GlobalActions$2;->this$0:Lcom/android/server/policy/GlobalActions;
 
     invoke-static {v1}, Lcom/android/server/policy/GlobalActions;->-get0(Lcom/android/server/policy/GlobalActions;)Lcom/android/server/policy/GlobalActions$MyAdapter;
@@ -98,10 +92,8 @@
 
     invoke-virtual {v1}, Lcom/android/server/policy/GlobalActions$MyAdapter;->notifyDataSetChanged()V
 
-    .line 1082
     return-void
 
-    .line 1084
     .end local v0    # "inAirplaneMode":Z
     :cond_1
     const/4 v0, 0x0
@@ -109,7 +101,6 @@
     .restart local v0    # "inAirplaneMode":Z
     goto :goto_0
 
-    .line 1085
     :cond_2
     sget-object v1, Lcom/android/server/policy/GlobalActions$ToggleAction$State;->Off:Lcom/android/server/policy/GlobalActions$ToggleAction$State;
 

@@ -30,14 +30,12 @@
     .param p5, "val$user"    # Landroid/content/pm/UserInfo;
 
     .prologue
-    .line 575
     iput-object p1, p0, Lcom/android/server/policy/GlobalActions$13;->this$0:Lcom/android/server/policy/GlobalActions;
 
     iput-object p5, p0, Lcom/android/server/policy/GlobalActions$13;->val$user:Landroid/content/pm/UserInfo;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/server/policy/GlobalActions$SinglePressAction;-><init>(ILandroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
 
-    .line 578
     return-void
 .end method
 
@@ -47,7 +45,6 @@
     .locals 4
 
     .prologue
-    .line 581
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -61,23 +58,20 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 579
     :goto_0
     return-void
 
-    .line 582
     :catch_0
     move-exception v0
 
-    .line 583
     .local v0, "re":Landroid/os/RemoteException;
-    const-string/jumbo v1, "GlobalActions"
+    const-string v1, "GlobalActions"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Couldn\'t switch user "
+    const-string v3, "Couldn\'t switch user "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -100,7 +94,6 @@
     .locals 1
 
     .prologue
-    .line 592
     const/4 v0, 0x0
 
     return v0
@@ -110,7 +103,6 @@
     .locals 1
 
     .prologue
-    .line 588
     const/4 v0, 0x1
 
     return v0

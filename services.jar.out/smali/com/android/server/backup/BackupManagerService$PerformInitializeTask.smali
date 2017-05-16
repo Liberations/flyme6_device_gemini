@@ -47,16 +47,13 @@
     .end annotation
 
     .prologue
-    .line 8369
     .local p2, "transportNames":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$PerformInitializeTask;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8370
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$PerformInitializeTask;->mQueue:Ljava/util/HashSet;
 
-    .line 8369
     return-void
 .end method
 
@@ -66,7 +63,6 @@
     .locals 18
 
     .prologue
-    .line 8375
     :try_start_0
     move-object/from16 v0, p0
 
@@ -90,7 +86,6 @@
 
     check-cast v11, Ljava/lang/String;
 
-    .line 8376
     .local v11, "transportName":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -100,18 +95,16 @@
 
     move-result-object v10
 
-    .line 8377
     .local v10, "transport":Lcom/android/internal/backup/IBackupTransport;
     if-nez v10, :cond_0
 
-    .line 8378
-    const-string/jumbo v13, "BackupManagerService"
+    const-string v13, "BackupManagerService"
 
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v15, "Requested init for "
+    const-string v15, "Requested init for "
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -121,7 +114,7 @@
 
     move-result-object v14
 
-    const-string/jumbo v15, " but not found"
+    const-string v15, " but not found"
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -139,14 +132,12 @@
 
     goto :goto_0
 
-    .line 8416
     .end local v10    # "transport":Lcom/android/internal/backup/IBackupTransport;
     .end local v11    # "transportName":Ljava/lang/String;
     .end local v12    # "transportName$iterator":Ljava/util/Iterator;
     :catch_0
     move-exception v4
 
-    .line 8422
     .local v4, "e":Landroid/os/RemoteException;
     move-object/from16 v0, p0
 
@@ -156,24 +147,22 @@
 
     invoke-virtual {v13}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 8373
     .end local v4    # "e":Landroid/os/RemoteException;
     :goto_1
     return-void
 
-    .line 8382
     .restart local v10    # "transport":Lcom/android/internal/backup/IBackupTransport;
     .restart local v11    # "transportName":Ljava/lang/String;
     .restart local v12    # "transportName$iterator":Ljava/util/Iterator;
     :cond_0
     :try_start_1
-    const-string/jumbo v13, "BackupManagerService"
+    const-string v13, "BackupManagerService"
 
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v15, "Initializing (wiping) backup transport storage: "
+    const-string v15, "Initializing (wiping) backup transport storage: "
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -189,7 +178,6 @@
 
     invoke-static {v13, v14}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8383
     invoke-interface {v10}, Lcom/android/internal/backup/IBackupTransport;->transportDirName()Ljava/lang/String;
 
     move-result-object v13
@@ -198,38 +186,31 @@
 
     invoke-static {v14, v13}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 8384
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v8
 
-    .line 8385
     .local v8, "startRealtime":J
     invoke-interface {v10}, Lcom/android/internal/backup/IBackupTransport;->initializeDevice()I
 
     move-result v7
 
-    .line 8387
     .local v7, "status":I
     if-nez v7, :cond_1
 
-    .line 8388
     invoke-interface {v10}, Lcom/android/internal/backup/IBackupTransport;->finishBackup()I
 
     move-result v7
 
-    .line 8392
     :cond_1
     if-nez v7, :cond_2
 
-    .line 8393
-    const-string/jumbo v13, "BackupManagerService"
+    const-string v13, "BackupManagerService"
 
-    const-string/jumbo v14, "Device init successful"
+    const-string v14, "Device init successful"
 
     invoke-static {v13, v14}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8394
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v14
@@ -238,7 +219,6 @@
 
     long-to-int v6, v14
 
-    .line 8395
     .local v6, "millis":I
     const/4 v13, 0x0
 
@@ -248,7 +228,6 @@
 
     invoke-static {v14, v13}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 8396
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/backup/BackupManagerService$PerformInitializeTask;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -269,7 +248,6 @@
 
     invoke-virtual {v13, v14}, Lcom/android/server/backup/BackupManagerService;->resetBackupState(Ljava/io/File;)V
 
-    .line 8397
     const/4 v13, 0x2
 
     new-array v13, v13, [Ljava/lang/Object;
@@ -296,7 +274,6 @@
 
     invoke-static {v14, v13}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 8398
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/backup/BackupManagerService$PerformInitializeTask;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -309,7 +286,6 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 8399
     :try_start_2
     move-object/from16 v0, p0
 
@@ -330,7 +306,6 @@
 
     goto/16 :goto_0
 
-    .line 8418
     .end local v6    # "millis":I
     .end local v7    # "status":I
     .end local v8    # "startRealtime":J
@@ -340,18 +315,16 @@
     :catch_1
     move-exception v5
 
-    .line 8419
     .local v5, "e":Ljava/lang/Exception;
     :try_start_4
-    const-string/jumbo v13, "BackupManagerService"
+    const-string v13, "BackupManagerService"
 
-    const-string/jumbo v14, "Unexpected error performing init"
+    const-string v14, "Unexpected error performing init"
 
     invoke-static {v13, v14, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 8422
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/backup/BackupManagerService$PerformInitializeTask;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -362,7 +335,6 @@
 
     goto/16 :goto_1
 
-    .line 8398
     .end local v5    # "e":Ljava/lang/Exception;
     .restart local v6    # "millis":I
     .restart local v7    # "status":I
@@ -382,7 +354,6 @@
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 8420
     .end local v6    # "millis":I
     .end local v7    # "status":I
     .end local v8    # "startRealtime":J
@@ -392,7 +363,6 @@
     :catchall_1
     move-exception v13
 
-    .line 8422
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/backup/BackupManagerService$PerformInitializeTask;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -401,10 +371,8 @@
 
     invoke-virtual {v14}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 8420
     throw v13
 
-    .line 8404
     .restart local v7    # "status":I
     .restart local v8    # "startRealtime":J
     .restart local v10    # "transport":Lcom/android/internal/backup/IBackupTransport;
@@ -412,20 +380,18 @@
     .restart local v12    # "transportName$iterator":Ljava/util/Iterator;
     :cond_2
     :try_start_6
-    const-string/jumbo v13, "BackupManagerService"
+    const-string v13, "BackupManagerService"
 
-    const-string/jumbo v14, "Transport error in initializeDevice()"
+    const-string v14, "Transport error in initializeDevice()"
 
     invoke-static {v13, v14}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8405
-    const-string/jumbo v13, "(initialize)"
+    const-string v13, "(initialize)"
 
     const/16 v14, 0xb06
 
     invoke-static {v14, v13}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 8406
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/backup/BackupManagerService$PerformInitializeTask;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -438,7 +404,6 @@
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    .line 8407
     :try_start_7
     move-object/from16 v0, p0
 
@@ -453,20 +418,18 @@
     :try_start_8
     monitor-exit v14
 
-    .line 8410
     invoke-interface {v10}, Lcom/android/internal/backup/IBackupTransport;->requestBackupTime()J
 
     move-result-wide v2
 
-    .line 8411
     .local v2, "delay":J
-    const-string/jumbo v13, "BackupManagerService"
+    const-string v13, "BackupManagerService"
 
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v15, "Init failed on "
+    const-string v15, "Init failed on "
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -476,7 +439,7 @@
 
     move-result-object v14
 
-    const-string/jumbo v15, " resched in "
+    const-string v15, " resched in "
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -492,7 +455,6 @@
 
     invoke-static {v13, v14}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8412
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/backup/BackupManagerService$PerformInitializeTask;->this$0:Lcom/android/server/backup/BackupManagerService;
@@ -501,7 +463,6 @@
 
     move-result-object v13
 
-    .line 8413
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v14
@@ -520,7 +481,6 @@
 
     move-object/from16 v16, v0
 
-    .line 8412
     const/16 v17, 0x0
 
     move/from16 v0, v17
@@ -531,7 +491,6 @@
 
     goto/16 :goto_0
 
-    .line 8406
     .end local v2    # "delay":J
     :catchall_2
     move-exception v13
@@ -544,7 +503,6 @@
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_1
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
-    .line 8422
     .end local v7    # "status":I
     .end local v8    # "startRealtime":J
     .end local v10    # "transport":Lcom/android/internal/backup/IBackupTransport;
