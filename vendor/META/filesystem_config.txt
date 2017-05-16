@@ -248,7 +248,7 @@ system/bin/inotifyd 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x
 system/bin/input 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/insmod 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/installd 0 2000 755 selabel=u:object_r:installd_exec:s0 capabilities=0x0
-system/bin/install-recovery.sh 0 0 754 selabel=u:object_r:install_recovery_exec:s0 capabilities=0x0
+system/bin/install-recovery.sh 0 0 750 selabel=u:object_r:install_recovery_exec:s0 capabilities=0x0
 system/bin/ioctl 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/ionice 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/iop 0 2000 755 selabel=u:object_r:dumpstate_exec:s0 capabilities=0x0
@@ -363,7 +363,7 @@ system/bin/rmdir 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/rmmod 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/rmt_storage 0 2000 755 selabel=u:object_r:rmt_storage_exec:s0 capabilities=0x0
 system/bin/route 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/bin/run-as 0 2000 754 selabel=u:object_r:runas_exec:s0 capabilities=0x0
+system/bin/run-as 0 2000 750 selabel=u:object_r:runas_exec:s0 capabilities=0x0
 system/bin/runcon 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/schedtest 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/screencap 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
@@ -428,7 +428,7 @@ system/bin/tzdatacheck 0 2000 755 selabel=u:object_r:tzdatacheck_exec:s0 capabil
 system/bin/uiautomator 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/umount 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/uname 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/bin/uncrypt 0 0 754 selabel=u:object_r:uncrypt_exec:s0 capabilities=0x0
+system/bin/uncrypt 0 0 750 selabel=u:object_r:uncrypt_exec:s0 capabilities=0x0
 system/bin/uniq 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/unix2dos 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/bin/uptime 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
@@ -2906,7 +2906,7 @@ system/xbin/poweroff 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0
 system/xbin/printenv 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/xbin/printf 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/xbin/procmem 0 0 6755 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/xbin/procrank 0 0 755 selabel=u:object_r:procrank_exec:s0 capabilities=0x0
+system/xbin/procrank 0 0 6755 selabel=u:object_r:procrank_exec:s0 capabilities=0x0
 system/xbin/ps 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/xbin/pstree 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/xbin/puncture_fs 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
