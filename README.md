@@ -1,50 +1,44 @@
-# Flyme6_device_gemini
-+ I am trying to port flyme6 to Xiaomi Mi5
-+ It is booting.I am trying to deal with errors.
+# All the stuff related to the Flyme6 porting device Xiaomi Mi 5
 
-## What is not working
-+ Telephony
-+ Flyme account, theme  etc
-+ systemui sometimes crash
 
-Information:
-<pre><code>
-05-06 12:01:06.821  5799  5799 E TelephonyPluginDelegate: error: TelephonyPluginDelegate instance is not created!!
-05-06 12:01:06.821  5799  5799 D AndroidRuntime: Shutting down VM
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: FATAL EXCEPTION: main
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: Process: com.android.phone, PID: 5799
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: java.lang.RuntimeException: Unable to create application com.android.phone.PhoneApp: java.lang.NullPointerException: Attempt to invoke virtual method 'void com.android.internal.telephony.TelephonyPluginDelegate.initSubscriptionController(android.content.Context, com.android.internal.telephony.CommandsInterface[])' on a null object reference
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:4726)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at android.app.ActivityThread.-wrap1(ActivityThread.java)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1421)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:102)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:148)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:5433)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'void com.android.internal.telephony.TelephonyPluginDelegate.initSubscriptionController(android.content.Context, com.android.internal.telephony.CommandsInterface[])' on a null object reference
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at com.android.internal.telephony.PhoneFactory.makeDefaultPhone(PhoneFactory.java:170)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at com.android.internal.telephony.PhoneFactory.makeDefaultPhones(PhoneFactory.java:86)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at com.android.phone.PhoneGlobals.onCreate(PhoneGlobals.java:417)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at com.android.phone.PhoneApp.onCreate(PhoneApp.java:47)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1014)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:4723)
-05-06 12:01:06.822  5799  5799 E AndroidRuntime: 	... 8 more
-</code></pre>
-<pre><code>
-05-06 11:42:35.952  1617  2858 E flymed_connector: Communications error: java.io.IOException: No such file or directory
-05-06 11:42:35.953  1617  2858 E flymed_connector: Error in NativeDaemonConnector: java.io.IOException: No such file or directory
-</code></pre>
-<pre><code>
-05-06 11:42:36.278   469   469 E SELinux : avc:  denied  { find } for service=flyme_permission scontext=u:r:system_server:s0 tcontext=u:object_r:access_control_service:s0 tclass=service_manager
-05-06 11:42:37.903   469   469 E SELinux : avc:  denied  { find } for service=flyme_permission scontext=u:r:system_server:s0 tcontext=u:object_r:access_control_service:s0 tclass=service_manager
-</code></pre>
-<pre><code>
-05-06 11:37:59.669  2495  2499 W dex2oat : No verified method for method calling String.<init>: java.lang.String android.text.SpannableStringBuilder.toString()
-05-06 11:37:59.678  2495  2499 W dex2oat : No verified method for method calling String.<init>: java.lang.String android.text.SpannableStringBuilder.toString()
-05-06 11:37:59.679  2495  2499 W dex2oat : No verified method for method calling String.<init>: java.lang.String android.text.SpannableStringBuilder.toString()
-05-06 11:37:59.687  2495  2499 W dex2oat : No verified method for method calling String.<init>: java.lang.String android.text.SpannableStringBuilder.toString()
-05-06 11:37:59.687  2495  2499 W dex2oat : No verified method for method calling String.<init>: java.lang.String android.text.SpannableStringBuilder.toString()
-05-06 11:37:59.702  2495  2497 W dex2oat : No verified method for method calling String.<init>: java.lang.String android.text.SpannableStringBuilder.toString()</code></pre>
-</code></pre>
+## flyme_MI-5_Liberation_6.7.5.15R
+系统
+修复 写入NFC标签界面异常的问题
+修复 耳机无声
+
+计算器
+修复 计算器界面异常，键盘显示不全的问题
+-
+工具箱
+修复 从工具箱开启手电筒，工具箱报错的问题
+-
+其他
+同步Flyme6最新适配代码
+-
+
+Device configuration for Xiaomi Mi 5
+==============
+
+The Xiaomi Mi 5 (codenamed _"Gemini"_) is a high-end smartphone from Xiaomi.
+
+It was announced in February 2016, in three flavours. Release date was April 2016.
+
+## Device specifications
+
+| Feature      | Mi 5 Standard Edition                           | Mi 5 Pro Edition                                | Mi 5 Exclusive Edition                         |
+| -----------: | :---------------------------------------------- | :---------------------------------------------- | :--------------------------------------------- |
+| SoC          | Qualcomm MSM8996 Snapdragon 820                 | Qualcomm MSM8996 Snapdragon 820                 | Qualcomm MSM8996 Snapdragon 820                |
+| CPU          | Dual-core 1.8GHz Kryo & dual-core 1.36GHz Kryo  | Dual-core 2.15GHz Kryo & dual-core 1.6GHz Kryo  | Dual-core 2.15GHz Kryo & dual-core 1.6GHz Kryo |
+| GPU          | 510MHz Adreno 530                               | 624MHz Adreno 530                               | 624MHz Adreno 530                              |
+| Memory       | 3 GB RAM (LPDDR4 1333MHz dual-channel)          | 3 GB RAM (LPDDR4 1866MHz dual-channel)          | 4 GB RAM (LPDDR4 1866MHz dual-channel)         |
+| Shipped Android version | 6.0 with MIUI 7                      | 6.0 with MIUI 7                                 | 6.0 with MIUI 7                                |
+| Storage      | 32 GB (UFS 2.0 Flash)                           | 64 GB (UFS 2.0 Flash)                           | 128 GB (UFS 2.0 Flash)                         |
+| Battery      | Non-removable Li-Po 3000 mAh                    | Non-removable Li-Po 3000 mAh                    | Non-removable Li-Po 3000 mAh                   |
+| Dimensions   | 144.55 x 69.2 x 7.25 mm                         | 144.55 x 69.2 x 7.25 mm                         | 144.55 x 69.2 x 7.25 mm                        |
+| Display      | 1920 x 1080 px, 5.15 inches (428 PPI)           | 1920 x 1080 px, 5.15 inches (428 PPI)           | 1920 x 1080 px, 5.15 inches (428 PPI)          |
+| Rear camera  | 16 MPx, f/2.0, PDAF autofocus, dual-LED (dual tone) flash | 16 MPx, f/2.0, PDAF autofocus, dual-LED (dual tone) flash | 16 MPx, f/2.0, PDAF autofocus, dual-LED (dual tone) flash |
+| Front camera | 4 MPx, f/2.0                                    | 4 MPx, f/2.0                                    | 4 MPx, f/2.0                                   |
+
+## Device picture
+
+![Xiaomi Mi 5](http://xiaomi-mi.com/uploads/CatalogueImage/xiaomi-mi-5-black-01_14051_1456305832.jpg "Xiaomi Mi 5 in black")
