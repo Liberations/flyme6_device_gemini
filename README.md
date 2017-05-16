@@ -3,17 +3,21 @@
 
 ## `flyme_MI-5_Liberation_6.7.5.15R`
 * 系统
-#####修复 写入NFC标签界面异常的问题
-#####修复 `耳机无声`
+修复 写入NFC标签界面异常的问题
+修复 `耳机无声`
+-
 
 * 计算器
-#####修复 计算器界面异常，键盘显示不全的问题
+修复 计算器界面异常，键盘显示不全的问题
+-
 
 * 工具箱
-#####修复 从工具箱开启手电筒，工具箱报错的问题
+修复 从工具箱开启手电筒，工具箱报错的问题
+-
 
 * 其他
 #####同步Flyme6最新适配代码
+-
 
 
 Device configuration for Xiaomi Mi 5
@@ -43,6 +47,7 @@ It was announced in February 2016, in three flavours. Release date was April 201
 
 ![Xiaomi Mi 5](http://xiaomi-mi.com/uploads/CatalogueImage/xiaomi-mi-5-black-01_14051_1456305832.jpg "Xiaomi Mi 5 in black")
 
-```QQ：910689331```
-```MAIL：wenxianglimail@126.com```
+###QQ：910689331
+###MAIL：wenxianglimail@126.com```
+[我的博客](http://www.weibo.com/fjdxdy)
 
